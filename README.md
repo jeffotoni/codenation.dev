@@ -341,4 +341,75 @@ GO111MODULE=on go run main.go
 GO111MODULE=on go build main.go
 ```
 
+### Instalação com Docker
+
+Se não quisermos instalar diretamente em nosso sistema operacional golang, podemos instalá-lo em um contêiner docker.
+
+Podemos carregar um contêiner docker com o idioma instalado e compilar e executar nossos programas a partir desse contêiner.
+
+Vamos verificar como podemos fazer isso abaixo.
+
+Mais informações e detalhes você pode visitar este link: [hub.docker] (https://hub.docker.com/_/golang)
+
+### Instalar docker para Go
+
+```bash
+$ docker pull golang
+```
+
+### Compile seu aplicativo dentro do contêiner Docker
+
+Pode haver ocasiões em que não é apropriado executar seu aplicativo em um contêiner. Para compilar, mas não executar seu aplicativo dentro da Instância do Docker, você pode escrever algo como:
+```bash
+$ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.12.4 go build -v
+```
+
+Isso adicionará seu diretório atual como um volume ao contêiner, configurará o diretório de trabalho para o volume e executará o comando go build, que informará para compilar o projeto no diretório de trabalho e exibir o executável em myapp. Como alternativa, se você tiver um Makefile, poderá executar o comando make dentro do contêiner.
+```bash
+$ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.12.4 make
+```
+
+### Cross-compile Seu aplicativo dentro do contêiner Docker
+Se você precisar compilar seu aplicativo para uma plataforma diferente de linux/amd64 (como windows/386):
+
+```bash
+$ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp -e GOOS=windows \
+-e GOARCH=386 golang:1.12.4 go build -v
+```
+
+### Exemplo main.go
+
+Vamos fazer nosso programa de testes, vamos chamar isso de main.go
+
+```go
+package main
+
+import "fmt"
+
+func main(){
+	fmt.Println("My first program being compiled by a docker container!")
+}
+```
+
+Agora vamos rodar um programa para ver se funciona corretamente
+
+```bash
+$ docker run --rm -v "$PWD":/usr/src/main -w /usr/src/main golang:1.12.4 go run main.go
+```
+
+Output:
+```bash
+My first program being compiled by a docker container!
+```
+
+Check a version:
+```bash
+$ docker run --rm -v "$PWD":/usr/src/main -w /usr/src/main golang:1.12.4 go versio
+```
+
+Output:
+```bash
+go version go1.12.4 linux/amd64
+```
+
 
