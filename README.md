@@ -97,30 +97,30 @@ Vamos criar nosso diretório em nosso espaço de trabalho e testar para ver se t
 
 ```bash
 $ sudo rm -rf/usr/local/go
-$ wget https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz
+$ wget https://dl.google.com/go/go1.12.4.linux-amd64.tar.gz
 $ sudo tar C/usr/local -xzf vai $ VERSION. $ OS- $ ARCH.tar.gz
 ```
 
-### $ GOPATH
+### $GOPATH
 
-$ GOPATH é o golang em seu $ HOME, isso é necessário para que seus projetos usem o pkg e construam corretamente. Isso era obrigatório para todas as versões anteriores à versão 1.11. O legal é que a partir de agora não teremos que criar projetos no $ GOPATH, podemos criar em qualquer outro diretório que não esteja no $ GOPATH.
+$GOPATH é o golang em seu $HOME, isso é necessário para que seus projetos usem o pkg e construam corretamente. Isso era obrigatório para todas as versões anteriores à versão 1.11. O legal é que a partir de agora não teremos que criar projetos no $GOPATH, podemos criar em qualquer outro diretório que não esteja no $GOPATH.
 
 Este é o link para a proposta de versão [Proposta: Módulos Go Versionados] (https://go.googlesource.com/proposal/+/master/design/24301-versioned-go.md/) ou [Go 1.11 Modules] ( https://github.com/golang/go/wiki/Modules/)
 
-Vamos detalhar como trabalhar com ** go mod **, foi uma das melhores experiências que tive para projetos de versionamento usando Golang.
+Vamos detalhar como trabalhar com **go mod**, foi uma das melhores experiências que tive para projetos de versionamento usando Golang.
 
-Vamos configurar nosso ambiente para rodar o Go. Adicione **/usr/local/go/bin ** à variável de ambiente PATH. Você pode fazer isso adicionando esta linha ao seu **/etc/profile ** (para uma instalação em todo o sistema) ou ** $ HOME/.profile **.
+Vamos configurar nosso ambiente para rodar o Go. Adicione **/usr/local/go/bin** à variável de ambiente PATH. Você pode fazer isso adicionando esta linha ao seu **/etc/profile** (para uma instalação em todo o sistema) ou **$HOME/.profile**.
 
 ```bash
-$ export PATH = $ PATH:/usr/local/go/bin
+$ export PATH = $PATH:/usr/local/go/bin
 ```
 
-** Nota **: as alterações feitas em um arquivo de perfil podem não se aplicar até a próxima vez que você fizer login no seu computador. Para aplicar as alterações imediatamente, basta executar os comandos do shell diretamente ou executá-los a partir do perfil usando um comando como o source $ HOME/.profile.
+** Nota**: as alterações feitas em um arquivo de perfil podem não se aplicar até a próxima vez que você fizer login no seu computador. Para aplicar as alterações imediatamente, basta executar os comandos do shell diretamente ou executá-los a partir do perfil usando um comando como o source $HOME/.profile.
 
 ```bash
-$ echo "exportar GOPATH = $ HOME/go" >> $ HOME/.profile
-$ echo "export PATH = $ CAMINHO:/usr/local/go/bin" >> $ HOME/.profile
-$ echo "export PATH = $ PATH: $ GOPATH/bin" >> $ HOME/.profile
+$ echo "exportar GOPATH = $HOME/go" >> $HOME/.profile
+$ echo "export PATH = $ CAMINHO:/usr/local/go/bin" >> $HOME/.profile
+$ echo "export PATH = $PATH: $GOPATH/bin" >> $HOME/.profile
 ```
 
 ### Teste nossa instalação
@@ -129,50 +129,50 @@ Vamos executar a versão para ver se tudo está correto.
 
 ```bash
 $ go version
-vai a versão go1.11.5 linux/amd64
+go version go1.12.4 linux/amd64
 ```
 
 Verifique se o Go está instalado corretamente configurando um espaço de trabalho e construindo um programa simples, da seguinte maneira.
 
-Crie o seu ** espaço de trabalho ** diretório, $ HOME/go. (Se você quiser usar um diretório diferente, precisará definir a variável de ambiente $ GOPATH.)
+Crie o seu** espaço de trabalho** diretório, $HOME/go. (Se você quiser usar um diretório diferente, precisará definir a variável de ambiente $GOPATH.)
 
 Em seguida, faça o diretório src/hello dentro de sua área de trabalho e, nesse diretório, crie um arquivo chamado hello.go que se pareça com:
 
 ### Área de trabalho
 
-O espaço de trabalho é o nosso local de trabalho, onde organizaremos nossos diretórios com nossos projetos. Como mostrado acima, até ** Go versão 1.11 ** fomos forçados a fazer tudo no espaço de trabalho. $ GOPATH Down Projects.
+O espaço de trabalho é o nosso local de trabalho, onde organizaremos nossos diretórios com nossos projetos. Como mostrado acima, até **Go versão 1.11** fomos forçados a fazer tudo no espaço de trabalho. $GOPATH Down Projects.
 
-** Exemplo Olá **
+**Exemplo Olá**
 ```bash
-$ export GOPATH = $ HOME/ir
-$ mkdir $ HOME/go
-$ mkdir $ HOME/go/src
-$ mkdir $ HOME/go/src/ola
-$ vim $ HOME/go/src/ola/hello.go
+$ export GOPATH = $HOME/ir
+$ mkdir $HOME/go
+$ mkdir $HOME/go/src
+$ mkdir $HOME/go/src/ola
+$ vim   $HOME/go/src/ola/hello.go
 ```
 
 ```bash
-$ GOPATH/
+$GOPATH/
   | -src
     | -hello
       | -hello.go
 ```
 
-** Exemplo de projeto **
+** Exemplo de projeto**
 ```bash
-$ export GOPATH = $ HOME/ir
-$ mkdir $ HOME/go/src/project1
-$ mkdir $ HOME/go/src/project1/my-pkg
-$ mkdir $ HOME/go/src/project1/meu-cmd
-$ mkdir $ HOME/go/src/project1/meu-fornecedor
-$ mkdir $ HOME/go/src/project1/meus-logs
-$ mkdir $ HOME/go/src/project1/meus-modelos
-$ mkdir $ HOME/go/src/projeto1/meu-repo
-$ mkdir $ HOME/go/src/project1/my-handler
+$ export GOPATH = $HOME/ir
+$ mkdir $HOME/go/src/project1
+$ mkdir $HOME/go/src/project1/my-pkg
+$ mkdir $HOME/go/src/project1/meu-cmd
+$ mkdir $HOME/go/src/project1/meu-fornecedor
+$ mkdir $HOME/go/src/project1/meus-logs
+$ mkdir $HOME/go/src/project1/meus-modelos
+$ mkdir $HOME/go/src/projeto1/meu-repo
+$ mkdir $HOME/go/src/project1/my-handler
 ```
 
 ```bash
-$ GOPATH/
+$GOPATH/
   | -src
     | -github.com/user/project1/
         | -cmd (do projeto1)
@@ -187,35 +187,35 @@ $ GOPATH/
       ....
 ```
 
-A variável de ambiente $ GOPATH informa a ferramenta Go onde sua área de trabalho está localizada.
+A variável de ambiente $GOPATH informa a ferramenta Go onde sua área de trabalho está localizada.
 
 ```ir
 $ go get github.com/user/project1
 ```
 
-O comando ** go get ** busca repositórios de origem da Internet e os coloca em sua área de trabalho.
+O comando **go get** busca repositórios de origem da Internet e os coloca em sua área de trabalho.
 Os caminhos do pacote são importantes para a ferramenta Ir. Usar "github.com/..." significa que a ferramenta sabe como buscar seu repositório.
 
-No cenário acima, tudo teria que ficar em nosso ** $ GOPATH ** para que nossos projetos funcionassem corretamente.
+No cenário acima, tudo teria que ficar em nosso **$GOPATH** para que nossos projetos funcionassem corretamente.
 
-### Fora de $ GOPATH
+### Fora de $GOPATH
 
-Agora podemos fazer nossos projetos sem estar em $ GOPATH, podemos, por exemplo, fazê-lo em qualquer diretório.
+Agora podemos fazer nossos projetos sem estar em $GOPATH, podemos, por exemplo, fazê-lo em qualquer diretório.
 
-** Projeto fora do GOPATH **
+**Projeto fora do GOPATH**
 
 ```bash
-$ export GOPATH = $ HOME/ir
-$ mkdir $ HOME/2019/project1
-$ mkdir $ HOME/2019/project1/my-pkg
-$ mkdir $ HOME/2019/project1/my-cmd
-$ mkdir $ HOME/2019/project1/my-logs
-$ mkdir $ HOME/2019/project1/meus-modelos
-$ mkdir $ HOME/2019/project1/my-repo
-$ mkdir $ HOME/2019/project1/my-handler
+$ export GOPATH = $HOME/ir
+$ mkdir $HOME/2019/project1
+$ mkdir $HOME/2019/project1/my-pkg
+$ mkdir $HOME/2019/project1/my-cmd
+$ mkdir $HOME/2019/project1/my-logs
+$ mkdir $HOME/2019/project1/meus-modelos
+$ mkdir $HOME/2019/project1/my-repo
+$ mkdir $HOME/2019/project1/my-handler
 ```
 ```bash
-$ HOME/
+$HOME/
   | -2019
     | -github.com/user/project1/
       | -cmd
@@ -230,7 +230,7 @@ $ HOME/
 Podemos colocar nosso projeto em qualquer diretório agora.
 
 ```bash
-$ HOME/
+$HOME/
   | -manual
     | -github.com/user/project1/
       | -cmd
