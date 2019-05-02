@@ -16,39 +16,8 @@ MÓDULO 1 - Introdução da Linguagem
 Desafio: Go-0
 
 ## Overview
-Falando um pouco de rEST
-Falando um pouco do Graphql
-Falando um pouco de SOAP
-Falando um pouco de GRPC
-Falando um pouco de Frameworks
-Instalação
-Linux, Win, Mac
-$GOPATH
-Workspace
-Outside $GOPATH
-Func Main
-Pkg Fmt
-println
-Organizando seus projetos
-Clean Architecture
-Mvc
-Alguns Comandos
-go build
-go install
-go test
-go mod
-go get
-Types
-String Types
-Slice Types
-Struct Types
-Struct Type Tags Json
-Map Types
-Map Literals Continued
-Blank Identifier
-Estrutura de Controle
-for, break
-switch, case
-range
-If, else, if else
-Exercícios
+- [Overview](#overview)
+- [Introduction Installation](#introduction-installation)
+  - [Installation](#installation)
+  
+
