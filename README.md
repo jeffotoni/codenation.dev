@@ -63,7 +63,6 @@ Após a conclusão do curso “Programação Go”, o aluno estará apto a desen
    - [Interface Types](#interface-types)
 	 - [Here's an Interface as a Method](#heres-an-interface-as-a-method)
 	 - [Interface as Type](#interface-as-type)
-   - [Exercise One](#exercise-one)
 - [Control Structures](#control-structures)
   - [Control](#control)
     - [Control Return](#control-return)
@@ -88,7 +87,7 @@ Após a conclusão do curso “Programação Go”, o aluno estará apto a desen
     - [Recursion](#recursion)
     - [Asynchronous Functions](#asynchronous-functions)
 - [Defer](#defer)
-- [Exercise Two](#exercise-two)
+- [Exercise one](#exercise-one)
 
 
 ### Overview
@@ -4153,3 +4152,19 @@ defer db.Close()
 defer f.Close()
 defer res.Body.Close()
 ```
+### Exercício 01 / MODULO 01
+
+Utilizando Go e testes unitários você deverá determinar os dez maiores estados brasileiros em extensão territorial.
+
+### Tópicos
+
+Neste desafio você aprenderá:
+
+- Go
+- Testes unitários
+
+### Requisitos
+Para este desafio você precisará de:
+
+- Go versão 1.9 (ou superior)
+- Git
