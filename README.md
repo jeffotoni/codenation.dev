@@ -79,8 +79,7 @@ Os criadores Rob Pike, Ken Thompson e Robert Griesemer mantiveram a sintaxe de G
 
 Go teve influências de diversas linguagens de programação e paradigmas diferentes dentre elas: Alef, APL, BCPL, C, CSP, Limbo, Modula, Newsqueak, Oberon, occam, Pascal, Smalltalk e Cristal, percebe-se que utilizaram do que tinham de melhor e criou algo novo e enxuto, com o mínimo necessário para resolver os problemas propostos, sem perder sua simplicidade. Acredito que isto podemos chamar de inovação. Go inovou ao quebrar os paradigmas de linguagens e implementar algo novo de forma simples e muito poderosa.
  
-
- ### Introdução Instalação
+### Introdução Instalação
 
 Em golang a instalação é muito simples e prática, para Linux, Mac e Windows.
 
@@ -96,11 +95,11 @@ Vamos criar nosso diretório em nosso espaço de trabalho e testar para ver se t
 
 ### Linux
 
-`` `bash
+```bash
 $ sudo rm -rf/usr/local/go
 $ wget https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz
 $ sudo tar C/usr/local -xzf vai $ VERSION. $ OS- $ ARCH.tar.gz
-`` `
+```
 
 ### $ GOPATH
 
@@ -112,26 +111,26 @@ Vamos detalhar como trabalhar com ** go mod **, foi uma das melhores experiênci
 
 Vamos configurar nosso ambiente para rodar o Go. Adicione **/usr/local/go/bin ** à variável de ambiente PATH. Você pode fazer isso adicionando esta linha ao seu **/etc/profile ** (para uma instalação em todo o sistema) ou ** $ HOME/.profile **.
 
-`` `bash
+```bash
 $ export PATH = $ PATH:/usr/local/go/bin
-`` `
+```
 
 ** Nota **: as alterações feitas em um arquivo de perfil podem não se aplicar até a próxima vez que você fizer login no seu computador. Para aplicar as alterações imediatamente, basta executar os comandos do shell diretamente ou executá-los a partir do perfil usando um comando como o source $ HOME/.profile.
 
-`` `bash
+```bash
 $ echo "exportar GOPATH = $ HOME/go" >> $ HOME/.profile
 $ echo "export PATH = $ CAMINHO:/usr/local/go/bin" >> $ HOME/.profile
 $ echo "export PATH = $ PATH: $ GOPATH/bin" >> $ HOME/.profile
-`` `
+```
 
 ### Teste nossa instalação
 
 Vamos executar a versão para ver se tudo está correto.
 
-`` `bash
+```bash
 $ go version
 vai a versão go1.11.5 linux/amd64
-`` `
+```
 
 Verifique se o Go está instalado corretamente configurando um espaço de trabalho e construindo um programa simples, da seguinte maneira.
 
@@ -144,23 +143,23 @@ Em seguida, faça o diretório src/hello dentro de sua área de trabalho e, ness
 O espaço de trabalho é o nosso local de trabalho, onde organizaremos nossos diretórios com nossos projetos. Como mostrado acima, até ** Go versão 1.11 ** fomos forçados a fazer tudo no espaço de trabalho. $ GOPATH Down Projects.
 
 ** Exemplo Olá **
-`` `bash
+```bash
 $ export GOPATH = $ HOME/ir
 $ mkdir $ HOME/go
 $ mkdir $ HOME/go/src
 $ mkdir $ HOME/go/src/ola
 $ vim $ HOME/go/src/ola/hello.go
-`` `
+```
 
-`` `bash
+```bash
 $ GOPATH/
   | -src
     | -hello
       | -hello.go
-`` `
+```
 
 ** Exemplo de projeto **
-`` `bash
+```bash
 $ export GOPATH = $ HOME/ir
 $ mkdir $ HOME/go/src/project1
 $ mkdir $ HOME/go/src/project1/my-pkg
@@ -170,9 +169,9 @@ $ mkdir $ HOME/go/src/project1/meus-logs
 $ mkdir $ HOME/go/src/project1/meus-modelos
 $ mkdir $ HOME/go/src/projeto1/meu-repo
 $ mkdir $ HOME/go/src/project1/my-handler
-`` `
+```
 
-`` `bash
+```bash
 $ GOPATH/
   | -src
     | -github.com/user/project1/
@@ -186,13 +185,13 @@ $ GOPATH/
     | -github.com/user/project2/
       ....
       ....
-`` `
+```
 
 A variável de ambiente $ GOPATH informa a ferramenta Go onde sua área de trabalho está localizada.
 
-`` `ir
+```ir
 $ go get github.com/user/project1
-`` `
+```
 
 O comando ** go get ** busca repositórios de origem da Internet e os coloca em sua área de trabalho.
 Os caminhos do pacote são importantes para a ferramenta Ir. Usar "github.com/..." significa que a ferramenta sabe como buscar seu repositório.
@@ -205,7 +204,7 @@ Agora podemos fazer nossos projetos sem estar em $ GOPATH, podemos, por exemplo,
 
 ** Projeto fora do GOPATH **
 
-`` `bash
+```bash
 $ export GOPATH = $ HOME/ir
 $ mkdir $ HOME/2019/project1
 $ mkdir $ HOME/2019/project1/my-pkg
@@ -214,8 +213,8 @@ $ mkdir $ HOME/2019/project1/my-logs
 $ mkdir $ HOME/2019/project1/meus-modelos
 $ mkdir $ HOME/2019/project1/my-repo
 $ mkdir $ HOME/2019/project1/my-handler
-`` `
-`` `bash
+```
+```bash
 $ HOME/
   | -2019
     | -github.com/user/project1/
@@ -226,11 +225,11 @@ $ HOME/
       | -models
       | -repo
       | manipulador
-`` `
+```
 
 Podemos colocar nosso projeto em qualquer diretório agora.
 
-`` `bash
+```bash
 $ HOME/
   | -manual
     | -github.com/user/project1/
@@ -241,6 +240,6 @@ $ HOME/
       | -models
       | -repo
       | manipulador
-`` `
+```
  
 
