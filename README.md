@@ -62,8 +62,18 @@ Alguns paradigmas foram quebrados para torná-lo uma linguagem de **alto desempe
 
 Go é uma linguagem de programação compilada, concorrrente, forte e estaticamente tipada. É uma linguagem de **"Uso Geral"** que pode ser usada para resolver vários problemas e em diferentes áreas. Problemas envolvendo concorrência, aplicações web, aplicações de alto desempenho, desenvolvimento de APIs, soquetes de comunicação etc ... É onde a linguagem está se tornando cada vez mais proeminente no mercado e nas comunidades.
 
+```bash
+ - Compilado
+ - Estaticamente tipada
+ - Compilada estaticamente
+ - Concorrente
+ - Simples
+ - Produtivo
+ ```
+
 #### Onde posso utilizar Go
 
+```bash
 . Web backend (com diversos frameworks disponíveis)
 . Web Assembly (um dos frameworks vugu)
 . Microservices (alguns frameworks: Go Micro, Go Kit, Gizmo, Kite)
@@ -74,6 +84,7 @@ Go é uma linguagem de programação compilada, concorrrente, forte e estaticame
 . Boots (alguns aqui)
 . Aplicações Client que usam tecnologia Web 
 . Desktop Usando Qt+QML, Lib Nativa Win (example Qt, widgets Qt, Qml)
+```
 
 ### O Inicio de Tudo
 
