@@ -1,0 +1,348 @@
+Overview
+	
+ - Linguagem Go	
+
+ 	 - Compilado
+	 - Linguagem estática
+	 - Linguagem estática com tipos dinâmicos (Em Go seria o uso de tipo como interface)
+	 - Estaticamente tipada (declarado o tipo ele não muda)
+	 - Tipagem forte (um mesmo dado não é tratado como se fosse de outro tipo)
+	 - Compilada estaticamente
+	 - Concorrente
+	 - Simples
+	 - Produtivo
+	 - GC (Garbage Coletor)
+	 - Runtime (Implementa coleta de lixo, concorrencia, gerenciamento de pilha e outros 
+	 recursos críticos da linguagem em tempo de execução, algoritimo implementado é Dijkstra)
+	 
+
+	 COISAS BOAS DE GO
+	 - Não existe Generics
+	 - orientada a objetos, mas sem classes, reflexões embutida
+	 - funções de primeira classe com fechamentos
+	 - interfaces implicitamente satisfeitas
+	 - Não é explícito o gerenciamento de Threads;
+	 - Possui Goroutines != Threads;
+	 - Não possui sobrecarga do operador;
+	 - Possui inferência de tipos;
+	 - Memory Safe.
+	 - Suporte a Duck typing
+	 - Gerenciamento de dependências nativo
+
+
+-----------------------------------------------------------------------------------------------
+	
+	Não existe ainda bala de prata
+
+-----------------------------------------------------------------------------------------------
+
+	 Onde posso utilizar Go
+	. Web backend (com diversos frameworks disponíveis)
+	. Web Assembly (um dos frameworks vugu)
+	. Microservices (alguns frameworks: Go Micro, Go Kit, Gizmo, Kite)
+	. Fragments services (Termo citado pelo @jeffotoni em um grupo de discussão de microservices)
+	. Lambdas (FaaS example)
+	. Client Server
+	. IoT (alguns frameworks)
+	. Boots (alguns aqui)
+	. Aplicações Client que usam tecnologia Web 
+	. Desktop Usando Qt+QML, Lib Nativa Win (example Qt, widgets Qt, Qml)
+	
+-----------------------------------------------------------------------------------------------
+
+ 	  .Simplicidade
+ 	  .Legibilidade
+ 	  .Produtividade
+
+ 	 Por que meu binário hello world é tão grande ?
+
+-----------------------------------------------------------------------------------------------
+	
+Instalação
+	Linux, Win, Mac
+
+	LINUX
+
+	$ sudo rm -rf/usr/local/go
+	$ wget https://dl.google.com/go/go1.12.4.linux-amd64.tar.gz
+	$ sudo tar C/usr/local -xzf vai $ VERSION. $ OS- $ ARCH.tar.gz
+	$ go version
+
+	$ echo "exportar GOPATH = $HOME/go" >> $HOME/.zshrc
+	$ echo "export PATH = $ CAMINHO:/usr/local/go/bin" >> $HOME/.zshrc
+	$ echo "export PATH = $PATH: $GOPATH/bin" >> $HOME/.zshrc
+	$ go version
+-----------------------------------------------------------------------------------------------
+
+$GOPATH
+
+Workspace
+
+Exemplo Hello
+
+$ export GOPATH=$HOME/go
+$ mkdir $HOME/go
+$ mkdir $HOME/go/src
+$ mkdir $HOME/go/src/hello
+$ vim $HOME/go/src/hello/hello.go
+
+$GOPATH/
+  |-src
+    |-hello
+      |-hello.go
+
+-----------------------------------------------------------------------------------------------
+
+	Outside $GOPATH
+	
+	Func Main
+	
+	pkg "fmt"
+	
+	println
+		
+-----------------------------------------------------------------------------------------------
+	Organizando seus projetos
+
+	Example Project1
+
+	$GOPATH/
+	  |-src
+	    |-github.com/user/project1/
+	        |-cmd (of project1)
+	          |-main.go
+	        |-vendor
+	        |-logs
+	        |-models
+	        |-repo
+	        |-handler
+	    |-github.com/user/project2/
+	      ....
+	      ....
+
+	Clean Architecture (ABORDAGENS)
+	Robert “Uncle Bob” Martin apresenta uma arquitetura com alguns pontos importantes:
+
+	- Independent of Frameworks.
+	- Testable.
+	- Independent of UI.
+	- Independent of Database.
+	- Independent of any external agency.
+
+	4 Camadas
+	- Entities
+	- Use cases
+	- Controller
+	- Framework & Driver
+	
+	Examplo
+
+	$GOPATH/
+	  | -src
+	    | -github.com/user/project1/
+	        | -cmd (do projeto1)
+	          | -main.go
+	        | -vendor
+	        | -logs
+	        | -models
+	        | -repo
+	        | -handler
+	        | -Makefile
+	    | -github.com/user/project2/
+	      ....
+	      ....
+
+	Example SERVER API WEB
+
+	$HOME/
+	  |-any-directory
+	    |-github.com/user/project/
+	      |-config
+	      |-cmd
+	        |-main.go
+	      |-logs
+	      |-models
+	      |-repo
+	      |-handler/controller
+	      |-middleware
+	      |-pkg
+	      |-mocks
+	      |-model
+	      |-views/template
+	      |-loggs
+	      |-vendor
+	      |-Makefile
+
+	Mvc
+	...
+
+-----------------------------------------------------------------------------------------------
+Alguns Comandos
+	
+	go run 
+	
+		$ go run [build flags] [-exec xprog] package [arguments...]
+
+	go build
+
+		$ go build [-o output] [-i] [build flags] [packages]
+
+		Compiling to run on AWS platform, lambda. package main
+		$ GOOS=linux GOARCH=amd64 go build -o lambda lambda.go
+
+		Compiling for WebAssembly
+		$ go build GOARCH=wasm GOOS=js go build -o test.wasm hello.go
+
+		Compiling and generating an .o file, it generates the assembly
+		$ GOOS=linux GOARCH=amd64 go tool compile -S hello.go
+		$ go tool compile -S hello.go > hello.S
+
+		$ go build -gcflags -S hello.go
+
+		Quando informar Tags em seu codigo
+		$ go build -tags dev -o hello hello.go
+		
+		Usando -X idflags e passando parametros
+		$ go build -ldflags "-X main.version=0.0.1 -X main.date=2019-01-18" version.go
+
+		$ go build -ldflags="-s -w" hello.go
+
+		$ go build -o hello hello.go
+
+
+		O Cgo permite a criação de pacotes Go que chamam o código C.
+
+		// #include <stdio.h>
+		// #include <errno.h>
+		import "C"
+
+		$ go build -i
+
+		$ time go build -i . 
+		$ time CGO_ENABLED=0 go build -i .   
+		$ time CGO_ENABLED=0 go build .
+		$ time go build .
+
+		obs:
+		A primeira vez que você muda o modo cgo, ele precisa reconstruir as dependências. Se você especificar -i, ele será salvo e a segunda chamada de construção será muito mais rápida.
+
+		Sinalizadores: (são lentos para compilar)
+		O problema é que os pacotes da biblioteca padrão são criados sem sinalizadores. CGO_ENABLEDAs alterações criam sinalizadores e, portanto, não podem usar os pacotes pré-compilados, portanto, a maioria da biblioteca padrão precisa ser reconstruída.
+
+		$ CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-extldflags "-static"' -o hello hello.go
+
+	$ strings nome-pacote-github | grep "github"
+
+	go install
+
+	go test
+
+		$ go test [build/test flags] [packages] [build/test flags & test binary flags]
+		
+
+		package main
+
+		import "testing"
+
+		func TestWhatever(t *testing.T) {
+		    // Your test code goes here
+		}
+
+		$ go test -v
+
+	go mod
+
+		go mod <command> [arguments]
+		$ go mod init github.com/user/gomyproject
+
+		download    download modules to local cache
+		edit        edit go.mod from tools or scripts
+		graph       print module requirement graph
+		init        initialize new module in current directory
+		tidy        add missing and remove unused modules
+		vendor      make vendored copy of dependencies
+		verify      verify dependencies have expected content
+		why         explain why packages or modules are needed
+
+	go get
+
+		$ go get [-d] [-m] [-u] [-v] [-insecure] [build flags] [packages]
+
+		$ go get -v github.com/guptarohit/asciigraph
+		$ go get -u github.com/mxk/go-sqlite
+		$ go get -v github.com/google/uuid
+		$ go get -v github.com/sirupsen/logru
+
+
+-----------------------------------------------------------------------------------------------
+Golang Language
+
+Types
+
+	Keywords
+
+	break        default      func         interface    select
+	case         defer        go           map          struct
+	chan         else         goto         package      switch
+	const        fallthrough  if           range        type
+	continue     for          import       return       var
+
+	Operators and Punctuation
+
+	+    &     +=    &=     &&    ==    !=    (    )
+	-    |     -=    |=     ||    <     <=    [    ]
+	*    ^     *=    ^=     <-    >     >=    {    }
+	/    <<    /=    <<=    ++    =     :=    ,    ;
+	%    >>    %=    >>=    --    !     ...   .    :
+    	&^          &^=
+
+    Types
+	 
+
+	String Types
+
+	Slice Types
+
+	Struct Types
+
+	Struct Type Tags Json
+
+	Map Types
+
+	Map Literals Continued
+
+	Blank Identifier
+
+Estrutura de Controle
+
+	for, break
+
+	switch, case
+
+	range
+
+	If, else, if else
+
+
+  Links (blog posts, tutorials, books):
+    https://medium.com/@jeffotoni/golang-simplificando-a-complexidade-o-inicio
+	https://golang.org/doc/install
+	https://medium.com/@eminetto/clean-architecture-using-golang
+	https://github.com/jeffotoni/goworkshopdevops
+	https://github.com/jeffotoni/gocompilation
+	https://blog.golang.org/using-go-modules
+	https://blog.golang.org/modules2019
+	https://golang.org/cmd/go/
+	http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/
+	https://www.golang-book.com/books/intro/6#section
+	https://www.golang-book.com/books/intro/6#section3
+	https://gobyexample.com/structs
+	https://www.callicoder.com/categories/golang/
+	https://golangbot.com/structs/
+	https://medium.com/gommunity
+	https://tour.golang.org/moretypes/19
+	https://www.tutorialspoint.com/go/go_maps.htm
+	https://medium.com/rungo/the-anatomy-of-maps-in-go
+	https://blog.golang.org/go-slices-usage-and-internals
+
+
