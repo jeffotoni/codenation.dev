@@ -73,9 +73,12 @@ Go é uma linguagem de programação compilada, concorrrente, com tipagem forte 
  - Simples
  - Produtivo
  - GC (Garbage Coletor)
- - Runtime (Implementa coleta de lixo, concorrencia, gerenciamento de pilha e outros recursos críticos da linguagem em tempo de execução, algoritimo implementado é Dijkstra)
+ - Runtime (Implementa coleta de lixo, concorrencia, gerenciamento de pilha e outros 
+ recursos críticos da linguagem em tempo de execução, algoritimo implementado é Dijkstra)
 
-Obs: É importante entender, no entanto, que o tempo de execução do Go não inclui uma máquina virtual. Os programas Go são compilados para o código de máquina nativo.
+Obs: É importante entender, no entanto, que o tempo de execução do 
+Go não inclui uma máquina virtual. Os programas Go são compilados 
+para o código de máquina nativo.
  ```
 
 #### Onde posso utilizar Go
