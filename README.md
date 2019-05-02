@@ -60,15 +60,22 @@ Alguns paradigmas foram quebrados para torná-lo uma linguagem de **alto desempe
 
 É uma linguagem rápida e **estaticamente compilada** que se parece com uma linguagem **interpretada dinamicamente**. Este recurso **Go** se torna uma linguagem única como o assunto é web.
 
-Go é uma linguagem de programação compilada, concorrrente, forte e estaticamente tipada. É uma linguagem de **"Uso Geral"** que pode ser usada para resolver vários problemas e em diferentes áreas. Problemas envolvendo concorrência, aplicações web, aplicações de alto desempenho, desenvolvimento de APIs, soquetes de comunicação etc ... É onde a linguagem está se tornando cada vez mais proeminente no mercado e nas comunidades.
+Go é uma linguagem de programação compilada, concorrrente, com tipagem forte e estaticamente tipada. É uma linguagem de **"Uso Geral"** que pode ser usada para resolver vários problemas e em diferentes áreas. Problemas envolvendo concorrência, aplicações web, aplicações de alto desempenho, desenvolvimento de APIs, soquetes de comunicação etc ... É onde a linguagem está se tornando cada vez mais proeminente no mercado e nas comunidades.
 
 ```bash
  - Compilado
- - Estaticamente tipada
+ - Linguagem estática
+ - Linguagem estática com tipos dinâmicos (Em Go seria o uso de tipo como interface)
+ - Estaticamente tipada (declarado o tipo ele não muda)
+ - Tipagem forte (um mesmo dado não é tratado como se fosse de outro tipo)
  - Compilada estaticamente
  - Concorrente
  - Simples
  - Produtivo
+ - GC (Garbage Coletor)
+ - Runtime (Implementa coleta de lixo, concorrencia, gerenciamento de pilha e outros recursos críticos da linguagem em tempo de execução, algoritimo implementado é Dijkstra)
+
+Obs: É importante entender, no entanto, que o tempo de execução do Go não inclui uma máquina virtual. Os programas Go são compilados para o código de máquina nativo.
  ```
 
 #### Onde posso utilizar Go
