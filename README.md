@@ -121,6 +121,12 @@ $ export PATH = $PATH:/usr/local/go/bin
 $ echo "exportar GOPATH = $HOME/go" >> $HOME/.profile
 $ echo "export PATH = $ CAMINHO:/usr/local/go/bin" >> $HOME/.profile
 $ echo "export PATH = $PATH: $GOPATH/bin" >> $HOME/.profile
+
+or
+
+$ echo "exportar GOPATH = $HOME/go" >> $HOME/.zshrc
+$ echo "export PATH = $ CAMINHO:/usr/local/go/bin" >> $HOME/.zshrc
+$ echo "export PATH = $PATH: $GOPATH/bin" >> $HOME/.zshrc
 ```
 
 ### Teste nossa instalação
@@ -134,41 +140,57 @@ go version go1.12.4 linux/amd64
 
 Verifique se o Go está instalado corretamente configurando um espaço de trabalho e construindo um programa simples, da seguinte maneira.
 
-Crie o seu** espaço de trabalho** diretório, $HOME/go. (Se você quiser usar um diretório diferente, precisará definir a variável de ambiente $GOPATH.)
+Crie o seu **espaço de trabalho** diretório, $HOME/go. (Se você quiser usar um diretório diferente, precisará definir a variável de ambiente $GOPATH.)
 
 Em seguida, faça o diretório src/hello dentro de sua área de trabalho e, nesse diretório, crie um arquivo chamado hello.go que se pareça com:
 
 ### Área de trabalho
 
-O espaço de trabalho é o nosso local de trabalho, onde organizaremos nossos diretórios com nossos projetos. Como mostrado acima, até **Go versão 1.11** fomos forçados a fazer tudo no espaço de trabalho. $GOPATH Down Projects.
+O espaço de trabalho é o nosso local de trabalho, onde organizaremos nossos diretórios com nossos projetos. Como mostrado acima, até **Go versão 1.12** fomos forçados a fazer tudo no espaço de trabalho. $GOPATH abaixo do Projeto.
 
-**Exemplo Olá**
+**Exemplo Hello**
 ```bash
-$ export GOPATH = $HOME/ir
+$ export GOPATH=$HOME/go
 $ mkdir $HOME/go
 $ mkdir $HOME/go/src
-$ mkdir $HOME/go/src/ola
-$ vim   $HOME/go/src/ola/hello.go
+$ mkdir $HOME/go/src/hello
+$ vim $HOME/go/src/hello/hello.go
 ```
 
 ```bash
 $GOPATH/
-  | -src
-    | -hello
-      | -hello.go
+  |-src
+    |-hello
+      |-hello.go
 ```
 
-** Exemplo de projeto**
+**Example Project**
 ```bash
-$ export GOPATH = $HOME/ir
+$ export GOPATH=$HOME/go
 $ mkdir $HOME/go/src/project1
 $ mkdir $HOME/go/src/project1/my-pkg
-$ mkdir $HOME/go/src/project1/meu-cmd
-$ mkdir $HOME/go/src/project1/meu-fornecedor
-$ mkdir $HOME/go/src/project1/meus-logs
-$ mkdir $HOME/go/src/project1/meus-modelos
-$ mkdir $HOME/go/src/projeto1/meu-repo
+$ mkdir $HOME/go/src/project1/my-cmd
+$ mkdir $HOME/go/src/project1/my-vendor
+$ mkdir $HOME/go/src/project1/my-logs
+$ mkdir $HOME/go/src/project1/my-models
+$ mkdir $HOME/go/src/project1/my-repo
 $ mkdir $HOME/go/src/project1/my-handler
+```
+
+```bash
+$GOPATH/
+  |-src
+    |-github.com/user/project1/
+        |-cmd (of project1)
+          |-main.go
+        |-vendor
+        |-logs
+        |-models
+        |-repo
+        |-handler
+    |-github.com/user/project2/
+      ....
+      ....
 ```
 
 ```bash
@@ -205,41 +227,118 @@ Agora podemos fazer nossos projetos sem estar em $GOPATH, podemos, por exemplo, 
 **Projeto fora do GOPATH**
 
 ```bash
-$ export GOPATH = $HOME/ir
+$ export GOPATH=$HOME/go
 $ mkdir $HOME/2019/project1
 $ mkdir $HOME/2019/project1/my-pkg
 $ mkdir $HOME/2019/project1/my-cmd
 $ mkdir $HOME/2019/project1/my-logs
-$ mkdir $HOME/2019/project1/meus-modelos
+$ mkdir $HOME/2019/project1/my-models
 $ mkdir $HOME/2019/project1/my-repo
 $ mkdir $HOME/2019/project1/my-handler
 ```
 ```bash
 $HOME/
-  | -2019
-    | -github.com/user/project1/
-      | -cmd
-        | -main.go
-      | -vendor
-      | -logs
-      | -models
-      | -repo
-      | manipulador
+  |-2019
+    |-github.com/user/project1/
+      |-cmd
+        |-main.go
+      |-vendor
+      |-logs
+      |-models
+      |-repo
+      |-handler
 ```
 
-Podemos colocar nosso projeto em qualquer diretório agora.
+Nós podemos colocar o nosso projeto em qualquer diretório agora.
 
 ```bash
 $HOME/
-  | -manual
-    | -github.com/user/project1/
-      | -cmd
-        | -main.go
-      | -vendor
-      | -logs
-      | -models
-      | -repo
-      | manipulador
+  |-any-directory
+    |-github.com/user/project1/
+      |-cmd
+        |-main.go
+      |-vendor
+      |-logs
+      |-models
+      |-repo
+      |-handler
+```
+
+Para o cenário acima, teremos que usar **go mod** em nosso projeto para que todos os pacotes externos possam funcionar corretamente, assim poderemos gerenciá-los corretamente e versão.
+Mais informações podem ser encontradas aqui: [Wiki Go Modules] (https://github.com/golang/go/wiki/Modules)
+
+Exemplo prático de como você irá proceder:
+```go
+$ go mod init github.com/user/project1
+```
+
+**Note**: 
+Quando usarmos o go mod em $GOPATH, teremos que habilitar o uso de GO111MODULE=on, para que ele possa trabalhar dentro da estrutura $GOPATH.
+
+Então, nosso programa pode compilar com sucesso.
+```go
+$ GO111MODULE=on go run cmd/main.go
+$ GO111MODULE=on go build -o project1 cmd/main.go
+```
+
+**Projeto fora do GOPATH e Local sem github**
+
+Vamos criar nosso projeto sem github, somente local com nossos diretórios
+
+```bash
+$HOME/
+  |-codenation
+    |-project1
+      |-main.go
+      |-go.mod
+      |-pkg
+         |-math
+	    - go.mod
+	 |-util
+	    - go.mod
+      |-vendor
+      |-logs
+      |-models
+      |-repo
+      |-handler
 ```
  
+Percebe-se que temos go.mod agora no raiz e em cada pkg que desejamos configurar para que possamos importa-los.
+
+O arquivo go.mod na raiz ficaria assim:
+```go
+module project1
+
+require (
+	pkg/math v0.0.0
+	pkg/util v0.0.0
+)
+
+replace (
+	pkg/math => ./pkg/math
+	pkg/util => ./pkg/util
+)
+
+go 1.12
+```
+
+Os arquivos que encontra-se dentro de cada pacote ficaria assim:
+pkg/math
+```go
+module math
+```
+
+pkg/util
+```go
+module util
+```
+Prontinho agora é testar
+```go
+GO111MODULE=on go run main.go
+```
+
+```go
+GO111MODULE=on go build main.go
+```
+
 
