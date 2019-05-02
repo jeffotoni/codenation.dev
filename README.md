@@ -9,14 +9,13 @@ Curso de programação usando a linguagem Go abordando conceitos teóricos e pr�
 O objetivo deste curso é capacitar os profissionais para o desenvolvimento de aplicações em Go. Para isso, o curso abordará os principais conceitos e tecnologias utilizadas no jeito Go de fazer as coisas. Iremos reforçar as boas práticas de programação, falar um pouco de métodos ágeis e abordar em um contexto geral problemas e como podemos resolvê-los usando Go.
 Após a conclusão do curso “Programação Go”, o aluno estará apto a desenvolver aplicações na linguagem Go, com condição de continuar e explorar ainda mais os aspectos da linguagem.
 
-### Linguagem Go
-A linguagem Go foi lançada em 2009 com propósito de facilitar a resolução de problemas quando o assunto é desenvolvimento em camadas de rede, escalabilidade, desempenho, produtividade e o mais importante concorrência. Go teve influências de diversas linguagens de programação e paradigmas diferentes, e se sobressaiu ao juntar o que tinham de melhor e criou algo novo e enxuto, com o mínimo necessário para resolver os problemas propostos, acredito que isto podemos chamar de inovação. 
-
-
-MÓDULO 1 - Introdução da Linguagem
-## MÓDULO 01 Install and Commands Golang
+## MÓDULO 01 Introduço a Linguagem
 
 - [Overview](#overview)
+    - [Golang](#Golang)
+      - [Linguagem Go](#Linguagem-Go)
+      - [Onde posso utilizar Go](#Onde-posso-utilizar-Go)      
+      - [O inicio de tudo](#O-inicio-de-tudo)      
 - [Introdução a Instalação](#Introdução-Instalação)
   - [Instalação](#Instalação)
     - [Linux](#linux)
@@ -50,6 +49,33 @@ MÓDULO 1 - Introdução da Linguagem
 
 
 ### Overview
+
+### Golang
+
+### Linguagem Go
+
+Go é uma linguagem poderosa quando se trata de **concorrência e alto desempenho**, com uma arquitetura limpa e eficiente. Ela cresce ano após ano e todos os dias as comunidades crescem ainda mais.
+
+Alguns paradigmas foram quebrados para torná-lo uma linguagem de **alto desempenho**, onde a concorrência é um dos seus pontos fortes. O Go facilita a criação de programas que aproveitam ao máximo as máquinas multicore e em rede, enquanto o novo sistema de tipos permite que você crie programas flexíveis e modulares.
+
+É uma linguagem rápida e **estaticamente compilada** que se parece com uma linguagem **interpretada dinamicamente**. Este recurso **Go** se torna uma linguagem única como o assunto é web.
+
+Go é uma linguagem de programação compilada, concorrrente, forte e estaticamente tipada. É uma linguagem de **"Uso Geral"** que pode ser usada para resolver vários problemas e em diferentes áreas. Problemas envolvendo concorrência, aplicações web, aplicações de alto desempenho, desenvolvimento de APIs, soquetes de comunicação etc ... É onde a linguagem está se tornando cada vez mais proeminente no mercado e nas comunidades.
+
+#### Onde posso utilizar Go
+
+. Web backend (com diversos frameworks disponíveis)
+. Web Assembly (um dos frameworks vugu)
+. Microservices (alguns frameworks: Go Micro, Go Kit, Gizmo, Kite)
+. Fragments services (Termo citado pelo @jeffotoni em um grupo de discussão de microservices)
+. Lambdas (FaaS example)
+. Client Server
+. IoT (alguns frameworks)
+. Boots (alguns aqui)
+. Aplicações Client que usam tecnologia Web 
+. Desktop Usando Qt+QML, Lib Nativa Win (example Qt, widgets Qt, Qml)
+
+### O Inicio de Tudo
 
 Existem inúmeras linguagens de programação e cada uma nasceu com um propósito: “resolver problemas”. As linguagens são ferramentas onde teremos que saber utilizá-las no momento certo. Falando “como desenvolvedor” quanto mais poliglota conseguir ser melhor será para sua carreira profissional e para um melhor entendimento e compreensão da diversidade deste ecossistema.
 
