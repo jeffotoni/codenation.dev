@@ -781,15 +781,15 @@ Uso:
 go run [build flags] [-exec xprog] package [arguments...]
 ```
 
-Run compiles and runs the named main Go package. Normalmente, o pacote é especificado como uma lista de arquivos de origem .go, mas também pode ser um caminho de importação, um caminho do sistema de arquivos ou um padrão que corresponda a um único pacote conhecido, como em 'go run .' ou 'go run my/cmd'.
+Executar compila e executa o pacote principal chamado Go. Normalmente, o pacote é especificado como uma lista de arquivos de origem .go, mas também pode ser um caminho de importação, um caminho do sistema de arquivos ou um padrão que corresponda a um único pacote conhecido, como em 'go run .' ou 'go run my/cmd'.
 
 Por padrão, 'go run' executa o binário compilado diretamente: 'a.out arguments...'. se o sinalizador -exec for fornecido, 'go run' invoca o binário usando xprog:
 
-If the -exec flag is not given, GOOS or GOARCH is different from the system default, and a program named go_$GOOS_$GOARCH_exec can be found on the current search path, 'go run' invokes the binary using that program, for example 'go_nacl_386_exec a.out arguments...'. This allows execution of cross-compiled programs when a simulator or other execution method is available.
+Se o sinalizador -exec não for fornecido, GOOS ou GOARCH será diferente do padrão do sistema, e um programa chamado go_ $ GOOS_ $ GOARCH_exec pode ser encontrado no caminho de busca atual, 'go run' invoca o binário usando esse programa, por exemplo, argumentos 'go_nacl_386_exec a.out...'. Isso permite a execução de programas compilados quando um simulador ou outro método de execução estiver disponível.
 
-The exit status of Run is not the exit status of the compiled binary.
+O status de saída de Executar não é o status de saída do binário compilado.
 
-For more about build flags, see 'go help build'. For more about specifying packages, see 'go help packages'.
+Para mais informações sobre sinalizadores de compilação, consulte 'go help build'. Para mais informações sobre como especificar pacotes, consulte 'go help packages'.
 
 Veja abaixo um exemplo:
 
@@ -818,7 +818,7 @@ Build compila os pacotes nomeados pelos caminhos de importação, junto com suas
 
 Ao compilar pacotes, o build ignora os arquivos que terminam em '_test.go'.
 
-O -o flag, only allowed when compiling a single package, forces build to write the resulting executable or object to the named output file, instead of the default behavior described in the last two paragraphs.
+O -o flag, permitido somente ao compilar um único pacote, obriga a compilação a gravar o executável ou objeto resultante no arquivo de saída nomeado, em vez do comportamento padrão descrito nos dois últimos parágrafos.
 
 O -i flag instala os pacotes que são dependências do destino.
 
@@ -875,11 +875,11 @@ Uso:
 $ go install [-i] [build flags] [packages]
 ```
 
-Install compiles and installs the packages named by the import paths.
+Instale compila e instala os pacotes nomeados pelos caminhos de importação.
 
 O **-i flag** instala as dependências dos pacotes nomeados também.
 
-Para mais sobre o build flags, veja 'go help build'. Para mais informações sobre como especificar pacotes, veja 'go help packages'.
+Para mais sobre o build flags, confira 'go help build'. Para mais informações sobre como especificar pacotes, confira 'go help packages'.
 
 ### Go Get
 ---
@@ -998,9 +998,8 @@ require (
 
 ### Go Mod Vendor
 
-The go mod vendor command will download all dependencies to the "vendor" directory.
-When using go mod init the packages are not in your directory.
-
+O comando go mod mod vendor baixará todas as dependências para o diretório "vendor".
+Ao usar o go mod mod, os pacotes não estão no seu diretório.
 ```bash
 $ cd gomyproject2
 $ go mod vendor
@@ -1025,7 +1024,7 @@ For more fine-grained control, the module support in Go 1.11 respects a temporar
 In module-aware mode, GOPATH no longer defines the meaning of imports during a build, but it still stores downloaded dependencies (in GOPATH/pkg/mod) and installed commands (in GOPATH/bin, unless GOBIN is set).
 
 
-Check below how we use the command:
+Confira abaixo como usamos o comando:
 ```bash
 $ GO111MODULE=on go run myprogram.go
 $ GO111MODULE=on go build myprogram.go
@@ -1036,7 +1035,7 @@ When our project is not in our **$GOPATH** it is not necessary to use **GO111MOD
 ### Go Test
 ---
 
-Test packages
+Pacotes de teste
 
 Uso:
 
@@ -1044,7 +1043,7 @@ Uso:
 $ go test [build/test flags] [packages] [build/test flags & test binary flags]
 ```
 
-Go **test** automates testing the packages named by the import paths. It prints a summary of the test results in the format: 
+Go **test** automatiza o teste dos pacotes nomeados pelos caminhos de importação. Imprime um resumo dos resultados do teste no formato:
 
 ```bash
 === RUN   TestWhatever
