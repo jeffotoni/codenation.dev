@@ -781,9 +781,9 @@ Uso:
 go run [build flags] [-exec xprog] package [arguments...]
 ```
 
-Run compiles and runs the named main Go package. Typically the package is specified as a list of .go source files, but it may also be an import path, file system path, or pattern matching a single known package, as in 'go run .' or 'go run my/cmd'.
+Run compiles and runs the named main Go package. Normalmente, o pacote é especificado como uma lista de arquivos de origem .go, mas também pode ser um caminho de importação, um caminho do sistema de arquivos ou um padrão que corresponda a um único pacote conhecido, como em 'go run .' ou 'go run my/cmd'.
 
-By default, 'go run' runs the compiled binary directly: 'a.out arguments...'. If the -exec flag is given, 'go run' invokes the binary using xprog: 
+Por padrão, 'go run' executa o binário compilado diretamente: 'a.out arguments...'. se o sinalizador -exec for fornecido, 'go run' invoca o binário usando xprog:
 
 If the -exec flag is not given, GOOS or GOARCH is different from the system default, and a program named go_$GOOS_$GOARCH_exec can be found on the current search path, 'go run' invokes the binary using that program, for example 'go_nacl_386_exec a.out arguments...'. This allows execution of cross-compiled programs when a simulator or other execution method is available.
 
@@ -791,7 +791,7 @@ The exit status of Run is not the exit status of the compiled binary.
 
 For more about build flags, see 'go help build'. For more about specifying packages, see 'go help packages'.
 
-See below an example:
+Veja abaixo um exemplo:
 
 ```go
 // test println
@@ -814,19 +814,18 @@ Debugging my system with println
 ### Go Build
 ---
 
-Build compiles the packages named by the import paths, along with their dependencies, but it does not install the results. 
+Build compila os pacotes nomeados pelos caminhos de importação, junto com suas dependências, mas não instala os resultados.
 
-When compiling packages, build ignores files that end in '_test.go'.
+Ao compilar pacotes, o build ignora os arquivos que terminam em '_test.go'.
 
-The -o flag, only allowed when compiling a single package, forces build to write the resulting executable or object to the named output file, instead of the default behavior described in the last two paragraphs.
+O -o flag, only allowed when compiling a single package, forces build to write the resulting executable or object to the named output file, instead of the default behavior described in the last two paragraphs.
 
-The -i flag installs the packages that are dependencies of the target.
+O -i flag instala os pacotes que são dependências do destino.
 
 ```go
 $ go build [-o output] [-i] [build flags] [packages]
 ```
-
-See an example:
+Veja um exemplo:
 ```go
 package main
 
@@ -842,7 +841,7 @@ Output:
 Workshop Golang 2019.
 ```
 
-Normal compilation
+Compilação normal
 ```go
 go build -o hello hello.go
 ```
@@ -854,7 +853,7 @@ $ ls -lh
 -rw-rw-r-- 1 root root   75 jan 17 12:04 hello.go
 ```
 
-Leaving the file smaller after compiling
+Deixando o arquivo menor após a compilação
 ```go
 go build -ldflags="-s -w" hello.go
 ```
@@ -866,35 +865,36 @@ $ ls -lh
 -rw-rw-r-- 1 root root   75 jan 17 12:04 hello.go
 ```
 
-### Go Install
+### Instalar Go 
 ---
 
-Install packages and dependencies
+Instalar pacotes e dependências
 
-Usage:
+Uso:
 ```bash
 $ go install [-i] [build flags] [packages]
 ```
 
 Install compiles and installs the packages named by the import paths.
 
-The **-i flag** installs the dependencies of the named packages as well.
+O **-i flag** instala as dependências dos pacotes nomeados também.
 
-For more about the build flags, see 'go help build'. For more about specifying packages, see 'go help packages'.
+Para mais sobre o build flags, veja 'go help build'. Para mais informações sobre como especificar pacotes, veja 'go help packages'.
 
 ### Go Get
 ---
 
-The **'go get'** command changes behavior depending on whether the go command is running in module-aware mode or legacy GOPATH mode. This help text, accessible as 'go help module-get' even in legacy GOPATH mode, describes 'go get' as it operates in module-aware mode.
+O **'go get'** comando muda o comportamento dependendo se o comando go está sendo executado no modo com reconhecimento de módulo ou no modo GOPATH herdado. Este texto de ajuda, acessível como 'go help module-get' mesmo em legado GOPATH mode, descreve 'go get' como opera em module-aware mode.
 
-Usage:
+Uso:
 ```bash
 $ go get [-d] [-m] [-u] [-v] [-insecure] [build flags] [packages]
 ```
 
-Get downloads the packages named by the import paths, along with their dependencies. It then installs the named packages, like 'go install'.
+Obtenha downloads dos pacotes nomeados pelos caminhos de importação, junto com suas dependências. Em seguida, instale os pacotes nomeados, como 'go install'.
 
-Look at the flags accepted below:
+Veja as bandeiras aceitas abaixo:
+
 ```bash
 The -d flag instructs get to stop after downloading the packages; that is, it instructs get not to install the packages.
 
@@ -911,7 +911,7 @@ The -u flag instructs get to use the network to update the named packages and th
 The -v flag enables verbose progress and debug output.
 ```
 
-Examples:
+Examplos:
 ```bash
 $ go get -v github.com/guptarohit/asciigraph
 $ go get -u github.com/mxk/go-sqlite
