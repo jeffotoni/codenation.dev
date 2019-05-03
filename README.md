@@ -911,7 +911,7 @@ The -u flag instructs get to use the network to update the named packages and th
 The -v flag enables verbose progress and debug output.
 ```
 
-Examplos:
+Exemplos:
 ```bash
 $ go get -v github.com/guptarohit/asciigraph
 $ go get -u github.com/mxk/go-sqlite
@@ -923,18 +923,18 @@ $ go get -v github.com/sirupsen/logru
 ### Go Mod
 ---
 
-A module is a collection of related Go packages. Modules are the unit of source code interchange and versioning. The go command has direct support for working with modules, including recording and resolving dependencies on other modules. Modules replace the old GOPATH-based approach to specifying which source files are used in a given build. 
+Um módulo é uma coleção de pacotes Go relacionados. Módulos são a unidade de intercâmbio de código-fonte e controle de versão. O comando go tem suporte direto para trabalhar com módulos, incluindo gravação e resolução de dependências em outros módulos. Os módulos substituem a antiga abordagem baseada em GOPATH para especificar quais arquivos de origem são usados em uma determinada compilação.
 
-Usage:
+Uso:
 
 ```bash
 $ go mod <command> [arguments]
 ```
-A module is defined by a tree of Go source files with a **go.mod** file in the tree's root directory. The directory containing the go.mod file is called the module root. Typically the module root will also correspond to a source code repository root (but in general it need not). The module is the set of all Go packages in the module root and its subdirectories, but excluding subtrees with their own go.mod files.
+Um módulo é definido por uma árvore de arquivos de origem Go com um **go.mod** arquivo no diretório raiz da árvore. O diretório que contém o arquivo go.mod é chamado de raiz do módulo. Normalmente, a raiz do módulo também corresponderá a uma raiz de repositório de código-fonte (mas, em geral, não precisa). O módulo é o conjunto de todos os pacotes Go na raiz do módulo e em seus subdiretórios, mas excluindo subárvores com seus próprios arquivos go.mod.
 
-The "module path" is the import path prefix corresponding to the module root. The go.mod file defines the module path and lists the specific versions of other modules that should be used when resolving imports during a build, by giving their module paths and versions.
+O "module path" é o prefixo do caminho de importação correspondente à raiz do módulo. O arquivo go.mod define o caminho do módulo e lista as versões específicas de outros módulos que devem ser usados ao resolver importações durante uma construção, fornecendo seus caminhos e versões de módulo.
 
-For example, this go.mod declares that the directory containing it is the root of the module with path example.com/m, and it also declares that the module depends on specific versions of golang.org/x/text and gopkg.in/yaml.v2: 
+Por exemplo, este go.mod declara que o diretório que o contém é a raiz do módulo com o caminho example.com/m, e também declara que o módulo depende de versões específicas de golang.org/x/text and gopkg.in/yaml.v2: 
 
 ```bash
 $ go mod init github.com/user/gomyproject
@@ -955,7 +955,7 @@ In a project already using an existing dependency management tool like **godep, 
 
 Once the go.mod file exists, no additional steps are required: go commands like **'go build'**, **'go test'**, or even **'go list'** will automatically add new dependencies as needed to satisfy imports.
 
-The commands are: 
+Os comandos são: 
 
 ```bash
 download    download modules to local cache
@@ -967,14 +967,14 @@ vendor      make vendored copy of dependencies
 verify      verify dependencies have expected content
 why         explain why packages or modules are needed
 ```
-Use "go help mod <command>" for more information about a command.
+Use "go help mod <command>" para mais informações sobre um comando.
 
 
 ### Go Mod Init
 
-Initialize new module in current directory
+Inicializar novo módulo no diretório atual
 
-Usage:
+Uso:
 
 ```bash
 $ go mod init [module]
@@ -1038,7 +1038,7 @@ When our project is not in our **$GOPATH** it is not necessary to use **GO111MOD
 
 Test packages
 
-Usage:
+Uso:
 
 ```go
 $ go test [build/test flags] [packages] [build/test flags & test binary flags]
