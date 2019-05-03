@@ -518,20 +518,20 @@ go version go1.12.4 linux/amd64
 ```
 
 
-### Introduction Golang
+### Introdução Golang
 ---
 
-Go is a general-purpose language designed with systems programming in mind. It is strongly typed and garbage-collected and has explicit support for concurrent programming. 
-Programs are constructed from packages, whose properties allow efficient management of dependencies.
+Go é uma linguagem de propósito geral, projetada com a programação de sistemas em mente. É fortemente tipado e colecionador de lixo, e tem suporte explícito para programação concorrente. 
+Os programas são construídos a partir de pacotes, cujas propriedades permitem o gerenciamento eficiente de dependências.
 
-The grammar is compact and regular, allowing for easy analysis by automatic tools such as integrated development environments.
+A gramática é compacta e regular, permitindo fácil análise por ferramentas automáticas, como ambientes de desenvolvimento integrados.
 
-### Golang Language
+### Linguagem Golang
 ---
 
 ### Keywords
 
-The following keywords are reserved and may not be used as identifiers. 
+As seguintes palavras-chave são reservadas e não podem ser usadas como identificadores:
 
 ```bash
 break        default      func         interface    select
@@ -541,9 +541,9 @@ const        fallthrough  if           range        type
 continue     for          import       return       var
 ```
 
-### Operators and Punctuation
+### Operadores e Pontuação
 
-The following character sequences represent operators (including assignment operators) and punctuation: 
+As seqüências de caracteres a seguir representam operadores (incluindo operadores de atribuição) e pontuação: 
 
 ```bash
 +    &     +=    &=     &&    ==    !=    (    )
@@ -556,11 +556,11 @@ The following character sequences represent operators (including assignment oper
 
 ### Println Print
 
-Let's learn how to send data to screen which is actually **stdout** standard output we will see more ahead with details on **stdout** and **stdin**.
+Vamos aprender como enviar dados para a tela que é, na verdade, **stdout** saída padrão, veremos mais detalhes sobre  **stdout** e **stdin**.
 
-Let's know **print, println and fmt.Println**
+Vamos conhecer **print, println and fmt.Println**
 
-Current implementations provide several built-in functions useful during bootstrapping. These functions are documented for completeness but are not guaranteed to stay in the language. They do not return a result. 
+As implementações atuais fornecem várias funções internas úteis durante o bootstrapping. Essas funções são documentadas para integridade, mas não garantem a permanência na linguagem. Eles não retornam um resultado. 
 
 Implementation restriction: **print** and **println** need not accept arbitrary argument types, but printing of boolean, numeric, and string types must be supported. 
 
