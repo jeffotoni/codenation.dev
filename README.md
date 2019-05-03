@@ -562,10 +562,9 @@ Vamos conhecer **print, println and fmt.Println**
 
 As implementações atuais fornecem várias funções internas úteis durante o bootstrapping. Essas funções são documentadas para integridade, mas não garantem a permanência na linguagem. Eles não retornam um resultado. 
 
-Implementation restriction: **print** and **println** need not accept arbitrary argument types, but printing of boolean, numeric, and string types must be supported. 
+Restrição de implementação: **print** e **println** não precisa aceitar tipos arbitrários de argumentos, mas a impressão de tipos boolean, numeric, e string types deve ser suportada. 
 
-**println is an built-in function** (into the runtime) which may eventually be removed, while the **fmt package** is in the standard library, which will persist.
-
+**println is an built-in function** (into the runtime) que pode eventualmente ser removido, enquanto o **fmt package** está na biblioteca padrão, que persistirá.
 
 ```bash
 Function   Behavior
@@ -620,7 +619,7 @@ Output:
 debugging my system with fmt.Println
 ```
 
-The goal of starting and running the print, println or fmt.Println command is to help us with the tests we will be performing from now on at every step of our Go learning.
+O objetivo de iniciar e executar o comando print, println ou fmt.Println é nos ajudar com os testes que faremos a partir de agora em todas as etapas do nosso aprendizado Go.
 
 
 ### Bufio NewWriter
@@ -629,9 +628,9 @@ The goal of starting and running the print, println or fmt.Println command is to
 bufio.Writer
 ```
 
-Doing many small writes can hurt performance. Each write is ultimately a syscall and if doing frequently can put burden on the CPU. Devices like disks work better dealing with block-aligned data. To avoid the overhead of many small write operations Golang is shipped with bufio.Writer. Data, instead of going straight to destination (implementing io.Writer interface) are first accumulated inside the buffer and send out when buffer is full:
+Fazer muitas gravações pequenas pode prejudicar o desempenho. Cada gravação é, em última instância, um syscall e se fazer com freqüência pode sobrecarregar a CPU. Dispositivos como discos funcionam melhor lidando com dados alinhados ao bloco. Para evitar a sobrecarga de muitas pequenas operações de gravação, o Golang é fornecido com o bufio.Writer. Os dados, em vez de ir diretamente para o destino (implementando a interface io.Writer) são acumulados primeiro dentro do buffer e enviados quando o buffer está cheio:
 
-Let’s visualise how buffering works with nine writes (one character each) when buffer has space for 4 characters:
+Vamos visualizar como o buffering funciona com nove gravações (um caractere cada) quando o buffer tem espaço para quatro caracteres:
 
 ```bash
 producer         buffer           destination (io.Writer)
@@ -647,7 +646,7 @@ producer         buffer           destination (io.Writer)
    i    ----->   i      ------>   abcdefgh
 ```
 
-Check out the example below
+Confira o exemplo abaixo:
 ```go
 package main
 
@@ -696,38 +695,38 @@ func main() {
 }
 ```
 
-Then **build** it with the **go tool**: 
+Então **build** com o **go tool**: 
 
 ```go
 $ cd $HOME/go/src/hello
 $ go build
 ```
 
-Or we can compile like this:
+Ou podemos compilar assim:
 ```go
 $ cd $HOME/go/src/hello
 $ go build -o hello hello.go
 ```
 
-The command above will build an executable named hello in the directory alongside your source code. Execute it to see the greeting: 
+O comando acima irá construir um executável chamado hello no diretório ao lado do seu código-fonte. Execute para ver a saudação:
 
 ```go
 $ ./hello
 hello, Gophers
 ```
 
-Check also the command **run** it with the go: 
+Verifique também o comando **run** com o go: 
 
 ```go
 $ go run hello.go
 hello, Gophers
 ```
 
-If you see the **"hello, Gophers"** message then your Go installation **is working**.
+Se você ver o **"hello, Gophers"** mensagem, em seguida, sua instalação Go **is working**.
 
 You can run **go install** to install the binary into your workspace's **bin** directory or **go clean -i** to remove it.
 
-Example: go install
+Exemplo: go install
 ```go
 $ pwd
 $ $HOME/go/src/hello
@@ -744,12 +743,12 @@ $ go clean -i
 $ ls -lhs $HOME/go/bin
 ```
 
-### Go Commands
+### Comandos Go
 ---
 
-### Go Commands Introduction
+### Introdução aos Comandos Go
 
-In golang we have an arsenal to help us when it comes to compiling, testing, documenting, managing Profiling etc.
+Em golang, temos um arsenal para nos ajudar quando se trata de compilar, testar, documentar, gerenciar perfis, etc.
 
 ```bash
 bug         start a bug report
@@ -771,13 +770,13 @@ version     print Go version
 vet         report likely mistakes in packages
 ```
 
-Use "go help " for more information about a command.
+Use "go help" para mais informações sobre um comando.
 
 
 ### Go Run
 ---
 
-Usage:
+Uso:
 ```bash
 go run [build flags] [-exec xprog] package [arguments...]
 ```
