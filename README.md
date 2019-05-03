@@ -9,7 +9,7 @@ Curso de programação usando a linguagem Go abordando conceitos teóricos e pr�
 O objetivo deste curso é capacitar os profissionais para o desenvolvimento de aplicações em Go. Para isso, o curso abordará os principais conceitos e tecnologias utilizadas no jeito Go de fazer as coisas. Iremos reforçar as boas práticas de programação, falar um pouco de métodos ágeis e abordar em um contexto geral problemas e como podemos resolvê-los usando Go.
 Após a conclusão do curso “Programação Go”, o aluno estará apto a desenvolver aplicações na linguagem Go, com condição de continuar e explorar ainda mais os aspectos da linguagem.
 
-## MÓDULO 01 Introduço a Linguagem
+## MÓDULO 01 Introdução a Linguagem
 
 - [Overview](#overview)
     - [Golang](#Golang)
@@ -21,22 +21,22 @@ Após a conclusão do curso “Programação Go”, o aluno estará apto a desen
   - [Instalação](#Instalação)
     - [Linux](#linux)
     - [$GOPATH](#gopath)
-    - [Test your installation](#test-your-installation)
+    - [Teste sua Instalação](#teste-sua-instalação)
     - [Workspace](#workspace)
     - [Outside GOPATH](#outside-gopath)
 - [Instalação Docker](#Instalação-docker)
-	- [Instalar Docker to Golang](#instalar-docker-to-golang)
-	- [Compile your app Inside the Docker Container](#compile-your-app-inside-the-docker-container)
-	- [Cross-compile Your app Inside the Docker Container](#cross-compile-your-app-inside-the-docker-container)
-- [Introduction Golang](#introduction-golang)
-  - [Golang Language](#golang-language)
+	- [Instalar Docker para Golang](#instalar-docker-para-golang)
+	- [Compile seu app dentro do contêiner do Docker](#compile-seu-app-dentro-do-contêiner-docker)
+	- [Faça a compilação cruzada do seu aplicativo dentro do contêiner do Docker](#faça-compilação-cruzada-do-seu-app-dentro-do-contêiner-docker)
+- [Introdução Golang](#introdução-golang)
+  - [Linguagem Golang](#linguagem-golang)
     - [Keywords](#keywords)
-    - [Operators and Punctuation](#operators-and-punctuation)
+    - [Operadores e Pontuação](#operadores-e-pontuação)
     - [Println Print](#println-print)
     - [Bufio NewWriter](#bufio-newWriter)
     - [Func Main](#func-main)
-- [Go Commands](#go-commands)
-   - [Go Commands Introduction](#go-commands-introduction)
+- [Comandos Go](#comandos-go-)
+   - [Introdução aos Comandos Go](#introdução-aos-comandos-go)
    - [Go Run](#go-run) 
    - [Go Build](#go-build)
    - [Go Install](#go-install)
@@ -48,7 +48,7 @@ Após a conclusão do curso “Programação Go”, o aluno estará apto a desen
    - [Go Test](#go-test)
 
 ## MÓDULO 02 Aprofundando na Linguagem
-- [Types](#types)
+- [Tipos](#tipos)
    - [Numeric Types](#numeric-types)
    - [String Types](#string-types)
    - [Pointer Types](#pointer-types)
@@ -62,9 +62,9 @@ Após a conclusão do curso “Programação Go”, o aluno estará apto a desen
    - [Map Literals Continued](#map-literals-continued)
    - [Channel Types](#channel-types)
    - [Blank Identifier](#blank-identifier)
-   - [Interface Types](#interface-types)
-	 - [Here's an Interface as a Method](#heres-an-interface-as-a-method)
-	 - [Interface as Type](#interface-as-type)
+   - [Tipos de Interface](#tipos-de-interface)
+	 - [Aqui está uma interface como um método](#aqui-está-uma-interface-como-um-método)
+	 - [Interface como Tipo](#interface-como-tipo)
 - [Control Structures](#control-structures)
   - [Control](#control)
     - [Control Return](#control-return)
@@ -80,8 +80,8 @@ Após a conclusão do curso “Programação Go”, o aluno estará apto a desen
     - [Errors New](#errorsnew)
     - [Custom Errors](#custom-errors)    
     - [fmt Errorf](#fmt-errorf)
-- [Functions](#functions)
-  - [Introduction Function](#introduction-function)
+- [Funções](#funções)
+  - [Função de Introução](#função-de-introdução)
     - [Return Multiple Values](#return-multiple-values) 
     - [Variadic Functions](#variadic-functions) 
     - [Functions as a Parameter](#functions-as-a-parameter) 
@@ -89,7 +89,7 @@ Após a conclusão do curso “Programação Go”, o aluno estará apto a desen
     - [Recursion](#recursion)
     - [Asynchronous Functions](#asynchronous-functions)
 - [Defer](#defer)
-- [Exercise one](#exercise-one)
+- [Exercício 1](#exercício-1)
 
 
 ### Overview
