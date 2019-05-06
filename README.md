@@ -2739,21 +2739,20 @@ map[jeffotoni:{jeffotoni jeff jeff@gm.com} Google:{root super google@gm.com}]
 
 ### Channel Types
 
-A channel provides a mechanism for concurrently executing functions to communicate by sending and receiving values of a specified element type. The value of an uninitialized channel is nil.
+Um canal fornece um mecanismo para a execução simultânea de funções para comunicação, enviando e recebendo valores de um tipo de elemento especificado. O valor de um canal não inicializado é nulo.
 
 ```bash
 ChannelType = ( "chan" | "chan" "<-" | "<-" "chan" ) ElementType .
 ```
 
-The optional <- operator specifies the channel direction, send or receive. If no direction is given, the channel is bidirectional. A channel may be constrained only to send or only to receive by conversion or assignment.
+O operador <- opcional especifica a direção do canal, enviar ou receber. Se nenhuma direção for dada, o canal é bidirecional. Um canal pode ser restrito apenas para enviar ou receber apenas por conversão ou atribuição.
 
 ```bash
 chan T          // can be used to send and receive values of type T
 chan<- float64  // can only be used to send float64s
 <-chan int      // can only be used to receive ints
 ```
-
-The <- operator associates with the leftmost chan possible:
+O operador <- se associa ao canal mais à esquerda possível:
 
 ```bash
 chan<- chan int    // same as chan<- (chan int)
@@ -2762,19 +2761,20 @@ chan<- <-chan int  // same as chan<- (<-chan int)
 chan (<-chan int)
 ```
 
-A new, initialized channel value can be made using the built-in function make, which takes the channel type and an optional capacity as arguments:
+Um novo valor de canal inicializado pode ser feito usando a função interna make, que aceita o tipo de canal e uma capacidade opcional como argumentos:
 
 ```bash
 make(chan int, 100)
 ```
 
-The capacity, in number of elements, sets the size of the buffer in the channel. If the capacity is zero or absent, the channel is unbuffered and communication succeeds only when both a sender and receiver are ready. Otherwise, the channel is buffered and communication succeeds without blocking if the buffer is not full (sends) or not empty (receives). A nil channel is never ready for communication.
+A capacidade, em número de elementos, define o tamanho do buffer no canal. Se a capacidade for zero ou ausente, o canal não será buffer e a comunicação será bem-sucedida somente quando o remetente e o receptor estiverem prontos. Caso contrário, o canal é armazenado em buffer e a comunicação é bem-sucedida sem bloqueio se o buffer não estiver cheio (envia) ou não estiver vazio (recebe). Um canal nulo nunca está pronto para comunicação.
 
-A channel may be closed with the built-in function close. The multi-valued assignment form of the receive operator reports whether a received value was sent before the channel was closed.
+Um canal pode ser fechado com a função interna fechada. O formulário de atribuição de valor múltiplo do operador de recebimento informa se um valor recebido foi enviado antes do canal ser fechado.
 
-A single channel may be used in send statements, receive operations, and calls to the built-in functions cap and len by any number of goroutines without further synchronization. Channels act as first-in-first-out queues. For example, if one goroutine sends values on a channel and a second goroutine receives them, the values are received in the order sent.
+A single channel may be used in send statements, receive operations, and calls to the built-in functions cap and len by any number of goroutines without further synchronization. Channels act as first-in-first-out queues. Por exemplo, se uma goroutine enviar valores em um canal e uma segunda goroutine os receber, os valores serão recebidos na ordem enviada.
 
-Let me show you an example:
+Deixe-me mostrar-lhe um exemplo:
+
 ```go
 
 package main
@@ -2852,7 +2852,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 0xc000056180 0x55bb00 okay
 0xc0000561e0 0x55bb28 2019-01-25 15:11:41.982906669 -0200 -02 m=+0.000147197
@@ -2864,9 +2865,10 @@ Output:
 
 ### Blank Identifier
 
-The blank identifier is represented by the underscore character **_**. It serves as an anonymous placeholder instead of a regular (non-blank) identifier and has special meaning in declarations, as an operand, and in assignments.
+O identificador em branco é representado pelo caractere de sublinhado **_**. Ele serve como um espaço reservado anônimo em vez de um identificador regular (non-blank) e tem um significado especial em declarações, como um operando e em atribuições.
 
-Example:
+Exemplo:
+
 ```bash
 // function statement
 func f() (int, string, error)
@@ -2877,16 +2879,17 @@ _, _, _ := f()
 
 ### Tipos de interface
 
-**An interface is two things:**
- - it is a set of methods
- - but it is also a type
+**Uma interface são duas coisas:**
+ - é um conjunto de métodos
+ - mas também é um tipo
 
-The __interface{} type__, the empty interface is the interface that has __no methods__
+O __interface {} type__, a interface vazia é a interface que tem __no métodos__
 
-Since there is no implements keyword, all types implement at least zero methods, and satisfying an interface is done automatically, all types satisfy the empty interface.
-That means that if you write a function that takes an interface{} value as a parameter, you can supply that function with any value.
+Como não há nenhuma palavra-chave implements, todos os tipos implementam pelo menos zero métodos e a satisfação de uma interface é feita automaticamente, todos os tipos satisfazem a interface vazia.
+Isso significa que, se você escrever uma função que usa um valor {} de interface como um parâmetro, você poderá fornecer essa função com qualquer valor.
 
-Example:
+Exemplo:
+
 ```go
 func DoSomething(v interface{}) {
    // ...
@@ -2901,7 +2904,7 @@ type Stringer interface {
 
 #### Aqui está uma interface como um método
 
-An interface type specifies a method set called its interface. A variable of interface type can store a value of any type with a method set that is any superset of the interface. Such a type is said to implement the interface. The value of an uninitialized variable of interface type is nil.
+Um tipo de interface especifica um conjunto de métodos chamado sua interface. Uma variável do tipo de interface pode armazenar um valor de qualquer tipo com um conjunto de métodos que seja qualquer superconjunto da interface. Tal tipo é dito para implementar a interface. O valor de uma variável não inicializada do tipo de interface é nulo.
 
 
 ```bash
@@ -2911,7 +2914,7 @@ MethodName         = identifier .
 InterfaceTypeName  = TypeName .
 ```
 
-As with all method sets, in an interface type, each method must have a unique non-blank name.
+Como com todos os conjuntos de métodos, em um tipo de interface, cada método deve ter um nome exclusivo não vazio.
 
 ```go
 // A simple File interface
@@ -2922,7 +2925,7 @@ interface {
 }
 ```
 
-More than one type may implement an interface. For instance, if two types S1 and S2 have the method set
+Mais de um tipo pode implementar uma interface. Por exemplo, se dois tipos S1 e S2 tiverem o conjunto de métodos
 
 ```bash
 func (p T) Read(b Buffer) bool { return … }
@@ -2930,15 +2933,15 @@ func (p T) Write(b Buffer) bool { return … }
 func (p T) Close() { … }
 ```
 
-(where T stands for either S1 or S2) then the File interface is implemented by both S1 and S2, regardless of what other methods S1 and S2 may have or share.
+(onde T significa S1 ou S2) então a interface File é implementada por S1 e S2, independentemente de quais outros métodos S1 e S2 possam ter ou compartilhar.
 
-A type implements any interface comprising any subset of its methods and may therefore implement several distinct interfaces. For instance, all types implement the empty interface:
+Um tipo implementa qualquer interface que inclua qualquer subconjunto de seus métodos e, portanto, pode implementar várias interfaces distintas. Por exemplo, todos os tipos implementam a interface vazia:
 
 ```bash
 interface{}
 ```
 
-Similarly, consider this interface specification, which appears within a type declaration to define an interface called Locker:
+Da mesma forma, considere esta especificação de interface, que aparece dentro de uma declaração de tipo para definir uma interface chamada Locker:
 
 ```go
 type Locker interface {
@@ -2947,16 +2950,16 @@ type Locker interface {
 }
 ```
 
-If S1 and S2 also implement
+Se S1 e S2 também implementarem
 
 ```bash
 func (p T) Lock() { … }
 func (p T) Unlock() { … }
 ```
 
-they implement the Locker interface as well as the File interface.
+Eles implementam a interface do Locker, bem como a interface do arquivo.
 
-An interface T may use a (possibly qualified) interface type name E in place of a method specification. This is called embedding interface E in T; it adds all (exported and non-exported) methods of E to the interface T.
+Uma interface T pode usar um nome de tipo de interface (possivelmente qualificado) E no lugar de uma especificação de método. Isso é chamado de interface de incorporação E em T; adiciona todos os métodos (exportados e não exportados) de E para a interface T.
 
 ```go
 type ReadWriter interface {
@@ -2977,7 +2980,8 @@ type LockedFile interface {
 }
 ```
 
-An interface type T may not embed itself or any interface type that embeds T, recursively.
+Um tipo de interface T não pode incorporar a si mesmo ou a qualquer tipo de interface que incorpore T, recursivamente.
+
 ```go
 // illegal: Bad cannot embed itself
 type Bad interface {
@@ -2993,7 +2997,8 @@ type Bad2 interface {
 }
 ```
 
-Example: 
+Exemplo:
+
 ```go
 package main
 
@@ -3031,7 +3036,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 &{hello interface} {hello interface}
 Only: call Read
@@ -3040,8 +3046,8 @@ Read: Only: call Read
 
 ####  Interface como tipo
 
-Interfaces as type __interface{}__ means you can put value of any type, including your own custom type. All types in Go satisfy an empty interface (interface{} is an empty interface).
-In your example, Msg field can have value of any type. 
+Interfaces como tipo __ interface {} __ significa que você pode colocar valor de qualquer tipo, incluindo seu próprio tipo personalizado. Todos os tipos em Go satisfazem uma interface vazia (interface {} é uma interface vazia).
+No seu exemplo, o campo Msg pode ter valor de qualquer tipo.
 
 
 ```go
@@ -3062,7 +3068,8 @@ a = 10.5
 a = "Lambda Man"
 ```
 
-Interfaces as types looks at another example below:
+Interfaces como tipos, veja outro exemplo abaixo:
+
 ```go
 package main
 
@@ -3107,7 +3114,7 @@ __For, If, else, else if__
 
 E algumas declarações entre elas: __break, continue, switch, case and goto__.
 
-#### Retorno de Controle
+#### Controle Return
 
 Declarações controlam a execução.
 
@@ -3121,11 +3128,12 @@ Statement =
 SimpleStmt = EmptyStmt | ExpressionStmt | SendStmt | IncDecStmt | Assignment | ShortVarDecl .
 ```
 
-A terminating statement prevents execution of all statements that lexically appear after it in the same block. The following statements are terminating:
+Uma instrução final impede a execução de todas as instruções que aparecem lexicalmente após o mesmo bloco. As seguintes declarações estão terminando:
 
-1. A "return" or "goto" statement.
+1. Uma instrução "return" ou "goto".
 
 Return:
+
 ```go
 package main
 
@@ -3140,7 +3148,8 @@ func Lambda() string {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 Lambda
 ```
@@ -3148,6 +3157,7 @@ Lambda
 #### Controle Goto
 
 Goto:
+
 ```go
 package main
 
@@ -3178,7 +3188,8 @@ LOOP2:
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 n 1 LOOP1 here...
 n 2 LOOP2 here...
@@ -3194,9 +3205,10 @@ fim
 
 #### Control if Else
 
-2. An "if" statement in which:
-      - the "else" branch is present, and
-      - both branches are terminating statements.
+2. Uma declaração "if" em que:
+      - a ramificação "else" está presente, e
+      - ambas as ramificações são declarações finais.
+      
 ```go
 package main
 
@@ -3217,18 +3229,19 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 else here.. n > 100
 ```
 
 #### Control For Break Continue
 
-3. A "for" statement in which:
-      - there are no "break" statements referring to the "for" statement, and
-      - the loop condition is absent.
-      - there are "continue"
-      - A "break" statement terminates execution of the innermost "for", "switch", or "select" statement within the same 
+3. Uma declaração "for" em que:
+      - não há declarações de "break" referentes à declaração "for" e
+      - a condição de loop está ausente.
+      - existem "continue"
+      - Uma instrução "break"  termina a execução da instrução "for", "switch" ou "select" mais interna dentro da mesma
 
 ```go
 package main
