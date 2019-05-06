@@ -11,7 +11,7 @@ Após a conclusão do curso “Programação Go”, o aluno estará apto a desen
 
 ## MÓDULO 01 Introdução a Linguagem
 
-- [Overview](#overview)
+- [Overview](#Overview)
     - [Golang](#Golang)
       - [Linguagem Go](#Linguagem-Go)
       - [Onde posso utilizar Go](#Onde-posso-utilizar-Go)      
@@ -3724,7 +3724,7 @@ Output:
 Area calculation failed, radius -80.00 is less than zero
 ```
 
-### Functions 
+### Funções
 ---
 
 Declaring and Calling Functions in Golang. 
@@ -3739,7 +3739,7 @@ func Sum(x float64, y float64) float64 {
 }
 ```
 
-### Introduction Function
+### Introdução as Funções
 
 Go requires explicit returns, i.e. it won’t automatically return the value of the last expression.
 When you have multiple consecutive parameters of the same type, you may omit the type name for the like-typed parameters up to the final parameter that declares the type.
