@@ -64,7 +64,7 @@ Após a conclusão do curso “Programação Go”, o aluno estará apto a desen
    - [Channel Types](#Channel-Types)
    - [Blank Identifier](#Blank-Identifier)
    - [Tipos de Interface](#Tipos-de-Tnterface)
-	 - [Aqui está uma interface como um método](#Aqui-está-uma-interface-como-um-método)
+	 - [Interface como um método](#Interface-como-um-método)
 	 - [Interface como tipo](#Interface-como-tipo)
 - [Control Structures](#Control-Structures)
   - [Control](#Control)
@@ -1257,10 +1257,10 @@ Output:
 10
 ```
 
-## Lab 02 Types with Golang
+## MÓDULO 02 Aprofundando na Linguagem
 ---
 
-### Types
+### Tipos
 ---
 
 A type determines a set of values together with operations and methods specific to those values. A type may be denoted by a type name, if it has one, or specified using a type literal, which composes a type from existing types. 
@@ -2875,7 +2875,7 @@ func f() (int, string, error)
 _, _, _ := f()
 ```
 
-### Interface Types
+### Tipos de interface
 
 **An interface is two things:**
  - it is a set of methods
@@ -2899,7 +2899,7 @@ type Stringer interface {
 }
 ```
 
-### Here's an interface as a method
+### Aqui está uma interface como um método
 
 An interface type specifies a method set called its interface. A variable of interface type can store a value of any type with a method set that is any superset of the interface. Such a type is said to implement the interface. The value of an uninitialized variable of interface type is nil.
 
@@ -3038,7 +3038,7 @@ Only: call Read
 Read: Only: call Read
 ```
 
-###  Interface as type
+###  Interface como tipo
 
 Interfaces as type __interface{}__ means you can put value of any type, including your own custom type. All types in Go satisfy an empty interface (interface{} is an empty interface).
 In your example, Msg field can have value of any type. 
@@ -3090,25 +3090,26 @@ func main() {
 }
 ```
 
-### Exercise One
-Exercise:
-Fill in the struct JsonMessage AWS above, initialize the struct and fill in the fields, and make a fmt.Println to display the filled fields.
-To be more readable you can separate into each struct type struct.
+### Exercício 1
 
-### Control Structures
+Exercício:
+Preencha o struct JsonMessage AWS acima, inicialize a estrutura e preencha os campos, e faça um fmt.Println para exibir os campos preenchidos.
+Para ser mais legível, você pode separar em cada estrutura do tipo struct.
+
+### Estruturas de Controle
 ---
 
-### Control
+### Ao Controle
 
-The control structures are:
+As estruturas de controle são:
 
 __For, If, else, else if__
 
-And some statments between them: __break, continue, switch, case and goto__.
+E algumas declarações entre elas: __break, continue, switch, case and goto__.
 
-### Control Return
+### Retorno de Controle
 
-Statements control execution.
+Declarações controlam a execução.
 
 ```bash
 Statement =
