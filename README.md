@@ -47,7 +47,7 @@ Após a conclusão do curso “Programação Go”, o aluno estará apto a desen
    - [GO-1.11-Módulo](#Go-111-módulo)
    - [Go Test](#Go-Test)
 
-## MÓDULO 02 Aprofundando na Linguagem
+## MÓDULO 02  Aprofundando na Linguagem
 - [Tipos](#Tipos)
    - [Numeric Types](#Numeric-Types)
    - [String Types](#String-Types)
