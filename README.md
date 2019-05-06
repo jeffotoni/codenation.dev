@@ -97,7 +97,7 @@ Após a conclusão do curso “Programação Go”, o aluno estará apto a desen
 
 ### Golang
 
-### Linguagem Go
+#### Linguagem Go
 
 Go é uma linguagem poderosa quando se trata de **concorrência e alto desempenho**, com uma arquitetura limpa e eficiente. Ela cresce ano após ano e todos os dias as comunidades crescem ainda mais.
 
@@ -172,7 +172,7 @@ Os criadores Rob Pike, Ken Thompson e Robert Griesemer mantiveram a sintaxe de G
 Go teve influências de diversas linguagens de programação e paradigmas diferentes dentre elas: Alef, APL, BCPL, C, CSP, Limbo, Modula, Newsqueak, Oberon, occam, Pascal, Smalltalk e Cristal, percebe-se que utilizaram do que tinham de melhor e criou algo novo e enxuto, com o mínimo necessário para resolver os problemas propostos, sem perder sua simplicidade. Acredito que isto podemos chamar de inovação. Go inovou ao quebrar os paradigmas de linguagens e implementar algo novo de forma simples e muito poderosa.
 
 
-### Por que meu binário hello world é tão grande?
+#### Por que meu binário hello world é tão grande?
 
 O vinculador no gc toolchain cria binários vinculados estaticamente por padrão. Portanto, todos os binários Go incluem o tempo de execução Go, juntamente com as informações do tipo em tempo de execução necessárias para oferecer suporte a verificações de tipos dinâmicos, reflexos e até mesmo rastreamentos de pilha em tempo de pânico.
 
@@ -199,7 +199,7 @@ Vamos dar uma olhada em como fazemos isso.
 Vamos baixar o arquivo, descompactá-lo e instalá-lo em/usr/local/go, se tivermos golang já instalado na máquina teremos que remover o existente para deixar nossa instalação como única.
 Vamos criar nosso diretório em nosso espaço de trabalho e testar para ver se tudo correu bem
 
-### Linux
+#### Linux
 
 ```bash
 $ sudo rm -rf/usr/local/go
@@ -207,7 +207,7 @@ $ wget https://dl.google.com/go/go1.12.4.linux-amd64.tar.gz
 $ sudo tar C/usr/local -xzf vai $ VERSION. $ OS- $ ARCH.tar.gz
 ```
 
-### $GOPATH
+#### $GOPATH
 
 $GOPATH é o golang em seu $HOME, isso é necessário para que seus projetos usem o pkg e construam corretamente. Isso era obrigatório para todas as versões anteriores à versão 1.11. O legal é que a partir de agora não teremos que criar projetos no $GOPATH, podemos criar em qualquer outro diretório que não esteja no $GOPATH.
 
@@ -235,7 +235,7 @@ $ echo "export PATH = $ CAMINHO:/usr/local/go/bin" >> $HOME/.zshrc
 $ echo "export PATH = $PATH: $GOPATH/bin" >> $HOME/.zshrc
 ```
 
-### Teste nossa instalação
+#### Teste nossa instalação
 
 Vamos executar a versão para ver se tudo está correto.
 
@@ -250,7 +250,7 @@ Crie o seu **espaço de trabalho** diretório, $HOME/go. (Se você quiser usar u
 
 Em seguida, faça o diretório src/hello dentro de sua área de trabalho e, nesse diretório, crie um arquivo chamado hello.go que se pareça com:
 
-### Área de trabalho
+#### Área de trabalho
 
 O espaço de trabalho é o nosso local de trabalho, onde organizaremos nossos diretórios com nossos projetos. Como mostrado acima, até **Go versão 1.12** fomos forçados a fazer tudo no espaço de trabalho. $GOPATH abaixo do Projeto.
 
@@ -326,7 +326,7 @@ Os caminhos do pacote são importantes para a ferramenta Ir. Usar "github.com/..
 
 No cenário acima, tudo teria que ficar em nosso **$GOPATH** para que nossos projetos funcionassem corretamente.
 
-### Fora de $GOPATH
+#### Fora de $GOPATH
 
 Agora podemos fazer nossos projetos sem estar em $GOPATH, podemos, por exemplo, fazê-lo em qualquer diretório.
 
