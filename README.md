@@ -374,6 +374,7 @@ Para o cenário acima, teremos que usar **go mod** em nosso projeto para que tod
 Mais informações podem ser encontradas aqui: [Wiki Go Modules] (https://github.com/golang/go/wiki/Modules)
 
 Exemplo prático de como você irá proceder:
+
 ```go
 $ go mod init github.com/user/project1
 ```
@@ -382,6 +383,7 @@ $ go mod init github.com/user/project1
 Quando usarmos o go mod em $GOPATH, teremos que habilitar o uso de GO111MODULE=on, para que ele possa trabalhar dentro da estrutura $GOPATH.
 
 Então, nosso programa pode compilar com sucesso.
+
 ```go
 $ GO111MODULE=on go run cmd/main.go
 $ GO111MODULE=on go build -o project1 cmd/main.go
@@ -412,6 +414,7 @@ $HOME/
 Percebe-se que temos go.mod agora no raiz e em cada pkg que desejamos configurar para que possamos importa-los.
 
 O arquivo go.mod na raiz ficaria assim:
+
 ```go
 module project1
 
@@ -430,15 +433,18 @@ go 1.12
 
 Os arquivos que encontra-se dentro de cada pacote ficaria assim:
 pkg/math
+
 ```go
 module math
 ```
 
 pkg/util
+
 ```go
 module util
 ```
 Prontinho agora é testar
+
 ```go
 GO111MODULE=on go run main.go
 ```
@@ -466,11 +472,13 @@ $ docker pull golang
 ### Compile seu aplicativo dentro do contêiner Docker
 
 Pode haver ocasiões em que não é apropriado executar seu aplicativo em um contêiner. Para compilar, mas não executar seu aplicativo dentro da Instância do Docker, você pode escrever algo como:
+
 ```bash
 $ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.12.4 go build -v
 ```
 
 Isso adicionará seu diretório atual como um volume ao contêiner, configurará o diretório de trabalho para o volume e executará o comando go build, que informará para compilar o projeto no diretório de trabalho e exibir o executável em myapp. Como alternativa, se você tiver um Makefile, poderá executar o comando make dentro do contêiner.
+
 ```bash
 $ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.12.4 make
 ```
@@ -503,17 +511,20 @@ Agora vamos rodar um programa para ver se funciona corretamente
 $ docker run --rm -v "$PWD":/usr/src/main -w /usr/src/main golang:1.12.4 go run main.go
 ```
 
-Output:
+Saída:
+
 ```bash
 My first program being compiled by a docker container!
 ```
 
-Check a version:
+Confira uma versão:
+
 ```bash
 $ docker run --rm -v "$PWD":/usr/src/main -w /usr/src/main golang:1.12.4 go versio
 ```
 
-Output:
+Saída:
+
 ```bash
 go version go1.12.4 linux/amd64
 ```
@@ -574,7 +585,8 @@ print      prints all arguments; formatting of arguments is implementation-speci
 println    like print but prints spaces between arguments and a newline at the end
 ```
 
-using print:
+Usando Print:
+
 ```go
 // test print
 package main
@@ -584,12 +596,14 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 debugging my system with print
 ```
 
-using println:
+Usando println:
+
 ```go
 // test println
 package main
@@ -599,12 +613,14 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 debugging my system with println
 ```
 
-using fmt.Println:
+Usando fmt.Println:
+
 ```go
 package main
 
@@ -615,7 +631,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 debugging my system with fmt.Println
 ```
@@ -648,6 +665,7 @@ producer         buffer           destination (io.Writer)
 ```
 
 Confira o exemplo abaixo:
+
 ```go
 package main
 
@@ -678,7 +696,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 How many stars does Orion have?
 H
@@ -704,6 +723,7 @@ $ go build
 ```
 
 Ou podemos compilar assim:
+
 ```go
 $ cd $HOME/go/src/hello
 $ go build -o hello hello.go
@@ -725,9 +745,10 @@ hello, Gophers
 
 Se você ver o **"hello, Gophers"** mensagem, em seguida, sua instalação Go **is working**.
 
-You can run **go install** to install the binary into your workspace's **bin** directory or **go clean -i** to remove it.
+Você pode executar o **go install** para instalar o binário no diretório **bin** da sua área de trabalho ou **ir limpar -i** para removê-lo.
 
 Exemplo: go install
+
 ```go
 $ pwd
 $ $HOME/go/src/hello
@@ -778,6 +799,7 @@ Use "go help" para mais informações sobre um comando.
 ---
 
 Uso:
+
 ```bash
 go run [build flags] [-exec xprog] package [arguments...]
 ```
@@ -803,11 +825,13 @@ func main() {
 }
 ```
 Go run:
+
 ```bash
 go run println.go
 ```
 
-Output:
+Saída:
+
 ```bash
 Debugging my system with println
 ```
@@ -827,6 +851,7 @@ O -i flag instala os pacotes que são dependências do destino.
 $ go build [-o output] [-i] [build flags] [packages]
 ```
 Veja um exemplo:
+
 ```go
 package main
 
@@ -837,17 +862,20 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 Workshop Golang 2019.
 ```
 
 Compilação normal
+
 ```go
 go build -o hello hello.go
 ```
 
-Output:
+Saída:
+
 ```bash
 $ ls -lh 
 -rwxrwxr-x 1 root root **1,9M** jan 18 12:42 hello
@@ -855,11 +883,13 @@ $ ls -lh
 ```
 
 Deixando o arquivo menor após a compilação
+
 ```go
 go build -ldflags="-s -w" hello.go
 ```
 
-Output:
+Saída:
+
 ```bash
 $ ls -lh 
 -rwxrwxr-x 1 root root **1,3M** jan 18 12:42 hello
@@ -872,6 +902,7 @@ $ ls -lh
 Instalar pacotes e dependências
 
 Uso:
+
 ```bash
 $ go install [-i] [build flags] [packages]
 ```
@@ -888,6 +919,7 @@ Para mais sobre o build flags, confira 'go help build'. Para mais informações 
 O **'go get'** comando muda o comportamento dependendo se o comando go está sendo executado no modo com reconhecimento de módulo ou no modo GOPATH herdado. Este texto de ajuda, acessível como 'go help module-get' mesmo em legado GOPATH mode, descreve 'go get' como opera em module-aware mode.
 
 Uso:
+
 ```bash
 $ go get [-d] [-m] [-u] [-v] [-insecure] [build flags] [packages]
 ```
@@ -913,6 +945,7 @@ The -v flag enables verbose progress and debug output.
 ```
 
 Exemplos:
+
 ```bash
 $ go get -v github.com/guptarohit/asciigraph
 $ go get -u github.com/mxk/go-sqlite
@@ -945,16 +978,15 @@ require (
   gopkg.in/yaml.v2 v2.1.0
 )
 ```
-The go.mod file can also specify replacements and excluded versions that only apply when building the module directly; they are ignored when the module is incorporated into a larger build. For more about the go.mod file, see 'go help go.mod'.
-
-To start a new module, simply create a go.mod file in the root of the module's directory tree, containing only a module statement. The 'go mod init' command can be used to do this: 
+O arquivo go.mod também pode especificar substituições e versões excluídas que só se aplicam ao construir o módulo diretamente; eles são ignorados quando o módulo é incorporado em uma construção maior. Para mais informações sobre o arquivo go.mod, consulte 'go help go.mod'.
+Para iniciar um novo módulo, basta criar um arquivo go.mod na raiz da árvore de diretórios do módulo, contendo apenas uma instrução do módulo. O comando 'go mod init' pode ser usado para fazer isso:
 
 ```bash
 $ go mod init github.com/user/gomyproject
 ```
-In a project already using an existing dependency management tool like **godep, glide, or dep, 'go mod init'** will also add require statements matching the existing configuration.
+Em um projeto que já utiliza uma ferramenta de gerenciamento de dependências existente como **godep, glide ou dep, 'go mod init'** também adicionará instruções requeridas que correspondam à configuração existente.
 
-Once the go.mod file exists, no additional steps are required: go commands like **'go build'**, **'go test'**, or even **'go list'** will automatically add new dependencies as needed to satisfy imports.
+Uma vez que o arquivo go.mod existe, nenhuma etapa adicional é necessária: vá com comandos como **'go build'**, **'go test' **, ou até mesmo **'go list'** adicionará automaticamente novas dependências conforme necessário para satisfazer as importações.
 
 Os comandos são: 
 
@@ -981,7 +1013,7 @@ Uso:
 $ go mod init [module]
 ```
 
-Init initializes and writes a new **go.mod** to the current directory, in effect creating a new module rooted at the current directory. The file go.mod must not already exist. If possible, init will guess the module path from import comments (see 'go help importpath') or from version control configuration. To override this guess, supply the module path as an argument. 
+Init inicializa e grava um novo **go.mod** no diretório atual, na verdade, criar um novo módulo com raiz no diretório atual. O arquivo go.mod não deve existir. Se possível, o init irá adivinhar o caminho do módulo a partir dos comentários de importação (consulte 'go help importpath') ou da configuração do controle de versão. Para substituir essa suposição, forneça o caminho do módulo como um argumento.
 
 
 ```bash
@@ -1001,12 +1033,14 @@ require (
 
 O comando go mod mod vendor baixará todas as dependências para o diretório "vendor".
 Ao usar o go mod mod, os pacotes não estão no seu diretório.
+
 ```bash
 $ cd gomyproject2
 $ go mod vendor
 ```
 
-Output:
+Saída:
+
 ```bash
 $ ls -lh vendor
 total 8,0K
@@ -1016,16 +1050,17 @@ drwxrwxr-x 3 root root 4,0K jan 27 01:47 github.com
 
 ### GO 1.11 Módulo
 
-Go 1.11 includes preliminary support for Go modules, including a new module-aware 'go get' command. We intend to keep revising this support, while preserving compatibility, until it can be declared official (no longer preliminary), and then at a later point we may remove support for work in GOPATH and the old 'go get' command.
+Go 1.11 inclui suporte preliminar para os módulos Go, incluindo um novo comando 'go get' que reconhece os módulos. Nós pretendemos continuar revisando este suporte, preservando a compatibilidade, até que ele possa ser declarado oficial (não mais preliminar), e então, em um ponto posterior, podemos remover o suporte para o trabalho no GOPATH e o antigo comando 'go get'.
 
-The quickest way to take advantage of the new Go 1.11 module support is to check out your repository into a directory outside GOPATH/src, create a go.mod file (described in the next section) there, and run go commands from within that file tree.
+A maneira mais rápida de aproveitar o novo suporte ao módulo Go 1.11 é verificar seu repositório em um diretório fora de GOPATH / src, criar um arquivo go.mod (descrito na próxima seção) e executar comandos go a partir desse arquivo árvore.
 
-For more fine-grained control, the module support in Go 1.11 respects a temporary environment variable, GO111MODULE, which can be set to one of three string values: off, on, or auto (the default). If GO111MODULE=off, then the go command never uses the new module support. Instead it looks in vendor directories and GOPATH to find dependencies; we now refer to this as "GOPATH mode." If GO111MODULE=on, then the go command requires the use of modules, never consulting GOPATH. We refer to this as the command being module-aware or running in "module-aware mode". If GO111MODULE=auto or is unset, then the go command enables or disables module support based on the current directory. Module support is enabled only when the current directory is outside GOPATH/src and itself contains a go.mod file or is below a directory containing a go.mod file.
+Para um controle mais refinado, o suporte a módulos no Go 1.11 respeita uma variável de ambiente temporária, GO111MODULE, que pode ser definida como um dos três valores de string: off, on ou auto (o padrão). Se GO111MODULE = off, então o comando go nunca usa o novo suporte ao módulo. Em vez disso, ele procura nos diretórios de fornecedores e no GOPATH para localizar dependências; agora nos referimos a isso como "modo GOPATH". Se GO111MODULE = on, então o comando go requer o uso de módulos, nunca consultando o GOPATH. Nós nos referimos a isso como o comando sendo ciente do módulo ou em execução no "modo de reconhecimento de módulo". Se GO111MODULE = auto ou não estiver definido, o comando go ativa ou desativa o suporte a módulos com base no diretório atual. O suporte a módulos é ativado somente quando o diretório atual está fora de GOPATH / src e ele contém um arquivo go.mod ou está abaixo de um diretório contendo um arquivo go.mod
 
-In module-aware mode, GOPATH no longer defines the meaning of imports during a build, but it still stores downloaded dependencies (in GOPATH/pkg/mod) and installed commands (in GOPATH/bin, unless GOBIN is set).
+No modo ciente de módulo, GOPATH não define mais o significado de importações durante uma compilação, mas ainda armazena dependências baixadas (em GOPATH / pkg / mod) e comandos instalados (em GOPATH / bin, a menos que GOBIN esteja definido).
 
 
 Confira abaixo como usamos o comando:
+
 ```bash
 $ GO111MODULE=on go run myprogram.go
 $ GO111MODULE=on go build myprogram.go
