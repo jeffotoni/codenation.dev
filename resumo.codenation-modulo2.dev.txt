@@ -1,0 +1,64 @@
+
+MODULO 2
+------------------------------------------------
+Types
+	Struct Types
+	String Types
+	Slice Types
+	Struct Type Tags Json
+	Map Types
+	Map Literals Continued
+	Blank Identifier
+------------------------------------------------
+Estrutura de Controle
+	for, break
+	switch, case
+	range
+	If, else, if else
+------------------------------------------------
+Erros
+	Introdução a erros
+	Erros.New
+	fmt.Errorf
+------------------------------------------------
+Funções
+	Introdução a funções
+	Retorno de multiple valores
+	Closures
+	Funções Assíncronas
+	defer
+------------------------------------------------
+Goroutine
+	What are Threads?
+	Introdução a Goroutine
+	Goroutine != Thread
+	Implementando nossa primeira goroutine
+	Channels
+	Direção de Channels 
+	Timeouts
+	Buffered Channels
+	Range and Close 
+	Select and Default Selection
+	Timers
+	Tickers
+	WaitGroup
+	Mutexes
+ 
+Métodos
+	Quebrando paradigmas 
+	Introdução aos métodos
+	Método vs funções
+	Métodos e Interfaces
+Parse Json
+	Json Marshal Encode
+	Json MarshalIndent
+	Option Omitempty
+	Json NewEncoder
+	Json Unmarshal Decode
+
+Tests
+	Introdução aos tests
+	Exemplos de tests
+	go test
+	Criando nossos tests
+

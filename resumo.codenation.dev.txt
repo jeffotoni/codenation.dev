@@ -402,36 +402,3 @@ Estrutura de Controle
 	https://medium.com/rungo/the-anatomy-of-maps-in-go
 	https://blog.golang.org/go-slices-usage-and-internals
 
-
-
-
-CONCORRENCIA GOROUTINE ( exemplo: https://golang.org/doc/codewalk/sharemem/)
-
-Composição de cálculos de execução independentes. É uma forma de pensar em escrever clean code(código limpos).
-Concorrência não é realmente paralelismo... Go é uma linguagem concorrente. Ao executar simultaneamente ou concorrentemente em um único processador, bem isto não é paralelo.
-Concorrência é uma forma de modelar e estruturar um software e em Go tudo torna-se mais fácil.
-
- - Fácil de escrever
- - Fácil de entender
- - Não precisa ser expert 
-
- Uma longa história e herança de várias langs que trabalham com concorrência: Occam 1983, Erlang 1986, Newsqueak 1988,Cocurrent ML 1993, Alef 1995, Limbo 1996.
-
- O projeto que influenciou toda equipe de desenvolvimento Go é o trabalho do Tony Hoare, 1978 CSP ("Comunicacao de processos sequenciais")
-
- Occam é a mais original deste projeto.
-
- Go é sobre canais um modelo diferente da proposta do Erlang 
-
- Boring function... go..
-
-
-A abordagem de Go à concorrência difere do uso tradicional de threads e memória compartilhada. Filosoficamente, pode ser resumido:
-Não se comunique compartilhando memória; compartilhe memória comunicando-se.
-Os canais permitem que você passe referências a estruturas de dados entre goroutines. Se você considerar isso como transmitindo a propriedade dos dados (a capacidade de ler e gravar), eles se tornarão um poderoso e expressivo mecanismo de sincronização.
-Goroutines é um jogo com coroutines. Mas, não são o mesmo. Goroutine é uma função executada em uma linha separada da linha que a invocou, para não bloqueá-la. Várias goroutines podem compartilhar a mesma linha de OS. Ao contrário de coroutines, goroutines não podem passar controle, de forma explicita, para outra. O tempo de execução de Go o faz, implicitamente, quando uma goroutine bloquear acesso de E/S.
-
-Goroutines fazem parte de tornar a simultaneidade fácil de usar. A ideia, que já existe há algum tempo, é multiplexar funções de execução independente - coroutines - em um conjunto de threads. Quando uma co-rotina é bloqueada, por exemplo, chamando uma chamada de sistema de bloqueio, o tempo de execução move automaticamente outras linhas de execução no mesmo encadeamento do sistema operacional para um encadeamento executável diferente, para que elas não sejam bloqueadas. O programador não vê nada disso, que é o ponto. O resultado, que chamamos de goroutines, pode ser muito barato: eles têm pouca sobrecarga além da memória para a pilha, que é apenas alguns kilobytes.
-
-Para tornar as pilhas pequenas, o tempo de execução de Go usa pilhas redimensionáveis ​​e delimitadas. Uma goroutine recém-cunhada recebe alguns kilobytes, o que é quase sempre suficiente. Quando não é, o tempo de execução aumenta (e encolhe) a memória para armazenar a pilha automaticamente, permitindo que muitos goroutines vivam em uma quantidade modesta de memória. A sobrecarga da CPU tem em média três instruções baratas por chamada de função. É prático criar centenas de milhares de goroutines no mesmo espaço de endereço. Se goroutines fossem apenas threads, os recursos do sistema acabariam em um número muito menor.
-
