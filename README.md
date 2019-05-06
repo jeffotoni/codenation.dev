@@ -2426,14 +2426,14 @@ true
 
 ### Map Types
 
-A map is an unordered group of elements of one type, called the element type, indexed by a set of unique keys of another type, called the key type. The value of an uninitialized map is nil.
+Um mapa é um grupo não ordenado de elementos de um tipo, chamado de tipo de elemento, indexado por um conjunto de chaves exclusivas de outro tipo, chamado de tipo de chave. O valor de um mapa não inicializado é nulo.
 
 ```bash
 MapType     = "map" "[" KeyType "]" ElementType .
 KeyType     = Type .
 ```
 
-The comparison operators == and != must be fully defined for operands of the key type; thus the key type must not be a function, map, or slice. If the key type is an interface type, these comparison operators must be defined for the dynamic key values; failure will cause a run-time panic.
+Os operadores de comparação == e! = Devem ser totalmente definidos para operandos do tipo de chave; Assim, o tipo de chave não deve ser uma função, mapa ou fatia. Se o tipo de chave for um tipo de interface, esses operadores de comparação devem ser definidos para os valores de chave dinâmica; falha causará um pânico em tempo de execução.
 
 ```bash
 map[string]int
@@ -2441,7 +2441,7 @@ map[*T]struct{ x, y float64 }
 map[string]interface{}
 ```
 
-The number of map elements is called its length. For a map m, it can be discovered using the built-in function len and may change during execution. Elements may be added during execution using assignments and retrieved with index expressions; they may be removed with the delete built-in function.
+O número de elementos do mapa é chamado seu comprimento. Para um mapa m, ele pode ser descoberto usando a função interna len e pode mudar durante a execução. Elementos podem ser adicionados durante a execução usando atribuições e recuperados com expressões de índice; eles podem ser removidos com a função integrada de exclusão.
 
 Um novo valor de mapa vazio é feito usando a função interna make, que usa o tipo de mapa e uma sugestão de capacidade opcional como argumentos:
 
@@ -2657,7 +2657,7 @@ func main() {
 }
 ```
 
-saída:
+Saída:
 
 ```bash
 map[Italy:Roma France:Paris Japan:Toquio Brasil:Brasilia EUA:Washington, D.c]
