@@ -16,7 +16,7 @@ Após a conclusão do curso “Programação Go”, o aluno estará apto a desen
       - [Linguagem Go](#Linguagem-Go)
       - [Onde posso utilizar Go](#Onde-posso-utilizar-Go)      
       - [O inicio de tudo](#O-inicio-de-tudo)
-      - [Por que meu binário hello world é tão grande?](#Por-que-meu-binário-hello-world-é-tão-grande-?)
+      - [Por que meu binário hello world é tão grande?](#Por-que-meu-binário-hello-world-é-tão-grande?)
 - [Introdução a instalação](#Introdução-a-instalação)
   - [Instalação](#Instalação)
     - [Linux](#Linux)
