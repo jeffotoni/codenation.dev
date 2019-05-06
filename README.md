@@ -180,7 +180,8 @@ Um simples programa C "hello, world" compilado e linkado estaticamente usando o 
 
 Um programa Go compilado com gc pode ser vinculado ao sinalizador -ldflags=-w para desabilitar a geração de DWARF, removendo as informações de depuração do binário, mas sem nenhuma outra perda de funcionalidade. Isso pode reduzir substancialmente o tamanho binário.
 
-Ex:
+Exemplo:
+
 ```bash
 $ go build -ldflags=-w -o helo hello.go
 ```
@@ -255,6 +256,7 @@ Em seguida, faça o diretório src/hello dentro de sua área de trabalho e, ness
 O espaço de trabalho é o nosso local de trabalho, onde organizaremos nossos diretórios com nossos projetos. Como mostrado acima, até **Go versão 1.12** fomos forçados a fazer tudo no espaço de trabalho. $GOPATH abaixo do Projeto.
 
 **Exemplo Hello**
+
 ```bash
 $ export GOPATH=$HOME/go
 $ mkdir $HOME/go
@@ -271,6 +273,7 @@ $GOPATH/
 ```
 
 **Example Project**
+
 ```bash
 $ export GOPATH=$HOME/go
 $ mkdir $HOME/go/src/project1
@@ -1088,14 +1091,15 @@ PASS
 ok    command-line-arguments  0.001s
 ```
 
-The test package runs side-by-side with the go test command. The package test should have the suffix "\_test.go".
-We can split the tests into several files following this convention. For example: "myprog1_test.go" and "myprog2_test.go".
+O pacote de teste é executado lado a lado com o comando go test. O teste de pacote deve ter o sufixo "\ _test.go".
+Podemos dividir os testes em vários arquivos seguindo esta convenção. Por exemplo: "myprog1_test.go" and "myprog2_test.go".
 
-We should put our test functions in these test files.
+Devemos colocar nossas funções de teste nesses arquivos de teste.
 
-Each test function is an exported public function whose name begins with **"Test"**, accepts a pointer to a **testing.T** object, and returns nothing. Like this:
+Cada função de teste é uma função pública exportada cujo nome começa com **"Test"**, aceita um ponteiro para um objeto **testing.T** e não retorna nada. Como isso:
 
-Example one / myprog1_test:
+Exemplo 1 / myprog1_test:
+
 ```go
 package main
 
@@ -1110,7 +1114,8 @@ func TestWhatever(t *testing.T) {
 $ go test -v
 ```
 
-Output:
+Saída:
+
 ```bash
 === RUN   TestWhatever
 --- PASS: TestWhatever (0.00s)
@@ -1118,9 +1123,10 @@ PASS
 ok    command-line-arguments  0.001s
 ```
 
-The T object provides several methods that we can use to indicate failures or log errors.
+O objeto T fornece vários métodos que podemos usar para indicar falhas ou erros de log.
 
-Example two / myprog2_test:
+Exexmplo 2 / myprog2_test:
+
 ```go
 package main
 
@@ -1138,7 +1144,8 @@ func TestSum(t *testing.T) {
 $ go test -v
 ```
 
-Output:
+Saída:
+
 ```bash
 === RUN   TestSum
 -- FAIL: TestSum (0.00s)
@@ -1147,11 +1154,12 @@ FAIL
 FAIL  command-line-arguments  0.001s
 ```
 
-In this example we will make an examination as it would be in our projects.
+Neste exemplo, faremos uma examinação de como seria em nossos projetos.
 
-In this program I will pass parameter at compile time or in our execution to facilitate and also serve as an example the use of **"ldflags"** that we can use in both **go run -ldflags ** and **go build -ldflags**
+Neste programa vou passar parâmetro em tempo de compilação ou em nossa execução para facilitar e também servir como exemplo o uso de **"ldflags"** que podemos usar em **go run -ldflags** e **go build -ldflags**
 
-From a check in our code below / main.go:
+De um check-in em nosso código abaixo / main.go:
+
 ```go
 import "strconv"
 
@@ -1174,7 +1182,7 @@ func main() {
 }
 ```
 
-Now we have a Sum function in a pkg that we create in **pkg/math/sum.go**
+Agora temos uma função Soma em um pacote que criamos em **pkg/math/sum.go**
 
 ```go
 package math
@@ -1184,7 +1192,7 @@ func Sum(x, y int) int {
 }
 ```
 
-We created our test file in **pkg/math/sum_test.go**
+Criamos nosso arquivo de teste em **pkg/math/sum_test.go**
 
 ```go
 package math
@@ -1223,7 +1231,8 @@ $ cd pkg/math/
 $ go test -v
 ```
 
-Output:
+Saída:
+
 ```bash
 === RUN   TestSum
 === RUN   TestSum/test_1:_
@@ -1243,25 +1252,27 @@ exit status 1
 FAIL  github.com/jeffotoni/goworkshopdevops/examples/tests/pkg/pkg/math  0.001s
 ```
 
-It converts to json the output of the tests
+Converte para json a saída dos testes
 
 ```bash
 $ go test -v -json
 ```
 
-check your output on your terminal screen to view json output.
+Verifique sua saída na tela do seu terminal para ver a saída do json.
 
 ---
 
-Now that we've saved our pkg / math / sum.go let's do a main.go by making the call in this packet.
-But first let's run go mod to manage our packages and versions correctly.
+Agora que salvamos nosso pkg / math / sum.go, vamos fazer um main.go fazendo a chamada neste pacote.
+Mas primeiro vamos executar o go mod para gerenciar nossos pacotes e versões corretamente.
 
-Check the command below:
+Verifique o comando abaixo:
+
 ```bash
 $ go mod init github.com/jeffotoni/goworkshopdevops/examples/tests/pkg
 ```
 
-Output:
+Saída:
+
 ```bash
 go: finding github.com/jeffotoni/goworkshopdevops/examples/tests/pkg/math latest
 go: finding github.com/jeffotoni/goworkshopdevops/examples/tests latest
@@ -1271,14 +1282,16 @@ go: downloading github.com/jeffotoni/goworkshopdevops v0.0.0-20190127023912-a2fa
 0
 ```
 
-Now we can do **build** or **run** in our **main.go**.
-Let's run go run using the **"-ldflags"** flag to pass parameter to our code at compile time.
+Agora podemos fazer **build** ou **run** em nosso **main.go**.
+
+Vamos rodar para rodar usando o flag **"- ldflags"** para passar parâmetros para o nosso código em tempo de compilação.
 
 ```bash
 $ go run -ldflags "-X main.x=2 -X main.y=3" main.go
 ```
 
-Output:
+Saída:
+
 ```bash
 5
 ```
@@ -1287,7 +1300,8 @@ Output:
 $ go run -ldflags "-X main.x=7 -X main.y=3" main.go
 ```
 
-Output:
+Saída:
+
 ```bash
 10
 ```
