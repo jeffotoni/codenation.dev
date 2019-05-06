@@ -2443,16 +2443,17 @@ map[string]interface{}
 
 The number of map elements is called its length. For a map m, it can be discovered using the built-in function len and may change during execution. Elements may be added during execution using assignments and retrieved with index expressions; they may be removed with the delete built-in function.
 
-A new, empty map value is made using the built-in function make, which takes the map type and an optional capacity hint as arguments:
+Um novo valor de mapa vazio é feito usando a função interna make, que usa o tipo de mapa e uma sugestão de capacidade opcional como argumentos:
 
 ```bash
 make(map[string]int)
 make(map[string]int, 100)
 ```
 
-The initial capacity does not bound its size: maps grow to accommodate the number of items stored in them, with the exception of nil maps. A nil map is equivalent to an empty map except that no elements may be added.
+A capacidade inicial não vincula seu tamanho: os mapas crescem para acomodar o número de itens armazenados neles, com exceção dos mapas nulos. Um mapa nulo é equivalente a um mapa vazio, exceto que nenhum elemento pode ser adicionado.
 
-Some examples of map initialization:
+Alguns exemplos de inicialização de mapa:
+
 ```go
 package main
 
@@ -2498,12 +2499,14 @@ func main() {
 	fmt.Println(l)
 }
 ```
-Output:
+Saída:
+
 ```bash
 map[] map[] map[population:500000] map[population:500000] map[]
 ```
 
-A map is declared using the following syntax:
+Um mapa é declarado usando a seguinte sintaxe:
+
 ```go
 var m map[KeyType]ValueType
 
@@ -2511,9 +2514,10 @@ var m map[KeyType]ValueType
 var m map[string]int
 ```
 
-The zero value of a map is nil. A nil map has no keys. Moreover, any attempt to add keys to a nil map will result in a runtime error.
+O valor zero de um mapa é nulo. Um mapa nulo não possui chaves. Além disso, qualquer tentativa de adicionar chaves a um mapa nulo resultará em um erro de execução.
 
-Let’s see an example:
+Vamos ver um exemplo:
+
 ```go
 package main
 
@@ -2535,20 +2539,22 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 map[]
 is nil
 ```
 
-You can initialize a map using the built-in make() function. You just need to pass the type of the map to the make() function as in the example below. The function will return an initialized and ready to use map.
+Você pode inicializar um mapa usando a função interna make (). Você só precisa passar o tipo do mapa para a função make () como no exemplo abaixo. A função retornará um mapa inicializado e pronto para uso.
 
 ```go
 // Initializing a map using the built-in make() function
 var m = make(map[string]int)
 ```
 
-Example:
+Exemplo:
+
 ```go
 package main
 
@@ -2567,18 +2573,20 @@ func main() {
 	fmt.Println(m)
 }
 ```
-Output:
+Saída:
+
 ```bash
 map[]
 map[population:500000]
 ```
 
-The example below introduces the creation of a map getting a struct done.
-When do we use an empty struct?
-There are some scenarios when we have a large amount of access in our API, but when I say large is> 10k = 10k of requests per second, in this scenario when we do our handler, we can implement a channel receiving an empty struct {} so that we can get put on a channel and process everything in with more security.
-We will show more ahead this very legal approach.
+O exemplo abaixo introduz a criação de um mapa obtendo um struct feito.
+Quando usamos uma estrutura vazia?
+Existem alguns cenários em que temos uma grande quantidade de acesso em nossa API, mas quando digo grande é> 10k = 10k de solicitações por segundo, nesse cenário quando fazemos nosso manipulador, podemos implementar um canal recebendo uma estrutura vazia { } para que possamos colocar em um canal e processar tudo com mais segurança.
+Mostraremos mais adiante esta abordagem muito legal.
 
-Example:
+Exemplo:
+
 ```go
 package main
 
@@ -2596,15 +2604,16 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```go
 map[key:{}]
 ```
+Também podemos fazer com que nossa chave de mapa receba uma estrutura vazia.
+Bem, nós sabemos que ele recebe qualquer tipo, ou seja, a estrutura pode ser completa sem que seja feita também.
 
-we can also make our map key receive an empty struct.
-Well we know that it gets any type ie the struct can be complete without it's done too.
+Exemplo:
 
-Example:
 ```go
 type T struct{}
 
@@ -2620,14 +2629,15 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```go
 map[{}:{}]
 ```
 
 ### Map Literals Continued
 
-A map literal is a very convenient way to initialize a map with some data. You just need to pass the key-value pairs separated by colon inside curly braces.
+Um map literal é uma maneira muito conveniente de inicializar um mapa com alguns dados. Você só precisa passar os pares de valores-chave separados por dois pontos dentro de chaves.
 
 ```go
 package main
@@ -2647,19 +2657,21 @@ func main() {
 }
 ```
 
-Output:
+saída:
+
 ```bash
 map[Italy:Roma France:Paris Japan:Toquio Brasil:Brasilia EUA:Washington, D.c]
 ```
 
-So you can check for the existence of a key in a map by using the following two-value assignment.
-The boolean variable ok will be true if the key exists, and false otherwise.
+Assim, você pode verificar a existência de uma chave em um mapa usando a seguinte atribuição de dois valores.
+A variável booleana ok será verdadeira se a chave existir e, caso contrário, será falsa.
 
 ```go
 value, ok := m[key]
 ```
 
-Consider the following map for example:
+Considere o seguinte mapa, por exemplo:
+
 ```go
 var C = map[string]string{
 		"Brasil": "Brasilia",
@@ -2674,19 +2686,19 @@ var C = map[string]string{
 capital, ok := C["EUA"]  // "Washington, D.c", true
 ```
 
-However, If you try to access a key that doesn’t exist, then the map will return an empty string "" (zero value of strings), and false
+No entanto, se você tentar acessar uma chave que não existe, o mapa retornará uma string vazia "" (valor zero de strings) e false
 
 ```go
 capital, ok := C["África do Sul"]  // "", false
 ```
-
-You can delete a key from a map using the built-in delete() function. The syntax looks like this.
+Você pode excluir uma chave de um mapa usando a função integrada delete (). A sintaxe é assim.
 
 ```go
 // Delete the `key` from the `map`
 delete(map, key)
 ```
-Example:
+Exemplo:
+
 ```go
 package main
 
@@ -2706,12 +2718,14 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 map[Brasil:Brasilia EUA:Washington, D.c France:Paris]
 ```
  
-If the top-level type is just a type name, you can omit it from the elements of the literal. 
+Se o tipo de nível superior for apenas um nome de tipo, você poderá omiti-lo dos elementos do literal. 
+
 ```go
 package main
 
