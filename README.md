@@ -1325,9 +1325,9 @@ To avoid portability issues all numeric types are defined types and thus distinc
 
 ### String Types
 
-A string type represents the set of string values. A string value is a (possibly empty) sequence of bytes. Strings are immutable: once created, it is impossible to change the contents of a string. The predeclared string type is string; it is a defined type.
+Um tipo de string representa o conjunto de valores de string. Um valor de string é uma seqüência (possivelmente vazia) de bytes. As strings são imutáveis: uma vez criadas, é impossível alterar o conteúdo de uma string. O tipo de string pré-declarado é string; é um tipo definido.
 
-The length of a string s (its size in bytes) can be discovered using the built-in function len. The length is a compile-time constant if the string is a constant. A string's bytes can be accessed by integer indices 0 through len(s)-1. It is illegal to take the address of such an element; if s[i] is the i'th byte of a string, &s[i] is invalid. 
+O comprimento de uma string s (seu tamanho em bytes) pode ser descoberto usando a função interna len. O comprimento é uma constante de tempo de compilação se a string for uma constante. Os bytes de uma string podem ser acessados por índices inteiros de 0 a len (s) -1. É ilegal tomar o endereço de tal elemento; Se s [i] é o i'th byte de uma string, & s [i] é inválido.
 
 ```go
 package main
@@ -1360,7 +1360,7 @@ func main() {
   fmt.Printf("Unicode codepoint: %U\n", []rune(s))
 }
 ```
-Output:
+Saída:
 
 ```go
 @workshop-devOpsBh
@@ -1373,11 +1373,11 @@ Unicode codepoint: [U+65E5 U+672C U+8A9E]
 ```
 ### Pointer Types
 
-Struct fields can be accessed through a struct pointer.
+Campos de estrutura podem ser acessados através de um ponteiro de estrutura.
 
-To access the field X of a struct when we have the struct pointer p we could write (*p).X. However, that notation is cumbersome, so the language permits us instead to write just p.X, without the explicit dereference.
+Para acessar o campo X de uma struct quando tivermos o struct pointer p poderíamos escrever (* p) .X. No entanto, essa notação é incômoda, de modo que a linguagem nos permite escrever apenas p.X, sem a referência explícita.
 
-A pointer type denotes the set of all pointers to variables of a given type, called the base type of the pointer. The value of an uninitialized pointer is nil.
+Um tipo de ponteiro indica o conjunto de todos os ponteiros para variáveis de um determinado tipo, chamado tipo de base do ponteiro. O valor de um ponteiro não inicializado é nulo.
 
 ```bash
 PointerType = "*" BaseType .
@@ -1389,7 +1389,8 @@ BaseType    = Type .
 *[4]int
 ```
 
-Example:
+Exemplo:
+
 ```go
 package main
 
@@ -1408,16 +1409,18 @@ func main() {
   fmt.Println(p.Y)
 }
 ```
-Output:
+Saída:
+
 ```bash
 {1000000000 2}
 2
 ```
-For every type that is declared, either by you or the language itself, you get for free a complement pointer type you can use for sharing. There already exists a built-in type named int so there is a complement pointer type called *int.
+Para cada tipo declarado, seja por você ou pela própria linguagem, você obtém gratuitamente um tipo de ponteiro de complemento que você pode usar para compartilhar. Já existe um tipo embutido chamado int, então existe um tipo de ponteiro de complemento chamado * int.
 
-All pointer types have the same two characteristics. First, they start with the character *. Second, they all have the same memory size and representation, which is a 4 or 8 bytes that represent an address. On 32bit architectures (like the playground), pointers require 4 bytes of memory and on 64bit architectures (like your machine), they require 8 bytes of memory.
+Todos os tipos de ponteiro possuem as mesmas duas características. Primeiro, eles começam com o personagem *. Segundo, todos eles têm o mesmo tamanho de memória e representação, que são 4 ou 8 bytes que representam um endereço. Em arquiteturas de 32 bits (como o playground), ponteiros exigem 4 bytes de memória e em arquiteturas de 64 bits (como sua máquina), eles exigem 8 bytes de memória.
 
-Example:
+Exemplo:
+
 ```go
 package main
 
@@ -1431,14 +1434,15 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 inc:  Value Of[ 0xc000036778 ]  Addr Of[ 0xc000036780 ]  Value Points To[ 3 ]
 ```
 
-For an operand x of type T, the address operation &x generates a pointer of type *T to x. The operand must be addressable, that is, either a variable, pointer indirection, or slice indexing operation; or a field selector of an addressable struct operand; or an array indexing operation of an addressable array. As an exception to the addressability requirement, x may also be a (possibly parenthesized) composite literal. If the evaluation of x would cause a run-time panic, then the evaluation of &x does too.
+Para um operando x do tipo T, a operação de endereço & x gera um ponteiro do tipo * T para x. O operando deve ser endereçável, isto é, uma variável, indicação indireta de ponteiro ou operação de indexação de fatia; ou um seletor de campo de um operável struct endereçável; ou uma operação de indexação de matriz de uma matriz endereçável. Como uma exceção ao requisito de endereçamento, x também pode ser um literal composto (possivelmente entre parênteses). Se a avaliação de x causar um pânico em tempo de execução, a avaliação de & x também ocorrerá.
 
-For an operand x of pointer type *T, the pointer indirection *x denotes the variable of type T pointed to by x. If x is nil, an attempt to evaluate *x will cause a run-time panic.
+Para um operando x do tipo ponteiro * T, o indicador indireto * x denota a variável do tipo T apontada por x. Se x for nulo, uma tentativa de avaliar * x causará um pânico em tempo de execução.
 
 ```bash
 &x
@@ -1452,7 +1456,8 @@ var x *int = nil
 &*x  // causes a run-time panic
 ```
 
-See the example below:
+Veja o exemplo abaixo:
+
 ```go
 package main
 
@@ -1485,7 +1490,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 Address of a variable: c0000160c8
 Address stored in ip variable: c0000160c8
@@ -1496,7 +1502,7 @@ success pointer is nil
 
 ### Array Types
 
-An array is a numbered sequence of elements of a single type, called the element type. The number of elements is called the length and is never negative.
+Uma matriz é uma sequência numerada de elementos de um único tipo, denominada tipo de elemento. O número de elementos é chamado de comprimento e nunca é negativo.
 
 ```bash
 ArrayType   = "[" ArrayLength "]" ElementType .
@@ -1504,7 +1510,7 @@ ArrayLength = Expression .
 ElementType = Type .
 ```
 
-The length is part of the array's type; it must evaluate to a non-negative constant representable by a value of type int. The length of array a can be discovered using the built-in function len. The elements can be addressed by integer indices 0 through len(a)-1. Array types are always one-dimensional but may be composed to form multi-dimensional types.
+O comprimento é parte do tipo da matriz; deve avaliar a uma constante não negativa representável por um valor do tipo int. O comprimento do array a pode ser descoberto usando a função interna len. Os elementos podem ser endereçados pelos índices inteiros 0 a len (a) -1. Os tipos de matriz são sempre unidimensionais, mas podem ser compostos para formar tipos multidimensionais.
 
 ```
 [32]byte
@@ -1517,6 +1523,7 @@ The length is part of the array's type; it must evaluate to a non-negative const
 O comprimento de uma matriz é parte do seu tipo, portanto, as matrizes não podem ser redimensionadas. Isso parece limitante, mas não se preocupe; Go fornece uma maneira conveniente de trabalhar com matrizes.
 
 Exemplo:
+
 ```go
 package main
 
@@ -1537,20 +1544,21 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 [5 4 3 2 1]
 ```
 
 ### Slice Types
 
-A slice is a descriptor for a contiguous segment of an underlying array and provides access to a numbered sequence of elements from that array. A slice type denotes the set of all slices of arrays of its element type. The value of an uninitialized slice is nil. 
+Uma fatia é um descritor de um segmento contíguo de uma matriz subjacente e fornece acesso a uma seqüência numerada de elementos dessa matriz. Um tipo de fatia indica o conjunto de todas as fatias de matrizes de seu tipo de elemento. O valor de uma fatia não inicializada é nulo.
 
-An array has a fixed size. A slice, on the other hand, is a dynamically-sized, flexible view into the elements of an array. In practice, slices are much more common than arrays.
+Uma matriz tem um tamanho fixo. Uma fatia, por outro lado, é uma visão flexível, de tamanho dinâmico, dos elementos de uma matriz. Na prática, as fatias são muito mais comuns que as matrizes.
 
-The type **[]T** is a slice with elements of **type T**.
+O tipo **[] T** é uma fatia com elementos de **type T**.
 
-A slice is formed by specifying two indices, a low and high bound, separated by a colon:
+Uma fatia é formada especificando dois índices, um limite baixo e alto, separados por dois pontos:
 
 ```bash
 a[low : high]
@@ -1578,29 +1586,30 @@ func main() {
   fmt.Println(p)
 }
 ```
-Output:
+Saída:
+
 ```bash
 [5 7 11]
 ```
 
-A new, initialized slice value for a given element type T is made using the built-in function make, which takes a slice type and parameters specifying the length and optionally the capacity. A slice created with make always allocates a new, hidden array to which the returned slice value refers. That is, executing.
+Um novo valor de fatia inicializado para um determinado tipo de elemento T é feito usando a função interna make, que usa um tipo de fatia e parâmetros que especificam o comprimento e, opcionalmente, a capacidade. Uma fatia criada com make sempre aloca uma nova matriz oculta à qual o valor da fatia retornada se refere. Isto é, executando.
 
 ```bash
 make([]T, length, capacity)
 ```
 
-Produces the same slice as allocating an array and slicing it, so these two expressions are equivalent:
+Produz a mesma fatia como alocar uma matriz e fatiá-la, então essas duas expressões são equivalentes:
 
 ```bash
 make([]int, 50, 100)
 new([100]int)[0:50]
 ```
 
-Like arrays, slices are always one-dimensional but may be composed to construct higher-dimensional objects. With arrays of arrays, the inner arrays are, by construction, always the same length; however with slices of slices (or arrays of slices), the inner lengths may vary dynamically. Moreover, the inner slices must be initialized individually.
+Como matrizes, as fatias são sempre unidimensionais, mas podem ser compostas para construir objetos de dimensões mais altas. Com matrizes de matrizes, as matrizes internas são, por construção, sempre o mesmo comprimento; no entanto, com fatias de fatias (ou conjuntos de fatias), os comprimentos internos podem variar dinamicamente. Além disso, as fatias internas devem ser inicializadas individualmente.
 
- Slices can be created with the built-in make function; this is how you create dynamically-sized arrays.
+Fatias podem ser criadas com a função built-in make; É assim que você cria matrizes de tamanho dinâmico.
 
-The make function allocates a zeroed array and returns a slice that refers to that array: 
+A função make aloca uma matriz zerada e retorna uma fatia que se refere a essa matriz:
 
 ```go
 a := make([]int, 4)  // len(a)=4
@@ -1624,7 +1633,8 @@ func main() {
   fmt.Println("c", c)
 }
 ```
-Output:
+Saída:
+
 ```bash
 a [12 0 0 0]
 b []
@@ -1651,11 +1661,12 @@ Você pode criar uma fatia usando um literal de fatia como este -
 var s = []int{3, 5, 7, 9, 11, 13, 17}
 ```
 
-The expression on the right-hand side of the above statement is a slice literal. The slice literal is declared just like an array literal, except that you do not specify any size in the square brackets [].
+A expressão do lado direito da declaração acima é um literal de fatia. O literal de fatia é declarado como um literal de matriz, exceto que você não especifica nenhum tamanho entre colchetes [].
 
-When you create a slice using a slice literal, it first creates an array and then returns a slice reference to it.
+Quando você cria uma fatia usando um literal de fatia, ela primeiro cria uma matriz e, em seguida, retorna uma referência de fatia a ela.
 
-Let’s see:
+Vamos ver:
+
 ```go
 package main
 
@@ -1672,22 +1683,23 @@ func main() {
 	fmt.Println("t = ", t, len(t))
 }
 ```
-Output:
+Saída:
+
 ```bash
 s =  [@jeffotoni @awsbrasil @devopsbh @go_br] 4
 t =  [2 4 8 16 32 64] 6
 ```
 
-Since a slice is a segment of an array, we can create a slice from an array.
+Como uma fatia é um segmento de uma matriz, podemos criar uma fatia a partir de uma matriz.
 
-To create a slice from an array a, we specify two indices low (lower bound) and high (upper bound) separated by a colon
+Para criar uma fatia de uma matriz a, especificamos dois índices baixo (limite inferior) e alto (limite superior) separados por dois pontos
 
 ```bash
 // Obtaining a slice from an array `a`
 a[low:high]
 ```
 
-The above expression selects a slice from the array a. The resulting slice includes all the elements starting from index low to high, but excluding the element at index high.
+A expressão acima seleciona uma fatia da matriz a. A fatia resultante inclui todos os elementos, começando do índice baixo para o alto, mas excluindo o elemento no índice alto.
 
 ```go
 package main
@@ -1715,7 +1727,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 Array groups =  [@awsbrasil @devopsbh @go_br @devopsbr @docker] len: 5 cap: 5
 Slice s =  [@go_br @devopsbr @docker] len: 3 cap: 3
@@ -1725,15 +1738,15 @@ Slice s =  [@docker] len: 1 cap: 1
 Slice s =  [@go_br @devopsbr @docker] len: 3 cap: 3
 ```
 
-The copy() function copies elements from one slice to another. Its signature looks like this
+A função copy () copia elementos de uma fatia para outra. Sua assinatura se parece com isso:
 
 ```go
 func copy(dst, src []T) int
 ```
 
-It takes two slices - a destination slice, and a source slice. It then copies elements from the source to the destination and returns the number of elements that are copied.
+São necessárias duas fatias - uma fatia de destino e uma fatia de origem. Em seguida, copia elementos da origem para o destino e retorna o número de elementos copiados.
 
-Note that the elements are copied only if the destination slice has sufficient capacity.
+Observe que os elementos são copiados somente se a fatia de destino tiver capacidade suficiente.
 
 ```go
 package main
@@ -1753,25 +1766,27 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 src =  [Erlang Elixir Haskell Clojure Scala]
 dest =  [Erlang Elixir]
 Number of elements copied from src to dest =  2
 ```
-The append() function appends new elements at the end of a given slice. Following is the signature of append function.
+A função append () acrescenta novos elementos no final de uma determinada fatia. A seguir, a assinatura da função append.
 
 ```go
 func append(s []T, x ...T) []T
 ```
 
-It takes a slice and a variable number of arguments x …T. It then returns a new slice containing all the elements from the given slice as well as the new elements.
+É preciso uma fatia e um número variável de argumentos x… T. Em seguida, ele retorna uma nova fatia contendo todos os elementos da fatia especificada, bem como os novos elementos.
 
-If the given slice doesn’t have sufficient capacity to accommodate new elements then a new underlying array is allocated with bigger capacity. All the elements from the underlying array of the existing slice are copied to this new array, and then the new elements are appended.
+Se o segmento especificado não tiver capacidade suficiente para acomodar novos elementos, um novo array subjacente será alocado com maior capacidade. Todos os elementos da matriz subjacente da fatia existente são copiados para essa nova matriz e, em seguida, os novos elementos são anexados.
 
-However, if the slice has enough capacity to accommodate new elements, then the append() function re-uses its underlying array and appends new elements to the same array.
+No entanto, se a fatia tiver capacidade suficiente para acomodar novos elementos, a função append () reutilizará sua matriz subjacente e anexará novos elementos à mesma matriz.
 
-Let’s see an example:
+Vamos ver um exemplo:
+
 ```go
 package main
 
@@ -1795,7 +1810,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 slice1 = [Clojure Scala Elixir], len = 3, cap = 3
 slice2 = [Clojure Scala Elixir Assembly Rust Go], len = 6, cap = 6
@@ -1808,7 +1824,7 @@ s = [Java C Lisp Haskell], len = 4, cap = 4
 
 ### Struct Types
 
-A struct is a sequence of named elements, called fields, each of which has a name and a type. Field names may be specified explicitly (IdentifierList) or implicitly (EmbeddedField). Within a struct, non-blank field names must be unique.
+Uma struct é uma sequência de elementos nomeados, chamados de campos, cada um com um nome e um tipo. Nomes de campos podem ser especificados explicitamente (IdentifierList) ou implicitamente (EmbeddedField). Dentro de uma estrutura, os nomes de campos não vazios devem ser exclusivos.
 
 ```go
 StructType    = "struct" "{" { FieldDecl ";" } "}" .
@@ -1829,7 +1845,7 @@ struct {
 }
 ```
 
-A field declared with a type but no explicit field name is called an embedded field. An embedded field must be specified as a type name T or as a pointer to a non-interface type name *T, and T itself may not be a pointer type. The unqualified type name acts as the field name.
+Um campo declarado com um tipo, mas sem nome de campo explícito, é chamado de campo incorporado. Um campo incorporado deve ser especificado como um nome de tipo T ou como um ponteiro para um nome de tipo não-interface * T, e T em si não pode ser um tipo de ponteiro. O nome do tipo não qualificado atua como o nome do campo.
 
 ```go
 // A struct with four embedded fields of types T1, *T2, P.T3 and *P.T4
@@ -1842,7 +1858,7 @@ struct {
 }
 ```
 
-The following declaration is illegal because field names must be unique in a struct type:
+A declaração a seguir é ilegal porque os nomes de campo devem ser exclusivos em um tipo de estrutura:
 
 ```go
 struct {
@@ -1851,7 +1867,7 @@ struct {
   *P.T  // conflicts with embedded field T and *T
 }
 ```
-A struct is a collection of fields. 
+Uma estrutura é uma coleção de campos. 
 
 ```go
 package main
@@ -1870,15 +1886,16 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 {4 201}
 ```
 
 ### Struct in C 
 
-Before we will see the origin of everything in C, let's see the code written in C and the comments of how it would be in Golang.
-And we have it written in Golang, so that you can see how dynamic you were in Go, the C inheritance was simply fantastic and light.
+Antes de vermos a origem de tudo em C, vamos ver o código escrito em C e os comentários de como seria em Golang.
+E nós temos isso escrito em Golang, para que você possa ver como você estava dinâmico em Go, a herança C era simplesmente fantástica e leve.
 
 ```c
 #include <stdio.h>
@@ -1935,12 +1952,14 @@ func main() {
 }
 ```
 
-Compile the program in C:
+Compile o programa em C:
+
 ```
 $ gcc -o struct-1-c struct-1-c.c
 ```
 
-Output:
+Saída:
+
 ```bash
 login vals: jeffotoni jef@m.com
 pointerToLogin: 0x5627788a0260 pike pike@g.com
