@@ -16,8 +16,8 @@ Após a conclusão do curso “Programação Go”, o aluno estará apto a desen
       - [Linguagem Go](#Linguagem-Go)
       - [Onde posso utilizar Go](#Onde-posso-utilizar-Go)      
       - [O inicio de tudo](#O-inicio-de-tudo)
-      - [Por que meu binário hello world é tão grande](#Por-que-meu-binário-hello-world-é-tão-grande)
-- [Introdução a Instalação](#Introdução-a-Instalação)
+      - [Por que meu binário hello world é tão grande?](#Por-que-meu-binário-hello-world-é-tão-grande-?)
+- [Introdução a instalação](#Introdução-a-instalação)
   - [Instalação](#Instalação)
     - [Linux](#Linux)
     - [$GOPATH](#gopath)
@@ -140,7 +140,7 @@ para o código de máquina nativo.
 . Desktop Usando Qt+QML, Lib Nativa Win (example Qt, widgets Qt, Qml)
 ```
 
-### O Inicio de Tudo
+### O inicio de tudo
 
 Existem inúmeras linguagens de programação e cada uma nasceu com um propósito: “resolver problemas”. As linguagens são ferramentas onde teremos que saber utilizá-las no momento certo. Falando “como desenvolvedor” quanto mais poliglota conseguir ser melhor será para sua carreira profissional e para um melhor entendimento e compreensão da diversidade deste ecossistema.
 
@@ -171,7 +171,7 @@ Os criadores Rob Pike, Ken Thompson e Robert Griesemer mantiveram a sintaxe de G
 Go teve influências de diversas linguagens de programação e paradigmas diferentes dentre elas: Alef, APL, BCPL, C, CSP, Limbo, Modula, Newsqueak, Oberon, occam, Pascal, Smalltalk e Cristal, percebe-se que utilizaram do que tinham de melhor e criou algo novo e enxuto, com o mínimo necessário para resolver os problemas propostos, sem perder sua simplicidade. Acredito que isto podemos chamar de inovação. Go inovou ao quebrar os paradigmas de linguagens e implementar algo novo de forma simples e muito poderosa.
 
 
-### Por que meu binário hello world é tão grande ?
+### Por que meu binário hello world é tão grande?
 
 O vinculador no gc toolchain cria binários vinculados estaticamente por padrão. Portanto, todos os binários Go incluem o tempo de execução Go, juntamente com as informações do tipo em tempo de execução necessárias para oferecer suporte a verificações de tipos dinâmicos, reflexos e até mesmo rastreamentos de pilha em tempo de pânico.
 
@@ -184,7 +184,7 @@ Ex:
 $ go build -ldflags=-w -o helo hello.go
 ```
 
-### Introdução Instalação
+### Introdução a instalação
 
 Em golang a instalação é muito simples e prática, para Linux, Mac e Windows.
 
