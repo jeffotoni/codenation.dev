@@ -3305,10 +3305,10 @@ func main() {
 
 #### Control Switch Case Break
 
-4. A "switch" statement in which:
-      - there are no "break" statements referring to the "switch" statement,
-      - there is a default "case", and
-      - the statement lists in each case, including the default, end in a terminating statement, or a possibly labeled "fallthrough" statement.
+4. Uma declaração "switch" em que:
+      - não há declarações de "break" referentes à declaração "switch",
+      -existe um "case" padrão e
+      - as listas de instruções em cada caso, incluindo o padrão, terminam em uma instrução final, ou uma declaração "fallthrough" possivelmente rotulada.
 
 ```go
 package main
@@ -3349,7 +3349,8 @@ func f() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 here default
 i:  0
@@ -3362,7 +3363,7 @@ goto fim
 
 #### Etiqueta de Controle
 
-5. A labeled statement labeling a terminating statement.
+5. Uma instrução rotulada rotulando uma instrução final.
 
 ```go
 package main
@@ -3389,24 +3390,25 @@ func f(i int) {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 label fim i: 10
 ```
 
-All other statements are not terminating.
+Todas as outras declarações não terminam.
 
-A statement list ends in a terminating statement if the list is not empty and its final non-empty statement is terminating. 
+Uma lista de instruções termina em uma instrução final se a lista não estiver vazia e sua instrução final não vazia estiver sendo finalizada. 
 
-A "for" statement with a "range" clause iterates through all entries of an array, slice, string or map, or values received on a channel. For each entry it assigns iteration values to corresponding iteration variables if present and then executes the block. 
+Uma instrução "for" com uma cláusula "range" itera todas as entradas de uma matriz, fatia, string ou mapa ou valores recebidos em um canal. Para cada entrada, ele atribui valores de iteração a variáveis de iteração correspondentes, se presentes, e, em seguida, executa o bloco.
 
 ```bash
 RangeClause = [ ExpressionList "=" | IdentifierList ":=" ] "range" Expression .
 ```
 
-#### Faixa de Controle
+#### Controle Range
 
-The expression on the right in the "range" clause is called the range expression, which may be an array, pointer to an array, slice, string, map, or channel permitting receive operations. As with an assignment, if present the operands on the left must be addressable or map index expressions; they denote the iteration variables. If the range expression is a channel, at most one iteration variable is permitted, otherwise there may be up to two. If the last iteration variable is the blank identifier, the range clause is equivalent to the same clause without that identifier. 
+A expressão à direita na cláusula "range" é chamada de expressão de intervalo, que pode ser uma matriz, ponteiro para uma matriz, fatia, string, mapa ou canal que permite operações de recebimento. Como em uma atribuição, se presentes, os operandos à esquerda devem ser endereçáveis ou expressões de índice de mapa; eles denotam as variáveis de interação. Se a expressão de intervalo for um canal, no máximo uma variável de iteração será permitida, caso contrário, pode haver até duas. Se a última variável de iteração for o identificador em branco, a cláusula range é equivalente à mesma cláusula sem esse identificador.
 
 ```bash
 Range expression                          1st value          2nd value
@@ -3417,7 +3419,8 @@ map             m  map[K]V                key      k  K      m[k]       V
 channel         c  chan E, <-chan E       element  e  E
 ```
 
-See an example below, with various uses using Range:
+Veja um exemplo abaixo, com vários usos usando o Range:
+
 ```go
 
 package main
@@ -3499,7 +3502,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 [Erlang Elixir Haskell Clojure Scala]
 0 Erlang
@@ -3532,14 +3536,14 @@ fri 4
 ## Erros
 ---
  
- The predeclared type error is defined as 
+ O erro de tipo pré-declarado é definido como
 
  ```bash
  type error interface {
 	Error() string
 }
  ```
-It is the conventional interface for representing an error condition, with the nil value representing no error. For instance, a function to read data from a file might be defined: 
+É a interface convencional para representar uma condição de erro, com o valor inexistente representando nenhum erro. Por exemplo, uma função para ler dados de um arquivo pode ser definida:
 
 ```bash
 func Read(f *File, b []byte) (n int, err error)
@@ -3566,13 +3570,15 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 <nil>
 ```
 #### Como funciona o controle de erros
 
 Exemplo:
+
 ```go
 package main
 
@@ -3597,12 +3603,12 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 <nil>
 json: unsupported type: chan int
 ```
-
 #### Novos Erros
 
 ```go
@@ -3639,12 +3645,12 @@ func main() {
 	}
 }
 ```
-Output:
+Saída:
+
 ```bash
 Math: negative number passed to Sqrt [-33.00]
 Sqrt(81) = [ 9 ]
 ```
-
 #### Erros Personalizados
 
 ```go
@@ -3688,7 +3694,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 MyFunc worked in line:  200
 MyFunc failed: 99 - can't work with it
@@ -3721,7 +3728,8 @@ func main() {
     fmt.Printf("Area of circle: %0.2f", area)
 }
 ```
-Output:
+Saída:
+
 ```bash
 Area calculation failed, radius -80.00 is less than zero
 ```
@@ -3735,6 +3743,7 @@ Uma função tem um nome, uma lista de parâmetros de entrada separados por vír
 Os parâmetros de entrada e os tipos de retorno são opcionais para uma função.
 
 Exemplo de declarar e chamar funções em Golang:
+
 ```go
 func Sum(x float64, y float64) float64 {
 	return (x + y) / 2
@@ -3748,6 +3757,7 @@ Quando você tem vários parâmetros consecutivos do mesmo tipo, você pode omit
 Um tipo de função denota o conjunto de todas as funções com os mesmos tipos de parâmetros e resultados. O valor de uma variável não inicializada do tipo de função é nulo.
 
 Algumas possibilidades:
+
 ```bash
 func()
 func(x int) int
@@ -3772,7 +3782,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 Hello, @go_br
 ```
@@ -3809,7 +3820,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 @go_br
 100
@@ -3857,7 +3869,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 The Len of 2 is: [ C,C++ ]
 The Len of 3 is: [ Clojure,Elixir,Scala ]
@@ -3895,7 +3908,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 param is 432
 param is 874
@@ -3927,17 +3941,19 @@ func main() {
 }
 ```
 
-Output:
+saída:
+
 ```bash
 [206116 207025 7396 976144]
 ```
 
 #### Fechamentos
 
-Go supports anonymous functions, which can form closures. Anonymous functions are useful when you want to define a function inline without having to name it.
-This function intSeq returns another function, which we define anonymously in the body of intSeq. The returned function closes over the variable i to form a closure.
+Go suporta funções anônimas, que podem formar fechamentos. Funções anônimas são úteis quando você deseja definir uma função inline sem precisar nomeá-la.
+Esta função intSeq retorna outra função, que definimos anonimamente no corpo do intSeq. A função retornada se fecha sobre a variável i para formar um fechamento.
 
-Example:
+Exemplo:
+
 ```go
 package main
 
@@ -3964,7 +3980,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 5+15: 20
 6+10: 16
@@ -3975,6 +3992,7 @@ Output:
 Go suporta funções recursivas. Aqui está um exemplo fatorial clássico.
 
 Um exemplo simples:
+
 ```go
 package main
 
@@ -3992,12 +4010,14 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 5040
 ```
 
-Listing all subdirectories directories:
+Listando todos os diretórios de subdiretórios:
+
 ```go
 package main
 
@@ -4053,7 +4073,8 @@ func ListDir(rootpath string) []string {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 [0:$(pwd)/examples/bufio.writer===main.go]
 [1:$(pwd)/examples/error===error1.go]
@@ -4064,10 +4085,10 @@ Output:
 ...
 ```
 
-#### Funções Asynchronous
+#### Funções Assíncronas
 
-In golang to perform asynchronous functions we use the keyword **"go"** it is responsible for putting the functions to be executed concurrently.
-A **"go"** statement starts the execution of a function call as an independent concurrent thread of control, or goroutine, within the same address space. 
+No golang para executar funções assíncronas, usamos a palavra-chave **"go"**, que é responsável por colocar as funções a serem executadas simultaneamente.
+Uma instrução **"go"** inicia a execução de uma chamada de função como um encadeamento de controle concorrente independente, ou goroutine, dentro do mesmo espaço de endereço. 
 
 ```go
 GoStmt = "go" Expression .
@@ -4079,6 +4100,7 @@ go func(ch chan<- bool) { for { sleep(10); ch <- true }} (c)
 ```
 
 Exemplo:
+
 ```go
 
 package main
@@ -4118,14 +4140,16 @@ func main() {
 	fmt.Scanln(&input)
 }
 ```
-Output one:
+Saída 1:
+
 ```bash
 ponger
 pinger
 printer
 ```
 
-Output two:
+saída 2:
+
 ```bash
 pinger
 ponger
@@ -4134,17 +4158,18 @@ printer
 
 ## Defer
 
-A "defer" statement invokes a function whose execution is deferred to the moment the surrounding function returns, either because the surrounding function executed a return statement, reached the end of its function body, or because the corresponding goroutine is panicking. 
+Uma "defer" invoca uma função cuja execução é adiada para o momento em que a função circundante retorna, seja porque a função circundante executou uma instrução de retorno, atingiu o fim de seu corpo de função ou porque a gorout correspondente está em pânico.
 
 ```go
 DeferStmt = "defer" Expression .
 ```
 
-The expression must be a function or method call; it cannot be parenthesized. Calls of built-in functions are restricted as for expression statements.
+A expressão deve ser uma chamada de função ou método; não pode ser entre parênteses. Chamadas de funções internas são restritas como para instruções de expressão.
 
-Each time a "defer" statement executes, the function value and parameters to the call are evaluated as usual and saved anew but the actual function is not invoked. Instead, deferred functions are invoked immediately before the surrounding function returns, in the reverse order they were deferred. If a deferred function value evaluates to nil, execution panics when the function is invoked, not when the "defer" statement is executed. 
+Cada vez que uma instrução de "defer" é executada, o valor da função e os parâmetros da chamada são avaliados como de costume e salvos novamente, mas a função real não é invocada. Em vez disso, as funções diferidas são chamadas imediatamente antes da função circundante retornar, na ordem inversa em que foram adiadas. Se um valor de função diferido for avaliado como nulo, a execução entra em pane quando a função é invocada, e não quando a instrução "defer" é executada. 
 
 Exemplos:
+
 ```go
 defer unlock(l)
 defer myFunc()
