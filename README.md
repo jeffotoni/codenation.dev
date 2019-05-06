@@ -456,7 +456,7 @@ Vamos verificar como podemos fazer isso abaixo.
 
 Mais informações e detalhes você pode visitar este link: [hub.docker] (https://hub.docker.com/_/golang)
 
-### Instalar docker para Go
+### Instalar Docker para Go
 
 ```bash
 $ docker pull golang
@@ -474,7 +474,7 @@ Isso adicionará seu diretório atual como um volume ao contêiner, configurará
 $ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.12.4 make
 ```
 
-### Cross-compile Seu aplicativo dentro do contêiner Docker
+### Cross-compile seu aplicativo dentro do contêiner Docker
 Se você precisar compilar seu aplicativo para uma plataforma diferente de linux/amd64 (como windows/386):
 
 ```bash
@@ -482,7 +482,7 @@ $ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp -e GOOS=windows \
 -e GOARCH=386 golang:1.12.4 go build -v
 ```
 
-### Exemplo main.go
+#### Exemplo main.go
 
 Vamos fazer nosso programa de testes, vamos chamar isso de main.go
 
