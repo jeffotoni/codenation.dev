@@ -9,92 +9,95 @@ Curso de programação usando a linguagem Go abordando conceitos teóricos e pr�
 O objetivo deste curso é capacitar os profissionais para o desenvolvimento de aplicações em Go. Para isso, o curso abordará os principais conceitos e tecnologias utilizadas no jeito Go de fazer as coisas. Iremos reforçar as boas práticas de programação, falar um pouco de métodos ágeis e abordar em um contexto geral problemas e como podemos resolvê-los usando Go.
 Após a conclusão do curso “Programação Go”, o aluno estará apto a desenvolver aplicações na linguagem Go, com condição de continuar e explorar ainda mais os aspectos da linguagem.
 
-## MÓDULO 01 Introduço a Linguagem
+## MÓDULO 01 Introdução a Linguagem
 
-- [Overview](#overview)
+- [Overview](#Overview)
     - [Golang](#Golang)
       - [Linguagem Go](#Linguagem-Go)
       - [Onde posso utilizar Go](#Onde-posso-utilizar-Go)      
       - [O inicio de tudo](#O-inicio-de-tudo)
       - [Por que meu binário hello world é tão grande](#Por-que-meu-binário-hello-world-é-tão-grande)
-- [Introdução a Instalação](#Introdução-Instalação)
+- [Introdução a instalação](#Introdução-a-instalação)
   - [Instalação](#Instalação)
-    - [Linux](#linux)
+    - [Linux](#Linux)
     - [$GOPATH](#gopath)
-    - [Test your installation](#test-your-installation)
-    - [Workspace](#workspace)
-    - [Outside GOPATH](#outside-gopath)
-- [Instalação Docker](#Instalação-docker)
-	- [Instalar Docker to Golang](#instalar-docker-to-golang)
-	- [Compile your app Inside the Docker Container](#compile-your-app-inside-the-docker-container)
-	- [Cross-compile Your app Inside the Docker Container](#cross-compile-your-app-inside-the-docker-container)
-- [Introduction Golang](#introduction-golang)
-  - [Golang Language](#golang-language)
-    - [Keywords](#keywords)
-    - [Operators and Punctuation](#operators-and-punctuation)
-    - [Println Print](#println-print)
-    - [Bufio NewWriter](#bufio-newWriter)
-    - [Func Main](#func-main)
-- [Go Commands](#go-commands)
-   - [Go Commands Introduction](#go-commands-introduction)
-   - [Go Run](#go-run) 
-   - [Go Build](#go-build)
-   - [Go Install](#go-install)
-   - [Go Get](#go-get)
-   - [Go Mod](#go-mod)
-   - [Go Mod Init](#go-mod-init)
-   - [Go Mod Vendor](#go-mod-vendor)
-   - [GO111MODULE](#go111module)
-   - [Go Test](#go-test)
-- [Types](#types)
-   - [Numeric Types](#numeric-types)
-   - [String Types](#string-types)
-   - [Pointer Types](#pointer-types)
-   - [Array Types](#array-types)
-   - [Slice Types](#slice-types)
-   - [Struct Types](#struct-types)
-   - [Struct In C](#struct-in-c)
-   - [Struct Type Tags Json](#struct-type-tags-json)
-   - [Fatih Structs to Map](#fatih-structs-to-map)
-   - [Map Types](#map-types)
-   - [Map Literals Continued](#map-literals-continued)
-   - [Channel Types](#channel-types)
-   - [Blank Identifier](#blank-identifier)
-   - [Interface Types](#interface-types)
-	 - [Here's an Interface as a Method](#heres-an-interface-as-a-method)
-	 - [Interface as Type](#interface-as-type)
-- [Control Structures](#control-structures)
-  - [Control](#control)
-    - [Control Return](#control-return)
-    - [Control Goto](#control-goto)
-    - [Control if Else](#control-if-else)
-    - [Control For Break Continue](#control-for-break-continue)
-    - [Control Switch Case Break](#control-switch-case-break)
-    - [Control Label](#control-label)
-    - [Control Range](#control-range)
-- [Errors](#Errors)
-  - [Introduction Errors](#introduction-Errors)
-    - [How Error Control Works](#how-error-control-works)
-    - [Errors New](#errorsnew)
-    - [Custom Errors](#custom-errors)    
-    - [fmt Errorf](#fmt-errorf)
-- [Functions](#functions)
-  - [Introduction Function](#introduction-function)
-    - [Return Multiple Values](#return-multiple-values) 
-    - [Variadic Functions](#variadic-functions) 
-    - [Functions as a Parameter](#functions-as-a-parameter) 
-    - [Closures](#closures)
-    - [Recursion](#recursion)
-    - [Asynchronous Functions](#asynchronous-functions)
-- [Defer](#defer)
-- [Exercise one](#exercise-one)
+    - [Teste nossa instalação](#Teste-nossa-instalação)
+    - [Área de trabalho](#área-de-trabalho)
+    - [Fora de $GOPATH](#Fora-de-GOPATH)
+- [Instalação com Docker](#Instalação-com-Docker)
+	- [Instalar Docker para Go](#Instalar-Docker-para-Go)
+	- [Compile seu aplicativo dentro do contêiner Docker](#Compile-seu-aplicativo-dentro-do-contêiner-Docker)
+	- [Cross-compile seu aplicativo dentro do contêiner Docker](#Cross-compile-seu-aplicativo-dentro-do-contêiner-Docker)
+- [Introdução Golang](#Introdução-Golang)
+  - [Linguagem Golang](#Linguagem-Golang)
+    - [Keywords](#Keywords)
+    - [Operadores e Pontuação](#Operadores-e-Pontuação)
+    - [Println Print](#Println-Print)
+    - [Bufio NewWriter](#Bufio-NewWriter)
+    - [Func Main](#Func-Main)
+- [Comandos Go](#Comandos-Go)
+   - [Introdução aos comandos Go](#Introdução-aos-comandos-Go)
+   - [Go Run](#Go-Run) 
+   - [Go Build](#Go-Build)
+   - [Instalar Go](#Instalar-Go)
+   - [Go Get](#Go-Get)
+   - [Go Mod](#Go-Mod)
+   - [Go Mod Init](#Go-Mod-Init)
+   - [Go Mod Vendor](#Go-Mod-Vendor)
+   - [GO-1.11-Módulo](#Go-111-módulo)
+   - [Go Test](#Go-Test)
+
+## MÓDULO 02 Aprofundando na Linguagem
+
+- [Tipos](#Tipos)
+   - [Numeric Types](#Numeric-Types)
+   - [String Types](#String-Types)
+   - [Pointer Types](#Pointer-Types)
+   - [Array Types](#Array-Types)
+   - [Slice Types](#Slice-Types)
+   - [Struct Types](#Struct-Types)
+   - [Struct In C](#Struct-In-C)
+   - [Struct Type Tags Json](#Struct-Type-Tags-Json)
+   - [Fatih Structs to Map](#Fatih-Structs-to-Map)
+   - [Map Types](#Map-Types)
+   - [Map Literals Continued](#Map-Literals-Continued)
+   - [Channel Types](#Channel-Types)
+   - [Blank Identifier](#Blank-Identifier)
+   - [Tipos de interface](#Tipos-de-interface)
+	 - [Aqui está uma interface como um método](#Aqui-está-uma-interface-como-um-método)
+	 - [Interface como tipo](#Interface-como-tipo)
+- [Estruturas de Controle](#Estruturas-de-Controle)
+  - [Ao-Controle](#Ao-Controle)
+    - [Retorno de Controle](#Retorno-de-Controle)
+    - [Controle Goto](#Controle-Goto)
+    - [Control if Else](#Control-if-Else)
+    - [Control for break continue](#Control-for-break-continue)
+    - [Control switch case break](#Control-switch-case-break)
+    - [Etiqueta de Controle](#Etiqueta-de-Controle)
+    - [Faixa de Controle](#Faixa-de-Controle)
+- [Erros](#Erros)
+  - [Introdução aos Erros](#Introdução-aos-Erros)
+    - [Como funciona o controle de erros](#Como-funciona-o-controle-de-erros)
+    - [Novos Erros](#Novos-Erros)
+    - [Erros Personalizados](#Erros-Personalizados)    
+    - [fmt Errorf](#fmt-Errorf)
+- [Funções](#Funções)
+  - [Introução as Funções](#Introdução-as-Funções)
+    - [Retornar vários valores](#Retornar-vários-valores) 
+    - [Funções Variadic](#Funções-Variadic) 
+    - [Funções como um parâmetro](#Funções-como-um-parâmetro) 
+    - [Fechamentos](#Fechamentos)
+    - [Recursão](#Recursão)
+    - [Funções Asynchronous](#Funções-Asynchronous)
+- [Defer](#Defer)
+- [Exercício 1](#Exercício-1)
 
 
-### Overview
+## Overview
 
 ### Golang
 
-### Linguagem Go
+#### Linguagem Go
 
 Go é uma linguagem poderosa quando se trata de **concorrência e alto desempenho**, com uma arquitetura limpa e eficiente. Ela cresce ano após ano e todos os dias as comunidades crescem ainda mais.
 
@@ -123,7 +126,7 @@ Go não inclui uma máquina virtual. Os programas Go são compilados
 para o código de máquina nativo.
  ```
 
-#### Onde posso utilizar Go
+##### Onde posso utilizar Go:
 
 ```bash
 . Web backend (com diversos frameworks disponíveis)
@@ -138,7 +141,7 @@ para o código de máquina nativo.
 . Desktop Usando Qt+QML, Lib Nativa Win (example Qt, widgets Qt, Qml)
 ```
 
-### O Inicio de Tudo
+### O inicio de tudo
 
 Existem inúmeras linguagens de programação e cada uma nasceu com um propósito: “resolver problemas”. As linguagens são ferramentas onde teremos que saber utilizá-las no momento certo. Falando “como desenvolvedor” quanto mais poliglota conseguir ser melhor será para sua carreira profissional e para um melhor entendimento e compreensão da diversidade deste ecossistema.
 
@@ -169,7 +172,7 @@ Os criadores Rob Pike, Ken Thompson e Robert Griesemer mantiveram a sintaxe de G
 Go teve influências de diversas linguagens de programação e paradigmas diferentes dentre elas: Alef, APL, BCPL, C, CSP, Limbo, Modula, Newsqueak, Oberon, occam, Pascal, Smalltalk e Cristal, percebe-se que utilizaram do que tinham de melhor e criou algo novo e enxuto, com o mínimo necessário para resolver os problemas propostos, sem perder sua simplicidade. Acredito que isto podemos chamar de inovação. Go inovou ao quebrar os paradigmas de linguagens e implementar algo novo de forma simples e muito poderosa.
 
 
-### Por que meu binário hello world é tão grande ?
+#### Por que meu binário hello world é tão grande?
 
 O vinculador no gc toolchain cria binários vinculados estaticamente por padrão. Portanto, todos os binários Go incluem o tempo de execução Go, juntamente com as informações do tipo em tempo de execução necessárias para oferecer suporte a verificações de tipos dinâmicos, reflexos e até mesmo rastreamentos de pilha em tempo de pânico.
 
@@ -182,7 +185,7 @@ Ex:
 $ go build -ldflags=-w -o helo hello.go
 ```
 
-### Introdução Instalação
+## Introdução a instalação
 
 Em golang a instalação é muito simples e prática, para Linux, Mac e Windows.
 
@@ -196,7 +199,7 @@ Vamos dar uma olhada em como fazemos isso.
 Vamos baixar o arquivo, descompactá-lo e instalá-lo em/usr/local/go, se tivermos golang já instalado na máquina teremos que remover o existente para deixar nossa instalação como única.
 Vamos criar nosso diretório em nosso espaço de trabalho e testar para ver se tudo correu bem
 
-### Linux
+#### Linux
 
 ```bash
 $ sudo rm -rf/usr/local/go
@@ -204,7 +207,7 @@ $ wget https://dl.google.com/go/go1.12.4.linux-amd64.tar.gz
 $ sudo tar C/usr/local -xzf vai $ VERSION. $ OS- $ ARCH.tar.gz
 ```
 
-### $GOPATH
+#### $GOPATH
 
 $GOPATH é o golang em seu $HOME, isso é necessário para que seus projetos usem o pkg e construam corretamente. Isso era obrigatório para todas as versões anteriores à versão 1.11. O legal é que a partir de agora não teremos que criar projetos no $GOPATH, podemos criar em qualquer outro diretório que não esteja no $GOPATH.
 
@@ -232,7 +235,7 @@ $ echo "export PATH = $ CAMINHO:/usr/local/go/bin" >> $HOME/.zshrc
 $ echo "export PATH = $PATH: $GOPATH/bin" >> $HOME/.zshrc
 ```
 
-### Teste nossa instalação
+#### Teste nossa instalação
 
 Vamos executar a versão para ver se tudo está correto.
 
@@ -247,7 +250,7 @@ Crie o seu **espaço de trabalho** diretório, $HOME/go. (Se você quiser usar u
 
 Em seguida, faça o diretório src/hello dentro de sua área de trabalho e, nesse diretório, crie um arquivo chamado hello.go que se pareça com:
 
-### Área de trabalho
+#### Área de trabalho
 
 O espaço de trabalho é o nosso local de trabalho, onde organizaremos nossos diretórios com nossos projetos. Como mostrado acima, até **Go versão 1.12** fomos forçados a fazer tudo no espaço de trabalho. $GOPATH abaixo do Projeto.
 
@@ -323,7 +326,7 @@ Os caminhos do pacote são importantes para a ferramenta Ir. Usar "github.com/..
 
 No cenário acima, tudo teria que ficar em nosso **$GOPATH** para que nossos projetos funcionassem corretamente.
 
-### Fora de $GOPATH
+#### Fora de $GOPATH
 
 Agora podemos fazer nossos projetos sem estar em $GOPATH, podemos, por exemplo, fazê-lo em qualquer diretório.
 
@@ -444,7 +447,7 @@ GO111MODULE=on go run main.go
 GO111MODULE=on go build main.go
 ```
 
-### Instalação com Docker
+## Instalação com Docker
 
 Se não quisermos instalar diretamente em nosso sistema operacional golang, podemos instalá-lo em um contêiner docker.
 
@@ -454,7 +457,7 @@ Vamos verificar como podemos fazer isso abaixo.
 
 Mais informações e detalhes você pode visitar este link: [hub.docker] (https://hub.docker.com/_/golang)
 
-### Instalar docker para Go
+### Instalar Docker para Go
 
 ```bash
 $ docker pull golang
@@ -472,7 +475,7 @@ Isso adicionará seu diretório atual como um volume ao contêiner, configurará
 $ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.12.4 make
 ```
 
-### Cross-compile Seu aplicativo dentro do contêiner Docker
+### Cross-compile seu aplicativo dentro do contêiner Docker
 Se você precisar compilar seu aplicativo para uma plataforma diferente de linux/amd64 (como windows/386):
 
 ```bash
@@ -480,7 +483,7 @@ $ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp -e GOOS=windows \
 -e GOARCH=386 golang:1.12.4 go build -v
 ```
 
-### Exemplo main.go
+#### Exemplo main.go
 
 Vamos fazer nosso programa de testes, vamos chamar isso de main.go
 
@@ -516,20 +519,20 @@ go version go1.12.4 linux/amd64
 ```
 
 
-### Introduction Golang
+## Introdução Golang
 ---
 
-Go is a general-purpose language designed with systems programming in mind. It is strongly typed and garbage-collected and has explicit support for concurrent programming. 
-Programs are constructed from packages, whose properties allow efficient management of dependencies.
+Go é uma linguagem de propósito geral, projetada com a programação de sistemas em mente. É fortemente tipado e colecionador de lixo, e tem suporte explícito para programação concorrente. 
+Os programas são construídos a partir de pacotes, cujas propriedades permitem o gerenciamento eficiente de dependências.
 
-The grammar is compact and regular, allowing for easy analysis by automatic tools such as integrated development environments.
+A gramática é compacta e regular, permitindo fácil análise por ferramentas automáticas, como ambientes de desenvolvimento integrados.
 
-### Golang Language
+### Linguagem Golang
 ---
 
-### Keywords
+#### Keywords
 
-The following keywords are reserved and may not be used as identifiers. 
+As seguintes palavras-chave são reservadas e não podem ser usadas como identificadores:
 
 ```bash
 break        default      func         interface    select
@@ -539,9 +542,9 @@ const        fallthrough  if           range        type
 continue     for          import       return       var
 ```
 
-### Operators and Punctuation
+#### Operadores e Pontuação
 
-The following character sequences represent operators (including assignment operators) and punctuation: 
+As seqüências de caracteres a seguir representam operadores (incluindo operadores de atribuição) e pontuação: 
 
 ```bash
 +    &     +=    &=     &&    ==    !=    (    )
@@ -552,18 +555,17 @@ The following character sequences represent operators (including assignment oper
      &^          &^=
 ```
 
-### Println Print
+#### Println Print
 
-Let's learn how to send data to screen which is actually **stdout** standard output we will see more ahead with details on **stdout** and **stdin**.
+Vamos aprender como enviar dados para a tela que é, na verdade, **stdout** saída padrão, veremos mais detalhes sobre  **stdout** e **stdin**.
 
-Let's know **print, println and fmt.Println**
+Vamos conhecer **print, println and fmt.Println**
 
-Current implementations provide several built-in functions useful during bootstrapping. These functions are documented for completeness but are not guaranteed to stay in the language. They do not return a result. 
+As implementações atuais fornecem várias funções internas úteis durante o bootstrapping. Essas funções são documentadas para integridade, mas não garantem a permanência na linguagem. Eles não retornam um resultado. 
 
-Implementation restriction: **print** and **println** need not accept arbitrary argument types, but printing of boolean, numeric, and string types must be supported. 
+Restrição de implementação: **print** e **println** não precisa aceitar tipos arbitrários de argumentos, mas a impressão de tipos boolean, numeric, e string types deve ser suportada. 
 
-**println is an built-in function** (into the runtime) which may eventually be removed, while the **fmt package** is in the standard library, which will persist.
-
+**println is an built-in function** (into the runtime) que pode eventualmente ser removido, enquanto o **fmt package** está na biblioteca padrão, que persistirá.
 
 ```bash
 Function   Behavior
@@ -618,18 +620,18 @@ Output:
 debugging my system with fmt.Println
 ```
 
-The goal of starting and running the print, println or fmt.Println command is to help us with the tests we will be performing from now on at every step of our Go learning.
+O objetivo de iniciar e executar o comando print, println ou fmt.Println é nos ajudar com os testes que faremos a partir de agora em todas as etapas do nosso aprendizado Go.
 
 
-### Bufio NewWriter
+#### Bufio NewWriter
 
 ```bash
 bufio.Writer
 ```
 
-Doing many small writes can hurt performance. Each write is ultimately a syscall and if doing frequently can put burden on the CPU. Devices like disks work better dealing with block-aligned data. To avoid the overhead of many small write operations Golang is shipped with bufio.Writer. Data, instead of going straight to destination (implementing io.Writer interface) are first accumulated inside the buffer and send out when buffer is full:
+Fazer muitas gravações pequenas pode prejudicar o desempenho. Cada gravação é, em última instância, um syscall e se fazer com freqüência pode sobrecarregar a CPU. Dispositivos como discos funcionam melhor lidando com dados alinhados ao bloco. Para evitar a sobrecarga de muitas pequenas operações de gravação, o Golang é fornecido com o bufio.Writer. Os dados, em vez de ir diretamente para o destino (implementando a interface io.Writer) são acumulados primeiro dentro do buffer e enviados quando o buffer está cheio:
 
-Let’s visualise how buffering works with nine writes (one character each) when buffer has space for 4 characters:
+Vamos visualizar como o buffering funciona com nove gravações (um caractere cada) quando o buffer tem espaço para quatro caracteres:
 
 ```bash
 producer         buffer           destination (io.Writer)
@@ -645,7 +647,7 @@ producer         buffer           destination (io.Writer)
    i    ----->   i      ------>   abcdefgh
 ```
 
-Check out the example below
+Confira o exemplo abaixo:
 ```go
 package main
 
@@ -682,7 +684,7 @@ How many stars does Orion have?
 H
 ```
 
-### Func Main
+#### Func Main
 
 ```go
 package main
@@ -694,38 +696,38 @@ func main() {
 }
 ```
 
-Then **build** it with the **go tool**: 
+Então **build** com o **go tool**: 
 
 ```go
 $ cd $HOME/go/src/hello
 $ go build
 ```
 
-Or we can compile like this:
+Ou podemos compilar assim:
 ```go
 $ cd $HOME/go/src/hello
 $ go build -o hello hello.go
 ```
 
-The command above will build an executable named hello in the directory alongside your source code. Execute it to see the greeting: 
+O comando acima irá construir um executável chamado hello no diretório ao lado do seu código-fonte. Execute para ver a saudação:
 
 ```go
 $ ./hello
 hello, Gophers
 ```
 
-Check also the command **run** it with the go: 
+Verifique também o comando **run** com o go: 
 
 ```go
 $ go run hello.go
 hello, Gophers
 ```
 
-If you see the **"hello, Gophers"** message then your Go installation **is working**.
+Se você ver o **"hello, Gophers"** mensagem, em seguida, sua instalação Go **is working**.
 
 You can run **go install** to install the binary into your workspace's **bin** directory or **go clean -i** to remove it.
 
-Example: go install
+Exemplo: go install
 ```go
 $ pwd
 $ $HOME/go/src/hello
@@ -742,12 +744,12 @@ $ go clean -i
 $ ls -lhs $HOME/go/bin
 ```
 
-### Go Commands
+## Comandos Go
 ---
 
-### Go Commands Introduction
+### Introdução aos Comandos Go
 
-In golang we have an arsenal to help us when it comes to compiling, testing, documenting, managing Profiling etc.
+Em golang, temos um arsenal para nos ajudar quando se trata de compilar, testar, documentar, gerenciar perfis, etc.
 
 ```bash
 bug         start a bug report
@@ -769,28 +771,28 @@ version     print Go version
 vet         report likely mistakes in packages
 ```
 
-Use "go help " for more information about a command.
+Use "go help" para mais informações sobre um comando.
 
 
 ### Go Run
 ---
 
-Usage:
+Uso:
 ```bash
 go run [build flags] [-exec xprog] package [arguments...]
 ```
 
-Run compiles and runs the named main Go package. Typically the package is specified as a list of .go source files, but it may also be an import path, file system path, or pattern matching a single known package, as in 'go run .' or 'go run my/cmd'.
+Executar compila e executa o pacote principal chamado Go. Normalmente, o pacote é especificado como uma lista de arquivos de origem .go, mas também pode ser um caminho de importação, um caminho do sistema de arquivos ou um padrão que corresponda a um único pacote conhecido, como em 'go run .' ou 'go run my/cmd'.
 
-By default, 'go run' runs the compiled binary directly: 'a.out arguments...'. If the -exec flag is given, 'go run' invokes the binary using xprog: 
+Por padrão, 'go run' executa o binário compilado diretamente: 'a.out arguments...'. se o sinalizador -exec for fornecido, 'go run' invoca o binário usando xprog:
 
-If the -exec flag is not given, GOOS or GOARCH is different from the system default, and a program named go_$GOOS_$GOARCH_exec can be found on the current search path, 'go run' invokes the binary using that program, for example 'go_nacl_386_exec a.out arguments...'. This allows execution of cross-compiled programs when a simulator or other execution method is available.
+Se o sinalizador -exec não for fornecido, GOOS ou GOARCH será diferente do padrão do sistema, e um programa chamado go_ $ GOOS_ $ GOARCH_exec pode ser encontrado no caminho de busca atual, 'go run' invoca o binário usando esse programa, por exemplo, argumentos 'go_nacl_386_exec a.out...'. Isso permite a execução de programas compilados quando um simulador ou outro método de execução estiver disponível.
 
-The exit status of Run is not the exit status of the compiled binary.
+O status de saída de Executar não é o status de saída do binário compilado.
 
-For more about build flags, see 'go help build'. For more about specifying packages, see 'go help packages'.
+Para mais informações sobre sinalizadores de compilação, consulte 'go help build'. Para mais informações sobre como especificar pacotes, consulte 'go help packages'.
 
-See below an example:
+Veja abaixo um exemplo:
 
 ```go
 // test println
@@ -813,19 +815,18 @@ Debugging my system with println
 ### Go Build
 ---
 
-Build compiles the packages named by the import paths, along with their dependencies, but it does not install the results. 
+Build compila os pacotes nomeados pelos caminhos de importação, junto com suas dependências, mas não instala os resultados.
 
-When compiling packages, build ignores files that end in '_test.go'.
+Ao compilar pacotes, o build ignora os arquivos que terminam em '_test.go'.
 
-The -o flag, only allowed when compiling a single package, forces build to write the resulting executable or object to the named output file, instead of the default behavior described in the last two paragraphs.
+O -o flag, permitido somente ao compilar um único pacote, obriga a compilação a gravar o executável ou objeto resultante no arquivo de saída nomeado, em vez do comportamento padrão descrito nos dois últimos parágrafos.
 
-The -i flag installs the packages that are dependencies of the target.
+O -i flag instala os pacotes que são dependências do destino.
 
 ```go
 $ go build [-o output] [-i] [build flags] [packages]
 ```
-
-See an example:
+Veja um exemplo:
 ```go
 package main
 
@@ -841,7 +842,7 @@ Output:
 Workshop Golang 2019.
 ```
 
-Normal compilation
+Compilação normal
 ```go
 go build -o hello hello.go
 ```
@@ -853,7 +854,7 @@ $ ls -lh
 -rw-rw-r-- 1 root root   75 jan 17 12:04 hello.go
 ```
 
-Leaving the file smaller after compiling
+Deixando o arquivo menor após a compilação
 ```go
 go build -ldflags="-s -w" hello.go
 ```
@@ -865,35 +866,36 @@ $ ls -lh
 -rw-rw-r-- 1 root root   75 jan 17 12:04 hello.go
 ```
 
-### Go Install
+### Instalar Go 
 ---
 
-Install packages and dependencies
+Instalar pacotes e dependências
 
-Usage:
+Uso:
 ```bash
 $ go install [-i] [build flags] [packages]
 ```
 
-Install compiles and installs the packages named by the import paths.
+Instale compila e instala os pacotes nomeados pelos caminhos de importação.
 
-The **-i flag** installs the dependencies of the named packages as well.
+O **-i flag** instala as dependências dos pacotes nomeados também.
 
-For more about the build flags, see 'go help build'. For more about specifying packages, see 'go help packages'.
+Para mais sobre o build flags, confira 'go help build'. Para mais informações sobre como especificar pacotes, confira 'go help packages'.
 
 ### Go Get
 ---
 
-The **'go get'** command changes behavior depending on whether the go command is running in module-aware mode or legacy GOPATH mode. This help text, accessible as 'go help module-get' even in legacy GOPATH mode, describes 'go get' as it operates in module-aware mode.
+O **'go get'** comando muda o comportamento dependendo se o comando go está sendo executado no modo com reconhecimento de módulo ou no modo GOPATH herdado. Este texto de ajuda, acessível como 'go help module-get' mesmo em legado GOPATH mode, descreve 'go get' como opera em module-aware mode.
 
-Usage:
+Uso:
 ```bash
 $ go get [-d] [-m] [-u] [-v] [-insecure] [build flags] [packages]
 ```
 
-Get downloads the packages named by the import paths, along with their dependencies. It then installs the named packages, like 'go install'.
+Obtenha downloads dos pacotes nomeados pelos caminhos de importação, junto com suas dependências. Em seguida, instale os pacotes nomeados, como 'go install'.
 
-Look at the flags accepted below:
+Veja as bandeiras aceitas abaixo:
+
 ```bash
 The -d flag instructs get to stop after downloading the packages; that is, it instructs get not to install the packages.
 
@@ -910,7 +912,7 @@ The -u flag instructs get to use the network to update the named packages and th
 The -v flag enables verbose progress and debug output.
 ```
 
-Examples:
+Exemplos:
 ```bash
 $ go get -v github.com/guptarohit/asciigraph
 $ go get -u github.com/mxk/go-sqlite
@@ -922,18 +924,18 @@ $ go get -v github.com/sirupsen/logru
 ### Go Mod
 ---
 
-A module is a collection of related Go packages. Modules are the unit of source code interchange and versioning. The go command has direct support for working with modules, including recording and resolving dependencies on other modules. Modules replace the old GOPATH-based approach to specifying which source files are used in a given build. 
+Um módulo é uma coleção de pacotes Go relacionados. Módulos são a unidade de intercâmbio de código-fonte e controle de versão. O comando go tem suporte direto para trabalhar com módulos, incluindo gravação e resolução de dependências em outros módulos. Os módulos substituem a antiga abordagem baseada em GOPATH para especificar quais arquivos de origem são usados em uma determinada compilação.
 
-Usage:
+Uso:
 
 ```bash
 $ go mod <command> [arguments]
 ```
-A module is defined by a tree of Go source files with a **go.mod** file in the tree's root directory. The directory containing the go.mod file is called the module root. Typically the module root will also correspond to a source code repository root (but in general it need not). The module is the set of all Go packages in the module root and its subdirectories, but excluding subtrees with their own go.mod files.
+Um módulo é definido por uma árvore de arquivos de origem Go com um **go.mod** arquivo no diretório raiz da árvore. O diretório que contém o arquivo go.mod é chamado de raiz do módulo. Normalmente, a raiz do módulo também corresponderá a uma raiz de repositório de código-fonte (mas, em geral, não precisa). O módulo é o conjunto de todos os pacotes Go na raiz do módulo e em seus subdiretórios, mas excluindo subárvores com seus próprios arquivos go.mod.
 
-The "module path" is the import path prefix corresponding to the module root. The go.mod file defines the module path and lists the specific versions of other modules that should be used when resolving imports during a build, by giving their module paths and versions.
+O "module path" é o prefixo do caminho de importação correspondente à raiz do módulo. O arquivo go.mod define o caminho do módulo e lista as versões específicas de outros módulos que devem ser usados ao resolver importações durante uma construção, fornecendo seus caminhos e versões de módulo.
 
-For example, this go.mod declares that the directory containing it is the root of the module with path example.com/m, and it also declares that the module depends on specific versions of golang.org/x/text and gopkg.in/yaml.v2: 
+Por exemplo, este go.mod declara que o diretório que o contém é a raiz do módulo com o caminho example.com/m, e também declara que o módulo depende de versões específicas de golang.org/x/text and gopkg.in/yaml.v2: 
 
 ```bash
 $ go mod init github.com/user/gomyproject
@@ -954,7 +956,7 @@ In a project already using an existing dependency management tool like **godep, 
 
 Once the go.mod file exists, no additional steps are required: go commands like **'go build'**, **'go test'**, or even **'go list'** will automatically add new dependencies as needed to satisfy imports.
 
-The commands are: 
+Os comandos são: 
 
 ```bash
 download    download modules to local cache
@@ -966,14 +968,14 @@ vendor      make vendored copy of dependencies
 verify      verify dependencies have expected content
 why         explain why packages or modules are needed
 ```
-Use "go help mod <command>" for more information about a command.
+Use "go help mod <command>" para mais informações sobre um comando.
 
 
 ### Go Mod Init
 
-Initialize new module in current directory
+Inicializar novo módulo no diretório atual
 
-Usage:
+Uso:
 
 ```bash
 $ go mod init [module]
@@ -997,9 +999,8 @@ require (
 
 ### Go Mod Vendor
 
-The go mod vendor command will download all dependencies to the "vendor" directory.
-When using go mod init the packages are not in your directory.
-
+O comando go mod mod vendor baixará todas as dependências para o diretório "vendor".
+Ao usar o go mod mod, os pacotes não estão no seu diretório.
 ```bash
 $ cd gomyproject2
 $ go mod vendor
@@ -1013,7 +1014,7 @@ drwxrwxr-x 3 root root 4,0K jan 27 01:47 github.com
 -rw-rw-r-- 1 root root  137 jan 27 01:47 modules.txt
 ```
 
-### GO111MODULE
+### GO 1.11 Módulo
 
 Go 1.11 includes preliminary support for Go modules, including a new module-aware 'go get' command. We intend to keep revising this support, while preserving compatibility, until it can be declared official (no longer preliminary), and then at a later point we may remove support for work in GOPATH and the old 'go get' command.
 
@@ -1024,7 +1025,7 @@ For more fine-grained control, the module support in Go 1.11 respects a temporar
 In module-aware mode, GOPATH no longer defines the meaning of imports during a build, but it still stores downloaded dependencies (in GOPATH/pkg/mod) and installed commands (in GOPATH/bin, unless GOBIN is set).
 
 
-Check below how we use the command:
+Confira abaixo como usamos o comando:
 ```bash
 $ GO111MODULE=on go run myprogram.go
 $ GO111MODULE=on go build myprogram.go
@@ -1035,15 +1036,15 @@ When our project is not in our **$GOPATH** it is not necessary to use **GO111MOD
 ### Go Test
 ---
 
-Test packages
+Pacotes de teste
 
-Usage:
+Uso:
 
 ```go
 $ go test [build/test flags] [packages] [build/test flags & test binary flags]
 ```
 
-Go **test** automates testing the packages named by the import paths. It prints a summary of the test results in the format: 
+Go **test** automatiza o teste dos pacotes nomeados pelos caminhos de importação. Imprime um resumo dos resultados do teste no formato:
 
 ```bash
 === RUN   TestWhatever
@@ -1256,10 +1257,10 @@ Output:
 10
 ```
 
-## Lab 02 Types with Golang
+## MÓDULO 02 Aprofundando na Linguagem
 ---
 
-### Types
+## Tipos
 ---
 
 A type determines a set of values together with operations and methods specific to those values. A type may be denoted by a type name, if it has one, or specified using a type literal, which composes a type from existing types. 
@@ -1513,9 +1514,9 @@ The length is part of the array's type; it must evaluate to a non-negative const
 [2][2][2]float64  // same as [2]([2]([2]float64))
 ```
 
-An array's length is part of its type, so arrays cannot be resized. This seems limiting, but don't worry; Go provides a convenient way of working with arrays. 
+O comprimento de uma matriz é parte do seu tipo, portanto, as matrizes não podem ser redimensionadas. Isso parece limitante, mas não se preocupe; Go fornece uma maneira conveniente de trabalhar com matrizes.
 
-Example:
+Exemplo:
 ```go
 package main
 
@@ -1555,15 +1556,15 @@ A slice is formed by specifying two indices, a low and high bound, separated by 
 a[low : high]
 ```
 
-This selects a half-open range which includes the first element, but excludes the last one.
+Isso seleciona um intervalo half-open que inclui o primeiro elemento, mas exclui o último.
 
-The following expression creates a slice which includes elements 1 through 3 of a: 
+A expressão a seguir cria uma fatia que inclui os elementos de 1 a 3 de um:
 
 ```bash
 a[1:4]
 ```
 
-Example:
+Exemplo:
 
 ```go
 package main
@@ -1604,7 +1605,7 @@ The make function allocates a zeroed array and returns a slice that refers to th
 ```go
 a := make([]int, 4)  // len(a)=4
 ```
-Example:
+Exemplo:
 
 ```go
 package main
@@ -1630,7 +1631,7 @@ b []
 c [0 0]
 ```
 
-A slice of type T is declared using []T. For example, Here is how you can declare a slice of type int -
+Uma fatia do tipo T é declarada usando [] T. Por exemplo, aqui está como você pode declarar uma fatia do tipo int -
 
 ```go
 // Slice of type `int`
@@ -1643,7 +1644,7 @@ var slice []string
 var lang = [...]string{"Erlang", "Elixir", "Haskell", "Clojure", "Scala"}
 ```
 
-You can create a slice using a slice literal like this -
+Você pode criar uma fatia usando um literal de fatia como este -
 
 ```go
 // Creating a slice using a slice literal
@@ -2004,9 +2005,10 @@ pointerToLogin: &{pike pike@g.com} pike pike@g.com
 
 ### Struct Type Tags Json
 
-We use json tags with omitempty or not to represent our json string, when generated by **json.Marshal** which we will see soon below.
+Usamos tags json com omitempty ou não para representar nossa string json, quando geradas pelo **json.Marshal**, que veremos logo abaixo.
 
-Example:
+Exemplo:
+
 ```go
 import (
 	//"encoding/json"
@@ -2042,13 +2044,14 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 { 23 {20 60}}
 ```
 
-In this example we have a struct "ApiLogin" and inside it we have And1 \*struct", ie, referencing a pointer from another struct, beautiful is not.
-To initialize and access the "And1" field, we have to use the "&" operator and create the struct at its initialization because it has not been defined yet so it would look like this: **"And1: & struct {City string} {City: "BH"}"**
+Neste exemplo temos uma estrutura "ApiLogin" e dentro dela temos And1 \ * struct ", ou seja, referenciando um ponteiro de outra struct, beautiful não é.
+Para inicializar e acessar o campo "And1", temos que usar o operador "&" e criar a estrutura em sua inicialização, porque ela ainda não foi definida, então ficaria assim: **"And1: & struct {City string} {City: "BH"}"**
 ```go
 type ApiLogin struct {
 	And1  *struct {
@@ -2057,15 +2060,17 @@ type ApiLogin struct {
 }
 ```
 
-In this example we only time the pointer of a struct already defined above.
-To access it we do not need to create it again, just refer to it with "&" and this way "And2: &Address{}", very nice, right?
+Neste exemplo, só damos tempo ao ponteiro de uma estrutura já definida acima.
+Para acessá-lo não precisamos criá-lo novamente, basta se referir a ele com "&" e assim "And2: & Address {}", muito legal, certo?
+
 ```go
 type ApiLogin struct {
 	And2 *Address
 }
 ```
 
-The example below is a way to display various forms of initialization using struct.
+O exemplo abaixo é uma maneira de exibir várias formas de inicialização usando struct.
+
 ```go
 package main
 
@@ -2163,7 +2168,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 &{@jeffotoni 093.393.334-34   0xc00000e1e0 <nil> []}
 @jeffotoni
@@ -2188,10 +2194,11 @@ BH
 {    <nil> <nil> [{Sao Paulo  } {Brasilia  }]}
 ```
 
-The example below is to demonstrate the ease we have when we manipulate structs in Golang.
-We are initializing the struct with values and displaying on the screen.
+O exemplo abaixo é para demonstrar a facilidade que temos quando manipulamos estruturas em Golang.
+Estamos inicializando a estrutura com valores e exibindo na tela.
 
-Take a look:
+Dê uma olhada:
+
 ```go
 package main
 
@@ -2216,10 +2223,11 @@ func main() {
 &[{some data} {some more data} {some more data}]
 ```
 
-In our example below is another way to make array of struct, we made the statement at the time of initializing our struct, this causes that the struct does not get caught in only accepting array of struct.
-We did append in the fields and the magic happens.
+Em nosso exemplo abaixo é outra maneira de fazer array de struct, fizemos a declaração no momento de inicializar nossa struct, isso faz com que a struct não seja pego apenas em aceitar array de struct.
+Nós acrescentamos nos campos e a mágica acontece.
 
-Let's take a look at the complete code:
+Vamos dar uma olhada no código completo:
+
 ```go
 package main
 
@@ -2261,7 +2269,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 [0xc000060150 0xc000060180]
 0 &{Jefferson otoni 350}
@@ -2274,7 +2283,8 @@ Hob
 55
 ```
 
-Example Struct AWS Sqs Json
+Exemplo de estrutura AWS Sqs Json
+
 ```go
 type SqsJson struct {
 	Type      string `json:"type"`
@@ -2330,24 +2340,26 @@ type JsonMessage struct {
 }
 ```
 
-When the subject is struct we have several possibilities to deal with and work with this feature in Golang, it is practically embedded in everything we will build in Golang, Structs is something powerful in Go to manipulate data and send data all the time between channels using goroutine, be it in queues, database recordings, json and database reads, GraphQL, REST API, SOAP etc ...
+Quando o assunto é struct temos várias possibilidades de lidar e trabalhar com esse recurso em Golang, ele está praticamente embutido em tudo que vamos construir em Golang, Structs é algo poderoso em Go manipular dados e enviar dados o tempo todo entre canais usando goroutine, seja em filas, gravações de banco de dados, json e leituras de banco de dados, GraphQL, REST API, SOAP etc ...
 
 
 ### Fatih Structs to Map
 
-Below is a lib that works directly with struct, converting to Maps.
-I do not use it in production but for our course it is interesting to analyze.
-We know that the more native we are in Golang it will be a good option, but at times we will need some libs to help us.
-This project is not maintained anymore and is archived. Feel free to fork and make your own changes if needed.
+Abaixo está uma biblioteca que trabalha diretamente com struct, convertendo para o Maps.
+Eu não uso na produção, mas para o nosso curso é interessante analisar.
+Sabemos que quanto mais nativos somos em Golang, será uma boa opção, mas às vezes precisaremos de algumas libs para nos ajudar.
+Este projeto não é mais mantido e é arquivado. Sinta-se à vontade para bifurcar e fazer suas próprias alterações, se necessário.
 
-Structs contains various utilities to work with Go (Golang) structs. It was initially used by me to convert a struct into a map[string]interface{}. With time I've added other utilities for structs. It's basically a high level package based on primitives from the reflect package. Feel free to add new functions or improve the existing code.
+Structs contém vários utilitários para trabalhar com estruturas Go (Golang). Ele foi inicialmente usado por mim para converter uma estrutura em uma interface {string] do mapa {}. Com o tempo, adicionei outros utilitários para estruturas. É basicamente um pacote de alto nível baseado em primitivas do pacote reflect. Sinta-se à vontade para adicionar novas funções ou melhorar o código existente.
 
-Install
+Instalar
+
 ```go
 go get github.com/fatih/structs
 ```
 
-To test low rotate the code below:
+Para testar baixo, gire o código abaixo:
+
 ```go
 
 type Server struct {
@@ -2406,7 +2418,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 &{gopher 12345678 true [jeffotoni pike dennis ken] 
 { <nil> <nil> 0s 0s 0s 0s 0 map[] <nil> <nil> 0 0 {{0 0} 0} <nil> {0 0} map[] map[] <nil> []}}
@@ -2425,14 +2438,14 @@ true
 
 ### Map Types
 
-A map is an unordered group of elements of one type, called the element type, indexed by a set of unique keys of another type, called the key type. The value of an uninitialized map is nil.
+Um mapa é um grupo não ordenado de elementos de um tipo, chamado de tipo de elemento, indexado por um conjunto de chaves exclusivas de outro tipo, chamado de tipo de chave. O valor de um mapa não inicializado é nulo.
 
 ```bash
 MapType     = "map" "[" KeyType "]" ElementType .
 KeyType     = Type .
 ```
 
-The comparison operators == and != must be fully defined for operands of the key type; thus the key type must not be a function, map, or slice. If the key type is an interface type, these comparison operators must be defined for the dynamic key values; failure will cause a run-time panic.
+Os operadores de comparação == e! = Devem ser totalmente definidos para operandos do tipo de chave; Assim, o tipo de chave não deve ser uma função, mapa ou fatia. Se o tipo de chave for um tipo de interface, esses operadores de comparação devem ser definidos para os valores de chave dinâmica; falha causará um pânico em tempo de execução.
 
 ```bash
 map[string]int
@@ -2440,18 +2453,19 @@ map[*T]struct{ x, y float64 }
 map[string]interface{}
 ```
 
-The number of map elements is called its length. For a map m, it can be discovered using the built-in function len and may change during execution. Elements may be added during execution using assignments and retrieved with index expressions; they may be removed with the delete built-in function.
+O número de elementos do mapa é chamado seu comprimento. Para um mapa m, ele pode ser descoberto usando a função interna len e pode mudar durante a execução. Elementos podem ser adicionados durante a execução usando atribuições e recuperados com expressões de índice; eles podem ser removidos com a função integrada de exclusão.
 
-A new, empty map value is made using the built-in function make, which takes the map type and an optional capacity hint as arguments:
+Um novo valor de mapa vazio é feito usando a função interna make, que usa o tipo de mapa e uma sugestão de capacidade opcional como argumentos:
 
 ```bash
 make(map[string]int)
 make(map[string]int, 100)
 ```
 
-The initial capacity does not bound its size: maps grow to accommodate the number of items stored in them, with the exception of nil maps. A nil map is equivalent to an empty map except that no elements may be added.
+A capacidade inicial não vincula seu tamanho: os mapas crescem para acomodar o número de itens armazenados neles, com exceção dos mapas nulos. Um mapa nulo é equivalente a um mapa vazio, exceto que nenhum elemento pode ser adicionado.
 
-Some examples of map initialization:
+Alguns exemplos de inicialização de mapa:
+
 ```go
 package main
 
@@ -2497,12 +2511,14 @@ func main() {
 	fmt.Println(l)
 }
 ```
-Output:
+Saída:
+
 ```bash
 map[] map[] map[population:500000] map[population:500000] map[]
 ```
 
-A map is declared using the following syntax:
+Um mapa é declarado usando a seguinte sintaxe:
+
 ```go
 var m map[KeyType]ValueType
 
@@ -2510,9 +2526,10 @@ var m map[KeyType]ValueType
 var m map[string]int
 ```
 
-The zero value of a map is nil. A nil map has no keys. Moreover, any attempt to add keys to a nil map will result in a runtime error.
+O valor zero de um mapa é nulo. Um mapa nulo não possui chaves. Além disso, qualquer tentativa de adicionar chaves a um mapa nulo resultará em um erro de execução.
 
-Let’s see an example:
+Vamos ver um exemplo:
+
 ```go
 package main
 
@@ -2534,20 +2551,22 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 map[]
 is nil
 ```
 
-You can initialize a map using the built-in make() function. You just need to pass the type of the map to the make() function as in the example below. The function will return an initialized and ready to use map.
+Você pode inicializar um mapa usando a função interna make (). Você só precisa passar o tipo do mapa para a função make () como no exemplo abaixo. A função retornará um mapa inicializado e pronto para uso.
 
 ```go
 // Initializing a map using the built-in make() function
 var m = make(map[string]int)
 ```
 
-Example:
+Exemplo:
+
 ```go
 package main
 
@@ -2566,18 +2585,20 @@ func main() {
 	fmt.Println(m)
 }
 ```
-Output:
+Saída:
+
 ```bash
 map[]
 map[population:500000]
 ```
 
-The example below introduces the creation of a map getting a struct done.
-When do we use an empty struct?
-There are some scenarios when we have a large amount of access in our API, but when I say large is> 10k = 10k of requests per second, in this scenario when we do our handler, we can implement a channel receiving an empty struct {} so that we can get put on a channel and process everything in with more security.
-We will show more ahead this very legal approach.
+O exemplo abaixo introduz a criação de um mapa obtendo um struct feito.
+Quando usamos uma estrutura vazia?
+Existem alguns cenários em que temos uma grande quantidade de acesso em nossa API, mas quando digo grande é> 10k = 10k de solicitações por segundo, nesse cenário quando fazemos nosso manipulador, podemos implementar um canal recebendo uma estrutura vazia { } para que possamos colocar em um canal e processar tudo com mais segurança.
+Mostraremos mais adiante esta abordagem muito legal.
 
-Example:
+Exemplo:
+
 ```go
 package main
 
@@ -2595,15 +2616,16 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```go
 map[key:{}]
 ```
+Também podemos fazer com que nossa chave de mapa receba uma estrutura vazia.
+Bem, nós sabemos que ele recebe qualquer tipo, ou seja, a estrutura pode ser completa sem que seja feita também.
 
-we can also make our map key receive an empty struct.
-Well we know that it gets any type ie the struct can be complete without it's done too.
+Exemplo:
 
-Example:
 ```go
 type T struct{}
 
@@ -2619,14 +2641,15 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```go
 map[{}:{}]
 ```
 
 ### Map Literals Continued
 
-A map literal is a very convenient way to initialize a map with some data. You just need to pass the key-value pairs separated by colon inside curly braces.
+Um map literal é uma maneira muito conveniente de inicializar um mapa com alguns dados. Você só precisa passar os pares de valores-chave separados por dois pontos dentro de chaves.
 
 ```go
 package main
@@ -2646,19 +2669,21 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 map[Italy:Roma France:Paris Japan:Toquio Brasil:Brasilia EUA:Washington, D.c]
 ```
 
-So you can check for the existence of a key in a map by using the following two-value assignment.
-The boolean variable ok will be true if the key exists, and false otherwise.
+Assim, você pode verificar a existência de uma chave em um mapa usando a seguinte atribuição de dois valores.
+A variável booleana ok será verdadeira se a chave existir e, caso contrário, será falsa.
 
 ```go
 value, ok := m[key]
 ```
 
-Consider the following map for example:
+Considere o seguinte mapa, por exemplo:
+
 ```go
 var C = map[string]string{
 		"Brasil": "Brasilia",
@@ -2673,19 +2698,19 @@ var C = map[string]string{
 capital, ok := C["EUA"]  // "Washington, D.c", true
 ```
 
-However, If you try to access a key that doesn’t exist, then the map will return an empty string "" (zero value of strings), and false
+No entanto, se você tentar acessar uma chave que não existe, o mapa retornará uma string vazia "" (valor zero de strings) e false
 
 ```go
 capital, ok := C["África do Sul"]  // "", false
 ```
-
-You can delete a key from a map using the built-in delete() function. The syntax looks like this.
+Você pode excluir uma chave de um mapa usando a função integrada delete (). A sintaxe é assim.
 
 ```go
 // Delete the `key` from the `map`
 delete(map, key)
 ```
-Example:
+Exemplo:
+
 ```go
 package main
 
@@ -2705,12 +2730,14 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 map[Brasil:Brasilia EUA:Washington, D.c France:Paris]
 ```
  
-If the top-level type is just a type name, you can omit it from the elements of the literal. 
+Se o tipo de nível superior for apenas um nome de tipo, você poderá omiti-lo dos elementos do literal. 
+
 ```go
 package main
 
@@ -2738,21 +2765,20 @@ map[jeffotoni:{jeffotoni jeff jeff@gm.com} Google:{root super google@gm.com}]
 
 ### Channel Types
 
-A channel provides a mechanism for concurrently executing functions to communicate by sending and receiving values of a specified element type. The value of an uninitialized channel is nil.
+Um canal fornece um mecanismo para a execução simultânea de funções para comunicação, enviando e recebendo valores de um tipo de elemento especificado. O valor de um canal não inicializado é nulo.
 
 ```bash
 ChannelType = ( "chan" | "chan" "<-" | "<-" "chan" ) ElementType .
 ```
 
-The optional <- operator specifies the channel direction, send or receive. If no direction is given, the channel is bidirectional. A channel may be constrained only to send or only to receive by conversion or assignment.
+O operador <- opcional especifica a direção do canal, enviar ou receber. Se nenhuma direção for dada, o canal é bidirecional. Um canal pode ser restrito apenas para enviar ou receber apenas por conversão ou atribuição.
 
 ```bash
 chan T          // can be used to send and receive values of type T
 chan<- float64  // can only be used to send float64s
 <-chan int      // can only be used to receive ints
 ```
-
-The <- operator associates with the leftmost chan possible:
+O operador <- se associa ao canal mais à esquerda possível:
 
 ```bash
 chan<- chan int    // same as chan<- (chan int)
@@ -2761,19 +2787,20 @@ chan<- <-chan int  // same as chan<- (<-chan int)
 chan (<-chan int)
 ```
 
-A new, initialized channel value can be made using the built-in function make, which takes the channel type and an optional capacity as arguments:
+Um novo valor de canal inicializado pode ser feito usando a função interna make, que aceita o tipo de canal e uma capacidade opcional como argumentos:
 
 ```bash
 make(chan int, 100)
 ```
 
-The capacity, in number of elements, sets the size of the buffer in the channel. If the capacity is zero or absent, the channel is unbuffered and communication succeeds only when both a sender and receiver are ready. Otherwise, the channel is buffered and communication succeeds without blocking if the buffer is not full (sends) or not empty (receives). A nil channel is never ready for communication.
+A capacidade, em número de elementos, define o tamanho do buffer no canal. Se a capacidade for zero ou ausente, o canal não será buffer e a comunicação será bem-sucedida somente quando o remetente e o receptor estiverem prontos. Caso contrário, o canal é armazenado em buffer e a comunicação é bem-sucedida sem bloqueio se o buffer não estiver cheio (envia) ou não estiver vazio (recebe). Um canal nulo nunca está pronto para comunicação.
 
-A channel may be closed with the built-in function close. The multi-valued assignment form of the receive operator reports whether a received value was sent before the channel was closed.
+Um canal pode ser fechado com a função interna fechada. O formulário de atribuição de valor múltiplo do operador de recebimento informa se um valor recebido foi enviado antes do canal ser fechado.
 
-A single channel may be used in send statements, receive operations, and calls to the built-in functions cap and len by any number of goroutines without further synchronization. Channels act as first-in-first-out queues. For example, if one goroutine sends values on a channel and a second goroutine receives them, the values are received in the order sent.
+A single channel may be used in send statements, receive operations, and calls to the built-in functions cap and len by any number of goroutines without further synchronization. Channels act as first-in-first-out queues. Por exemplo, se uma goroutine enviar valores em um canal e uma segunda goroutine os receber, os valores serão recebidos na ordem enviada.
 
-Let me show you an example:
+Deixe-me mostrar-lhe um exemplo:
+
 ```go
 
 package main
@@ -2851,7 +2878,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 0xc000056180 0x55bb00 okay
 0xc0000561e0 0x55bb28 2019-01-25 15:11:41.982906669 -0200 -02 m=+0.000147197
@@ -2863,9 +2891,10 @@ Output:
 
 ### Blank Identifier
 
-The blank identifier is represented by the underscore character **_**. It serves as an anonymous placeholder instead of a regular (non-blank) identifier and has special meaning in declarations, as an operand, and in assignments.
+O identificador em branco é representado pelo caractere de sublinhado **_**. Ele serve como um espaço reservado anônimo em vez de um identificador regular (non-blank) e tem um significado especial em declarações, como um operando e em atribuições.
 
-Example:
+Exemplo:
+
 ```bash
 // function statement
 func f() (int, string, error)
@@ -2874,18 +2903,19 @@ func f() (int, string, error)
 _, _, _ := f()
 ```
 
-### Interface Types
+### Tipos de interface
 
-**An interface is two things:**
- - it is a set of methods
- - but it is also a type
+**Uma interface são duas coisas:**
+ - é um conjunto de métodos
+ - mas também é um tipo
 
-The __interface{} type__, the empty interface is the interface that has __no methods__
+O __interface {} type__, a interface vazia é a interface que tem __no métodos__
 
-Since there is no implements keyword, all types implement at least zero methods, and satisfying an interface is done automatically, all types satisfy the empty interface.
-That means that if you write a function that takes an interface{} value as a parameter, you can supply that function with any value.
+Como não há nenhuma palavra-chave implements, todos os tipos implementam pelo menos zero métodos e a satisfação de uma interface é feita automaticamente, todos os tipos satisfazem a interface vazia.
+Isso significa que, se você escrever uma função que usa um valor {} de interface como um parâmetro, você poderá fornecer essa função com qualquer valor.
 
-Example:
+Exemplo:
+
 ```go
 func DoSomething(v interface{}) {
    // ...
@@ -2898,9 +2928,9 @@ type Stringer interface {
 }
 ```
 
-### Here's an interface as a method
+#### Aqui está uma interface como um método
 
-An interface type specifies a method set called its interface. A variable of interface type can store a value of any type with a method set that is any superset of the interface. Such a type is said to implement the interface. The value of an uninitialized variable of interface type is nil.
+Um tipo de interface especifica um conjunto de métodos chamado sua interface. Uma variável do tipo de interface pode armazenar um valor de qualquer tipo com um conjunto de métodos que seja qualquer superconjunto da interface. Tal tipo é dito para implementar a interface. O valor de uma variável não inicializada do tipo de interface é nulo.
 
 
 ```bash
@@ -2910,7 +2940,7 @@ MethodName         = identifier .
 InterfaceTypeName  = TypeName .
 ```
 
-As with all method sets, in an interface type, each method must have a unique non-blank name.
+Como com todos os conjuntos de métodos, em um tipo de interface, cada método deve ter um nome exclusivo não vazio.
 
 ```go
 // A simple File interface
@@ -2921,7 +2951,7 @@ interface {
 }
 ```
 
-More than one type may implement an interface. For instance, if two types S1 and S2 have the method set
+Mais de um tipo pode implementar uma interface. Por exemplo, se dois tipos S1 e S2 tiverem o conjunto de métodos
 
 ```bash
 func (p T) Read(b Buffer) bool { return … }
@@ -2929,15 +2959,15 @@ func (p T) Write(b Buffer) bool { return … }
 func (p T) Close() { … }
 ```
 
-(where T stands for either S1 or S2) then the File interface is implemented by both S1 and S2, regardless of what other methods S1 and S2 may have or share.
+(onde T significa S1 ou S2) então a interface File é implementada por S1 e S2, independentemente de quais outros métodos S1 e S2 possam ter ou compartilhar.
 
-A type implements any interface comprising any subset of its methods and may therefore implement several distinct interfaces. For instance, all types implement the empty interface:
+Um tipo implementa qualquer interface que inclua qualquer subconjunto de seus métodos e, portanto, pode implementar várias interfaces distintas. Por exemplo, todos os tipos implementam a interface vazia:
 
 ```bash
 interface{}
 ```
 
-Similarly, consider this interface specification, which appears within a type declaration to define an interface called Locker:
+Da mesma forma, considere esta especificação de interface, que aparece dentro de uma declaração de tipo para definir uma interface chamada Locker:
 
 ```go
 type Locker interface {
@@ -2946,16 +2976,16 @@ type Locker interface {
 }
 ```
 
-If S1 and S2 also implement
+Se S1 e S2 também implementarem
 
 ```bash
 func (p T) Lock() { … }
 func (p T) Unlock() { … }
 ```
 
-they implement the Locker interface as well as the File interface.
+Eles implementam a interface do Locker, bem como a interface do arquivo.
 
-An interface T may use a (possibly qualified) interface type name E in place of a method specification. This is called embedding interface E in T; it adds all (exported and non-exported) methods of E to the interface T.
+Uma interface T pode usar um nome de tipo de interface (possivelmente qualificado) E no lugar de uma especificação de método. Isso é chamado de interface de incorporação E em T; adiciona todos os métodos (exportados e não exportados) de E para a interface T.
 
 ```go
 type ReadWriter interface {
@@ -2976,7 +3006,8 @@ type LockedFile interface {
 }
 ```
 
-An interface type T may not embed itself or any interface type that embeds T, recursively.
+Um tipo de interface T não pode incorporar a si mesmo ou a qualquer tipo de interface que incorpore T, recursivamente.
+
 ```go
 // illegal: Bad cannot embed itself
 type Bad interface {
@@ -2992,7 +3023,8 @@ type Bad2 interface {
 }
 ```
 
-Example: 
+Exemplo:
+
 ```go
 package main
 
@@ -3030,17 +3062,18 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 &{hello interface} {hello interface}
 Only: call Read
 Read: Only: call Read
 ```
 
-###  Interface as type
+####  Interface como tipo
 
-Interfaces as type __interface{}__ means you can put value of any type, including your own custom type. All types in Go satisfy an empty interface (interface{} is an empty interface).
-In your example, Msg field can have value of any type. 
+Interfaces como tipo __ interface {} __ significa que você pode colocar valor de qualquer tipo, incluindo seu próprio tipo personalizado. Todos os tipos em Go satisfazem uma interface vazia (interface {} é uma interface vazia).
+No seu exemplo, o campo Msg pode ter valor de qualquer tipo.
 
 
 ```go
@@ -3061,7 +3094,8 @@ a = 10.5
 a = "Lambda Man"
 ```
 
-Interfaces as types looks at another example below:
+Interfaces como tipos, veja outro exemplo abaixo:
+
 ```go
 package main
 
@@ -3089,25 +3123,26 @@ func main() {
 }
 ```
 
-### Exercise One
-Exercise:
-Fill in the struct JsonMessage AWS above, initialize the struct and fill in the fields, and make a fmt.Println to display the filled fields.
-To be more readable you can separate into each struct type struct.
+### Exercício 1
 
-### Control Structures
+Exercício:
+Preencha o struct JsonMessage AWS acima, inicialize a estrutura e preencha os campos, e faça um fmt.Println para exibir os campos preenchidos.
+Para ser mais legível, você pode separar em cada estrutura do tipo struct.
+
+## Estruturas de Controle
 ---
 
-### Control
+### Ao Controle
 
-The control structures are:
+As estruturas de controle são:
 
 __For, If, else, else if__
 
-And some statments between them: __break, continue, switch, case and goto__.
+E algumas declarações entre elas: __break, continue, switch, case and goto__.
 
-### Control Return
+#### Controle Return
 
-Statements control execution.
+Declarações controlam a execução.
 
 ```bash
 Statement =
@@ -3119,11 +3154,12 @@ Statement =
 SimpleStmt = EmptyStmt | ExpressionStmt | SendStmt | IncDecStmt | Assignment | ShortVarDecl .
 ```
 
-A terminating statement prevents execution of all statements that lexically appear after it in the same block. The following statements are terminating:
+Uma instrução final impede a execução de todas as instruções que aparecem lexicalmente após o mesmo bloco. As seguintes declarações estão terminando:
 
-1. A "return" or "goto" statement.
+1. Uma instrução "return" ou "goto".
 
 Return:
+
 ```go
 package main
 
@@ -3138,14 +3174,16 @@ func Lambda() string {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 Lambda
 ```
 
-### Control Goto
+#### Controle Goto
 
 Goto:
+
 ```go
 package main
 
@@ -3176,7 +3214,8 @@ LOOP2:
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 n 1 LOOP1 here...
 n 2 LOOP2 here...
@@ -3190,11 +3229,12 @@ n 9 LOOP1 here...
 fim
 ```
 
-### Control if Else
+#### Control if Else
 
-2. An "if" statement in which:
-      - the "else" branch is present, and
-      - both branches are terminating statements.
+2. Uma declaração "if" em que:
+      - a ramificação "else" está presente, e
+      - ambas as ramificações são declarações finais.
+      
 ```go
 package main
 
@@ -3215,18 +3255,19 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 else here.. n > 100
 ```
 
-### Control For Break Continue
+#### Control For Break Continue
 
-3. A "for" statement in which:
-      - there are no "break" statements referring to the "for" statement, and
-      - the loop condition is absent.
-      - there are "continue"
-      - A "break" statement terminates execution of the innermost "for", "switch", or "select" statement within the same 
+3. Uma declaração "for" em que:
+      - não há declarações de "break" referentes à declaração "for" e
+      - a condição de loop está ausente.
+      - existem "continue"
+      - Uma instrução "break"  termina a execução da instrução "for", "switch" ou "select" mais interna dentro da mesma
 
 ```go
 package main
@@ -3301,12 +3342,12 @@ func main() {
 }
 ```
 
-### Control Switch Case Break
+#### Control Switch Case Break
 
-4. A "switch" statement in which:
-      - there are no "break" statements referring to the "switch" statement,
-      - there is a default "case", and
-      - the statement lists in each case, including the default, end in a terminating statement, or a possibly labeled "fallthrough" statement.
+4. Uma declaração "switch" em que:
+      - não há declarações de "break" referentes à declaração "switch",
+      -existe um "case" padrão e
+      - as listas de instruções em cada caso, incluindo o padrão, terminam em uma instrução final, ou uma declaração "fallthrough" possivelmente rotulada.
 
 ```go
 package main
@@ -3347,7 +3388,8 @@ func f() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 here default
 i:  0
@@ -3358,9 +3400,9 @@ i:  4
 goto fim
 ```
 
-### Control Label
+#### Etiqueta de Controle
 
-5. A labeled statement labeling a terminating statement.
+5. Uma instrução rotulada rotulando uma instrução final.
 
 ```go
 package main
@@ -3387,24 +3429,25 @@ func f(i int) {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 label fim i: 10
 ```
 
-All other statements are not terminating.
+Todas as outras declarações não terminam.
 
-A statement list ends in a terminating statement if the list is not empty and its final non-empty statement is terminating. 
+Uma lista de instruções termina em uma instrução final se a lista não estiver vazia e sua instrução final não vazia estiver sendo finalizada. 
 
-A "for" statement with a "range" clause iterates through all entries of an array, slice, string or map, or values received on a channel. For each entry it assigns iteration values to corresponding iteration variables if present and then executes the block. 
+Uma instrução "for" com uma cláusula "range" itera todas as entradas de uma matriz, fatia, string ou mapa ou valores recebidos em um canal. Para cada entrada, ele atribui valores de iteração a variáveis de iteração correspondentes, se presentes, e, em seguida, executa o bloco.
 
 ```bash
 RangeClause = [ ExpressionList "=" | IdentifierList ":=" ] "range" Expression .
 ```
 
-### Control Range
+#### Controle Range
 
-The expression on the right in the "range" clause is called the range expression, which may be an array, pointer to an array, slice, string, map, or channel permitting receive operations. As with an assignment, if present the operands on the left must be addressable or map index expressions; they denote the iteration variables. If the range expression is a channel, at most one iteration variable is permitted, otherwise there may be up to two. If the last iteration variable is the blank identifier, the range clause is equivalent to the same clause without that identifier. 
+A expressão à direita na cláusula "range" é chamada de expressão de intervalo, que pode ser uma matriz, ponteiro para uma matriz, fatia, string, mapa ou canal que permite operações de recebimento. Como em uma atribuição, se presentes, os operandos à esquerda devem ser endereçáveis ou expressões de índice de mapa; eles denotam as variáveis de interação. Se a expressão de intervalo for um canal, no máximo uma variável de iteração será permitida, caso contrário, pode haver até duas. Se a última variável de iteração for o identificador em branco, a cláusula range é equivalente à mesma cláusula sem esse identificador.
 
 ```bash
 Range expression                          1st value          2nd value
@@ -3415,7 +3458,8 @@ map             m  map[K]V                key      k  K      m[k]       V
 channel         c  chan E, <-chan E       element  e  E
 ```
 
-See an example below, with various uses using Range:
+Veja um exemplo abaixo, com vários usos usando o Range:
+
 ```go
 
 package main
@@ -3497,7 +3541,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 [Erlang Elixir Haskell Clojure Scala]
 0 Erlang
@@ -3527,31 +3572,31 @@ wed 2
 thu 3
 fri 4
 ```
-### Errors
+## Erros
 ---
  
- The predeclared type error is defined as 
+ O erro de tipo pré-declarado é definido como
 
  ```bash
  type error interface {
 	Error() string
 }
  ```
-It is the conventional interface for representing an error condition, with the nil value representing no error. For instance, a function to read data from a file might be defined: 
+É a interface convencional para representar uma condição de erro, com o valor inexistente representando nenhum erro. Por exemplo, uma função para ler dados de um arquivo pode ser definida:
 
 ```bash
 func Read(f *File, b []byte) (n int, err error)
 ```
 
-### Introduction Errors
+### Introdução aos Erros
 
-Error handling in Golang is very simple to deal with. There is no try, catch or exceptions.
-The error is handled with every call of some function.
-As we show "error" is an interface, and much used.
+O tratamento de erros em Golang é muito simples de lidar. Não há tentativa, captura ou exceções.
+O erro é tratado com todas as chamadas de alguma função.
+Como mostramos "error" é uma interface e muito utilizada.
 
-When we talk about handling errors in Golang everything is very simple, a good practice is to return an error in the functions that we created and treat them.
+Quando falamos em lidar com erros em Golang tudo é muito simples, uma boa prática é retornar um erro nas funções que criamos e tratá-las.
 
-Let's see in practice how it works.
+Vamos ver na prática como isso funciona.
 
 ```go
 package main
@@ -3564,13 +3609,15 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 <nil>
 ```
-### How Error Control Works
+#### Como funciona o controle de erros
 
-Example:
+Exemplo:
+
 ```go
 package main
 
@@ -3595,13 +3642,13 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 <nil>
 json: unsupported type: chan int
 ```
-
-### Errors New
+#### Novos Erros
 
 ```go
 package main
@@ -3637,13 +3684,13 @@ func main() {
 	}
 }
 ```
-Output:
+Saída:
+
 ```bash
 Math: negative number passed to Sqrt [-33.00]
 Sqrt(81) = [ 9 ]
 ```
-
-### Custom Errors
+#### Erros Personalizados
 
 ```go
 package main
@@ -3686,13 +3733,14 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 MyFunc worked in line:  200
 MyFunc failed: 99 - can't work with it
 ```
 
-### fmt Errorf
+#### fmt Errorf
 
 ```go
 package main
@@ -3719,33 +3767,36 @@ func main() {
     fmt.Printf("Area of circle: %0.2f", area)
 }
 ```
-Output:
+Saída:
+
 ```bash
 Area calculation failed, radius -80.00 is less than zero
 ```
 
-### Functions 
+## Funções
 ---
 
-Declaring and Calling Functions in Golang. 
-In Golang, we declare a function using the func keyword. 
-A function has a name, a list of comma-separated input parameters along with their types, the result type(s), and a body. 
-The input parameters and return type(s) are optional for a function.
+Declarando e Chamando Funções em Golang. 
+Em Golang, declaramos uma função usando a palavra-chave func. 
+Uma função tem um nome, uma lista de parâmetros de entrada separados por vírgula junto com seus tipos, o (s) tipo (s) de resultado e um corpo. 
+Os parâmetros de entrada e os tipos de retorno são opcionais para uma função.
 
-Example of declaring and Calling Functions in Golang:
+Exemplo de declarar e chamar funções em Golang:
+
 ```go
 func Sum(x float64, y float64) float64 {
 	return (x + y) / 2
 }
 ```
 
-### Introduction Function
+### Introdução as Funções
 
-Go requires explicit returns, i.e. it won’t automatically return the value of the last expression.
-When you have multiple consecutive parameters of the same type, you may omit the type name for the like-typed parameters up to the final parameter that declares the type.
-A function type denotes the set of all functions with the same parameter and result types. The value of an uninitialized variable of function type is nil. 
+Go exige retornos explícitos, ou seja, não retorna automaticamente o valor da última expressão.
+Quando você tem vários parâmetros consecutivos do mesmo tipo, você pode omitir o nome do tipo para os parâmetros do tipo semelhante até o parâmetro final que declara o tipo.
+Um tipo de função denota o conjunto de todas as funções com os mesmos tipos de parâmetros e resultados. O valor de uma variável não inicializada do tipo de função é nulo.
 
-Some possibilities:
+Algumas possibilidades:
+
 ```bash
 func()
 func(x int) int
@@ -3770,14 +3821,15 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 Hello, @go_br
 ```
 
-### Return Multiple Values
+#### Retornar vários valores
 
-Go has built-in support for multiple return values. This feature is used often in idiomatic Go, for example to return both result and error values from a function.
+Go tem suporte embutido para vários valores de retorno. Esse recurso é usado frequentemente no Go idiomático, por exemplo, para retornar valores de resultado e erro de uma função.
 
 ```go
 package main
@@ -3807,7 +3859,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 @go_br
 100
@@ -3816,11 +3869,11 @@ Output:
 <nil>
 ```
 
-### Variadic Functions
+#### Funções Variadic
 
-Variadic functions can be called with any number of trailing arguments. For example, fmt.Println is a common variadic function.
-Here’s a function that will take an arbitrary number of ints as arguments.
-Variadic functions can be called in the usual way with individual arguments.
+Funções Variadic podem ser chamadas com qualquer número de argumentos à direita. Por exemplo, fmt.Println é uma função variadic comum.
+Aqui está uma função que levará um número arbitrário de ints como argumentos.
+Funções variadic podem ser chamadas da maneira usual com argumentos individuais.
 
 ```go
 package main
@@ -3855,16 +3908,17 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 The Len of 2 is: [ C,C++ ]
 The Len of 3 is: [ Clojure,Elixir,Scala ]
 The Len of 4 is: [ Algol,C,C++,Golang ]
 ```
 
-### Functions as a Parameter
+#### Funções como um parâmetro
 
-You can pass function as parameter to a Go function. Here is an example of passing function as parameter to another Go function.
+Você pode passar a função como parâmetro para uma função Go. Aqui está um exemplo de função de passagem como parâmetro para outra função Go.
 
 ```go
 package main
@@ -3893,7 +3947,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 param is 432
 param is 874
@@ -3925,17 +3980,19 @@ func main() {
 }
 ```
 
-Output:
+saída:
+
 ```bash
 [206116 207025 7396 976144]
 ```
 
-### Closures
+#### Fechamentos
 
-Go supports anonymous functions, which can form closures. Anonymous functions are useful when you want to define a function inline without having to name it.
-This function intSeq returns another function, which we define anonymously in the body of intSeq. The returned function closes over the variable i to form a closure.
+Go suporta funções anônimas, que podem formar fechamentos. Funções anônimas são úteis quando você deseja definir uma função inline sem precisar nomeá-la.
+Esta função intSeq retorna outra função, que definimos anonimamente no corpo do intSeq. A função retornada se fecha sobre a variável i para formar um fechamento.
 
-Example:
+Exemplo:
+
 ```go
 package main
 
@@ -3962,17 +4019,19 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 5+15: 20
 6+10: 16
 ```
 
-### Recursion
+#### Recursão
 
-Go supports recursive functions. Here’s a classic factorial example.
+Go suporta funções recursivas. Aqui está um exemplo fatorial clássico.
 
-A simple example:
+Um exemplo simples:
+
 ```go
 package main
 
@@ -3990,12 +4049,14 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 5040
 ```
 
-Listing all subdirectories directories:
+Listando todos os diretórios de subdiretórios:
+
 ```go
 package main
 
@@ -4051,7 +4112,8 @@ func ListDir(rootpath string) []string {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 [0:$(pwd)/examples/bufio.writer===main.go]
 [1:$(pwd)/examples/error===error1.go]
@@ -4062,10 +4124,10 @@ Output:
 ...
 ```
 
-### Asynchronous Functions
+#### Funções Assíncronas
 
-In golang to perform asynchronous functions we use the keyword **"go"** it is responsible for putting the functions to be executed concurrently.
-A **"go"** statement starts the execution of a function call as an independent concurrent thread of control, or goroutine, within the same address space. 
+No golang para executar funções assíncronas, usamos a palavra-chave **"go"**, que é responsável por colocar as funções a serem executadas simultaneamente.
+Uma instrução **"go"** inicia a execução de uma chamada de função como um encadeamento de controle concorrente independente, ou goroutine, dentro do mesmo espaço de endereço. 
 
 ```go
 GoStmt = "go" Expression .
@@ -4076,7 +4138,8 @@ go Server()
 go func(ch chan<- bool) { for { sleep(10); ch <- true }} (c)
 ```
 
-Example:
+Exemplo:
+
 ```go
 
 package main
@@ -4116,33 +4179,36 @@ func main() {
 	fmt.Scanln(&input)
 }
 ```
-Output one:
+Saída 1:
+
 ```bash
 ponger
 pinger
 printer
 ```
 
-Output two:
+saída 2:
+
 ```bash
 pinger
 ponger
 printer
 ```
 
-### Defer
+## Defer
 
-A "defer" statement invokes a function whose execution is deferred to the moment the surrounding function returns, either because the surrounding function executed a return statement, reached the end of its function body, or because the corresponding goroutine is panicking. 
+Uma "defer" invoca uma função cuja execução é adiada para o momento em que a função circundante retorna, seja porque a função circundante executou uma instrução de retorno, atingiu o fim de seu corpo de função ou porque a gorout correspondente está em pânico.
 
 ```go
 DeferStmt = "defer" Expression .
 ```
 
-The expression must be a function or method call; it cannot be parenthesized. Calls of built-in functions are restricted as for expression statements.
+A expressão deve ser uma chamada de função ou método; não pode ser entre parênteses. Chamadas de funções internas são restritas como para instruções de expressão.
 
-Each time a "defer" statement executes, the function value and parameters to the call are evaluated as usual and saved anew but the actual function is not invoked. Instead, deferred functions are invoked immediately before the surrounding function returns, in the reverse order they were deferred. If a deferred function value evaluates to nil, execution panics when the function is invoked, not when the "defer" statement is executed. 
+Cada vez que uma instrução de "defer" é executada, o valor da função e os parâmetros da chamada são avaliados como de costume e salvos novamente, mas a função real não é invocada. Em vez disso, as funções diferidas são chamadas imediatamente antes da função circundante retornar, na ordem inversa em que foram adiadas. Se um valor de função diferido for avaliado como nulo, a execução entra em pane quando a função é invocada, e não quando a instrução "defer" é executada. 
 
-Examples:
+Exemplos:
+
 ```go
 defer unlock(l)
 defer myFunc()
@@ -4152,7 +4218,9 @@ defer db.Close()
 defer f.Close()
 defer res.Body.Close()
 ```
-### Exercício 01 / MODULO 01
+## Exercício 01 
+
+### Módulo 01
 
 Utilizando Go e testes unitários você deverá determinar os dez maiores estados brasileiros em extensão territorial.
 
