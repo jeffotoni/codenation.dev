@@ -3145,7 +3145,7 @@ Output:
 Lambda
 ```
 
-### Control Goto
+### Controle Goto
 
 Goto:
 ```go
@@ -3360,7 +3360,7 @@ i:  4
 goto fim
 ```
 
-### Control Label
+### Etiqueta de Controle
 
 5. A labeled statement labeling a terminating statement.
 
@@ -3404,7 +3404,7 @@ A "for" statement with a "range" clause iterates through all entries of an array
 RangeClause = [ ExpressionList "=" | IdentifierList ":=" ] "range" Expression .
 ```
 
-### Control Range
+### Faixa de Controle
 
 The expression on the right in the "range" clause is called the range expression, which may be an array, pointer to an array, slice, string, map, or channel permitting receive operations. As with an assignment, if present the operands on the left must be addressable or map index expressions; they denote the iteration variables. If the range expression is a channel, at most one iteration variable is permitted, otherwise there may be up to two. If the last iteration variable is the blank identifier, the range clause is equivalent to the same clause without that identifier. 
 
@@ -3529,7 +3529,7 @@ wed 2
 thu 3
 fri 4
 ```
-### Errors
+### Erros
 ---
  
  The predeclared type error is defined as 
@@ -3545,15 +3545,15 @@ It is the conventional interface for representing an error condition, with the n
 func Read(f *File, b []byte) (n int, err error)
 ```
 
-### Introduction Errors
+### Introdução aos Erros
 
-Error handling in Golang is very simple to deal with. There is no try, catch or exceptions.
-The error is handled with every call of some function.
-As we show "error" is an interface, and much used.
+O tratamento de erros em Golang é muito simples de lidar. Não há tentativa, captura ou exceções.
+O erro é tratado com todas as chamadas de alguma função.
+Como mostramos "error" é uma interface e muito utilizada.
 
-When we talk about handling errors in Golang everything is very simple, a good practice is to return an error in the functions that we created and treat them.
+Quando falamos em lidar com erros em Golang tudo é muito simples, uma boa prática é retornar um erro nas funções que criamos e tratá-las.
 
-Let's see in practice how it works.
+Vamos ver na prática como isso funciona.
 
 ```go
 package main
@@ -3570,9 +3570,9 @@ Output:
 ```bash
 <nil>
 ```
-### How Error Control Works
+### Como funciona o controle de erros
 
-Example:
+Exemplo:
 ```go
 package main
 
@@ -3603,7 +3603,7 @@ Output:
 json: unsupported type: chan int
 ```
 
-### Errors New
+### Novos Erros
 
 ```go
 package main
@@ -3645,7 +3645,7 @@ Math: negative number passed to Sqrt [-33.00]
 Sqrt(81) = [ 9 ]
 ```
 
-### Custom Errors
+### Erros Personalizados
 
 ```go
 package main
@@ -3729,12 +3729,12 @@ Area calculation failed, radius -80.00 is less than zero
 ### Funções
 ---
 
-Declaring and Calling Functions in Golang. 
-In Golang, we declare a function using the func keyword. 
-A function has a name, a list of comma-separated input parameters along with their types, the result type(s), and a body. 
-The input parameters and return type(s) are optional for a function.
+Declarando e Chamando Funções em Golang. 
+Em Golang, declaramos uma função usando a palavra-chave func. 
+Uma função tem um nome, uma lista de parâmetros de entrada separados por vírgula junto com seus tipos, o (s) tipo (s) de resultado e um corpo. 
+Os parâmetros de entrada e os tipos de retorno são opcionais para uma função.
 
-Example of declaring and Calling Functions in Golang:
+Exemplo de declarar e chamar funções em Golang:
 ```go
 func Sum(x float64, y float64) float64 {
 	return (x + y) / 2
@@ -3743,11 +3743,11 @@ func Sum(x float64, y float64) float64 {
 
 ### Introdução as Funções
 
-Go requires explicit returns, i.e. it won’t automatically return the value of the last expression.
-When you have multiple consecutive parameters of the same type, you may omit the type name for the like-typed parameters up to the final parameter that declares the type.
-A function type denotes the set of all functions with the same parameter and result types. The value of an uninitialized variable of function type is nil. 
+Go exige retornos explícitos, ou seja, não retorna automaticamente o valor da última expressão.
+Quando você tem vários parâmetros consecutivos do mesmo tipo, você pode omitir o nome do tipo para os parâmetros do tipo semelhante até o parâmetro final que declara o tipo.
+Um tipo de função denota o conjunto de todas as funções com os mesmos tipos de parâmetros e resultados. O valor de uma variável não inicializada do tipo de função é nulo.
 
-Some possibilities:
+Algumas possibilidades:
 ```bash
 func()
 func(x int) int
@@ -3777,9 +3777,9 @@ Output:
 Hello, @go_br
 ```
 
-### Return Multiple Values
+### Retornar vários valores
 
-Go has built-in support for multiple return values. This feature is used often in idiomatic Go, for example to return both result and error values from a function.
+Go tem suporte embutido para vários valores de retorno. Esse recurso é usado frequentemente no Go idiomático, por exemplo, para retornar valores de resultado e erro de uma função.
 
 ```go
 package main
@@ -3818,11 +3818,11 @@ Output:
 <nil>
 ```
 
-### Variadic Functions
+### Funções Variadic
 
-Variadic functions can be called with any number of trailing arguments. For example, fmt.Println is a common variadic function.
-Here’s a function that will take an arbitrary number of ints as arguments.
-Variadic functions can be called in the usual way with individual arguments.
+Funções Variadic podem ser chamadas com qualquer número de argumentos à direita. Por exemplo, fmt.Println é uma função variadic comum.
+Aqui está uma função que levará um número arbitrário de ints como argumentos.
+Funções variadic podem ser chamadas da maneira usual com argumentos individuais.
 
 ```go
 package main
@@ -3864,9 +3864,9 @@ The Len of 3 is: [ Clojure,Elixir,Scala ]
 The Len of 4 is: [ Algol,C,C++,Golang ]
 ```
 
-### Functions as a Parameter
+### Funções como um parâmetro
 
-You can pass function as parameter to a Go function. Here is an example of passing function as parameter to another Go function.
+Você pode passar a função como parâmetro para uma função Go. Aqui está um exemplo de função de passagem como parâmetro para outra função Go.
 
 ```go
 package main
@@ -3932,7 +3932,7 @@ Output:
 [206116 207025 7396 976144]
 ```
 
-### Closures
+### Fechamentos
 
 Go supports anonymous functions, which can form closures. Anonymous functions are useful when you want to define a function inline without having to name it.
 This function intSeq returns another function, which we define anonymously in the body of intSeq. The returned function closes over the variable i to form a closure.
@@ -3970,11 +3970,11 @@ Output:
 6+10: 16
 ```
 
-### Recursion
+### Recursão
 
-Go supports recursive functions. Here’s a classic factorial example.
+Go suporta funções recursivas. Aqui está um exemplo fatorial clássico.
 
-A simple example:
+Um exemplo simples:
 ```go
 package main
 
@@ -4064,7 +4064,7 @@ Output:
 ...
 ```
 
-### Asynchronous Functions
+### Funções Asynchronous
 
 In golang to perform asynchronous functions we use the keyword **"go"** it is responsible for putting the functions to be executed concurrently.
 A **"go"** statement starts the execution of a function call as an independent concurrent thread of control, or goroutine, within the same address space. 
@@ -4078,7 +4078,7 @@ go Server()
 go func(ch chan<- bool) { for { sleep(10); ch <- true }} (c)
 ```
 
-Example:
+Exemplo:
 ```go
 
 package main
@@ -4144,7 +4144,7 @@ The expression must be a function or method call; it cannot be parenthesized. Ca
 
 Each time a "defer" statement executes, the function value and parameters to the call are evaluated as usual and saved anew but the actual function is not invoked. Instead, deferred functions are invoked immediately before the surrounding function returns, in the reverse order they were deferred. If a deferred function value evaluates to nil, execution panics when the function is invoked, not when the "defer" statement is executed. 
 
-Examples:
+Exemplos:
 ```go
 defer unlock(l)
 defer myFunc()
