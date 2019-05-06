@@ -66,7 +66,7 @@ Após a conclusão do curso “Programação Go”, o aluno estará apto a desen
    - [Tipos de interface](#Tipos-de-interface)
 	 - [Aqui está uma interface como um método](#Aqui-está-uma-interface-como-um-método)
 	 - [Interface como tipo](#Interface-como-tipo)
-- [Estruturas de Controle](#Estrutura-de-Controle)
+- [Estruturas de Controle](#Estruturas-de-Controle)
   - [Ao-Controle](#Ao-Controle)
     - [Retorno de Controle](#Retorno-de-Controle)
     - [Controle Goto](#Controle-Goto)
