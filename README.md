@@ -39,12 +39,12 @@ Após a conclusão do curso “Programação Go”, o aluno estará apto a desen
    - [Introdução aos comandos Go](#Introdução-aos-comandos-Go)
    - [Go Run](#Go-Run) 
    - [Go Build](#Go-Build)
-   - [Go Install](#Go-Install)
+   - [Instalar Go](#Instalar-Go)
    - [Go Get](#Go-Get)
    - [Go Mod](#Go-Mod)
    - [Go Mod Init](#Go-Mod-Init)
    - [Go Mod Vendor](#Go-Mod-Vendor)
-   - [GO111MODULE](#go111module)
+   - [GO-1.11-MÓDULO](#Go-111-módulo)
    - [Go Test](#Go-Test)
 
 ## MÓDULO 02 Aprofundando na Linguagem
@@ -1013,7 +1013,7 @@ drwxrwxr-x 3 root root 4,0K jan 27 01:47 github.com
 -rw-rw-r-- 1 root root  137 jan 27 01:47 modules.txt
 ```
 
-### GO111MODULE
+### GO 1.11 MÓDULO
 
 Go 1.11 includes preliminary support for Go modules, including a new module-aware 'go get' command. We intend to keep revising this support, while preserving compatibility, until it can be declared official (no longer preliminary), and then at a later point we may remove support for work in GOPATH and the old 'go get' command.
 
