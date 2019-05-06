@@ -20,7 +20,7 @@ Após a conclusão do curso “Programação Go”, o aluno estará apto a desen
 - [Introdução a instalação](#Introdução-a-instalação)
   - [Instalação](#Instalação)
     - [Linux](#Linux)
-    - [$GOPATH](#$GOPATH)
+    - [$GOPATH](#gopath)
     - [Teste sua instalação](#Teste-sua-instalação)
     - [Workspace](#Workspace)
     - [Outside GOPATH](#Outside-GOPATH)
