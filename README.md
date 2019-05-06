@@ -93,7 +93,7 @@ Após a conclusão do curso “Programação Go”, o aluno estará apto a desen
 - [Exercício 1](#Exercício-1)
 
 
-### Overview
+## Overview
 
 ### Golang
 
@@ -126,7 +126,7 @@ Go não inclui uma máquina virtual. Os programas Go são compilados
 para o código de máquina nativo.
  ```
 
-#### Onde posso utilizar Go
+##### Onde posso utilizar Go:
 
 ```bash
 . Web backend (com diversos frameworks disponíveis)
@@ -172,7 +172,7 @@ Os criadores Rob Pike, Ken Thompson e Robert Griesemer mantiveram a sintaxe de G
 Go teve influências de diversas linguagens de programação e paradigmas diferentes dentre elas: Alef, APL, BCPL, C, CSP, Limbo, Modula, Newsqueak, Oberon, occam, Pascal, Smalltalk e Cristal, percebe-se que utilizaram do que tinham de melhor e criou algo novo e enxuto, com o mínimo necessário para resolver os problemas propostos, sem perder sua simplicidade. Acredito que isto podemos chamar de inovação. Go inovou ao quebrar os paradigmas de linguagens e implementar algo novo de forma simples e muito poderosa.
 
 
-### Por que meu binário hello world é tão grande
+### Por que meu binário hello world é tão grande?
 
 O vinculador no gc toolchain cria binários vinculados estaticamente por padrão. Portanto, todos os binários Go incluem o tempo de execução Go, juntamente com as informações do tipo em tempo de execução necessárias para oferecer suporte a verificações de tipos dinâmicos, reflexos e até mesmo rastreamentos de pilha em tempo de pânico.
 
@@ -185,7 +185,7 @@ Ex:
 $ go build -ldflags=-w -o helo hello.go
 ```
 
-### Introdução a instalação
+## Introdução a instalação
 
 Em golang a instalação é muito simples e prática, para Linux, Mac e Windows.
 
@@ -447,7 +447,7 @@ GO111MODULE=on go run main.go
 GO111MODULE=on go build main.go
 ```
 
-### Instalação com Docker
+## Instalação com Docker
 
 Se não quisermos instalar diretamente em nosso sistema operacional golang, podemos instalá-lo em um contêiner docker.
 
@@ -519,7 +519,7 @@ go version go1.12.4 linux/amd64
 ```
 
 
-### Introdução Golang
+## Introdução Golang
 ---
 
 Go é uma linguagem de propósito geral, projetada com a programação de sistemas em mente. É fortemente tipado e colecionador de lixo, e tem suporte explícito para programação concorrente. 
@@ -530,7 +530,7 @@ A gramática é compacta e regular, permitindo fácil análise por ferramentas a
 ### Linguagem Golang
 ---
 
-### Keywords
+#### Keywords
 
 As seguintes palavras-chave são reservadas e não podem ser usadas como identificadores:
 
@@ -542,7 +542,7 @@ const        fallthrough  if           range        type
 continue     for          import       return       var
 ```
 
-### Operadores e Pontuação
+#### Operadores e Pontuação
 
 As seqüências de caracteres a seguir representam operadores (incluindo operadores de atribuição) e pontuação: 
 
@@ -555,7 +555,7 @@ As seqüências de caracteres a seguir representam operadores (incluindo operado
      &^          &^=
 ```
 
-### Println Print
+#### Println Print
 
 Vamos aprender como enviar dados para a tela que é, na verdade, **stdout** saída padrão, veremos mais detalhes sobre  **stdout** e **stdin**.
 
@@ -623,7 +623,7 @@ debugging my system with fmt.Println
 O objetivo de iniciar e executar o comando print, println ou fmt.Println é nos ajudar com os testes que faremos a partir de agora em todas as etapas do nosso aprendizado Go.
 
 
-### Bufio NewWriter
+#### Bufio NewWriter
 
 ```bash
 bufio.Writer
@@ -684,7 +684,7 @@ How many stars does Orion have?
 H
 ```
 
-### Func Main
+#### Func Main
 
 ```go
 package main
@@ -744,7 +744,7 @@ $ go clean -i
 $ ls -lhs $HOME/go/bin
 ```
 
-### Comandos Go
+## Comandos Go
 ---
 
 ### Introdução aos Comandos Go
@@ -1260,7 +1260,7 @@ Output:
 ## MÓDULO 02 Aprofundando na Linguagem
 ---
 
-### Tipos
+## Tipos
 ---
 
 A type determines a set of values together with operations and methods specific to those values. A type may be denoted by a type name, if it has one, or specified using a type literal, which composes a type from existing types. 
@@ -1514,9 +1514,9 @@ The length is part of the array's type; it must evaluate to a non-negative const
 [2][2][2]float64  // same as [2]([2]([2]float64))
 ```
 
-An array's length is part of its type, so arrays cannot be resized. This seems limiting, but don't worry; Go provides a convenient way of working with arrays. 
+O comprimento de uma matriz é parte do seu tipo, portanto, as matrizes não podem ser redimensionadas. Isso parece limitante, mas não se preocupe; Go fornece uma maneira conveniente de trabalhar com matrizes.
 
-Example:
+Exemplo:
 ```go
 package main
 
@@ -1556,15 +1556,15 @@ A slice is formed by specifying two indices, a low and high bound, separated by 
 a[low : high]
 ```
 
-This selects a half-open range which includes the first element, but excludes the last one.
+Isso seleciona um intervalo half-open que inclui o primeiro elemento, mas exclui o último.
 
-The following expression creates a slice which includes elements 1 through 3 of a: 
+A expressão a seguir cria uma fatia que inclui os elementos de 1 a 3 de um:
 
 ```bash
 a[1:4]
 ```
 
-Example:
+Exemplo:
 
 ```go
 package main
@@ -1605,7 +1605,7 @@ The make function allocates a zeroed array and returns a slice that refers to th
 ```go
 a := make([]int, 4)  // len(a)=4
 ```
-Example:
+Exemplo:
 
 ```go
 package main
@@ -1631,7 +1631,7 @@ b []
 c [0 0]
 ```
 
-A slice of type T is declared using []T. For example, Here is how you can declare a slice of type int -
+Uma fatia do tipo T é declarada usando [] T. Por exemplo, aqui está como você pode declarar uma fatia do tipo int -
 
 ```go
 // Slice of type `int`
@@ -1644,7 +1644,7 @@ var slice []string
 var lang = [...]string{"Erlang", "Elixir", "Haskell", "Clojure", "Scala"}
 ```
 
-You can create a slice using a slice literal like this -
+Você pode criar uma fatia usando um literal de fatia como este -
 
 ```go
 // Creating a slice using a slice literal
@@ -2899,7 +2899,7 @@ type Stringer interface {
 }
 ```
 
-### Aqui está uma interface como um método
+#### Aqui está uma interface como um método
 
 An interface type specifies a method set called its interface. A variable of interface type can store a value of any type with a method set that is any superset of the interface. Such a type is said to implement the interface. The value of an uninitialized variable of interface type is nil.
 
@@ -3038,7 +3038,7 @@ Only: call Read
 Read: Only: call Read
 ```
 
-###  Interface como tipo
+####  Interface como tipo
 
 Interfaces as type __interface{}__ means you can put value of any type, including your own custom type. All types in Go satisfy an empty interface (interface{} is an empty interface).
 In your example, Msg field can have value of any type. 
@@ -3096,7 +3096,7 @@ Exercício:
 Preencha o struct JsonMessage AWS acima, inicialize a estrutura e preencha os campos, e faça um fmt.Println para exibir os campos preenchidos.
 Para ser mais legível, você pode separar em cada estrutura do tipo struct.
 
-### Estruturas de Controle
+## Estruturas de Controle
 ---
 
 ### Ao Controle
@@ -3107,7 +3107,7 @@ __For, If, else, else if__
 
 E algumas declarações entre elas: __break, continue, switch, case and goto__.
 
-### Retorno de Controle
+#### Retorno de Controle
 
 Declarações controlam a execução.
 
@@ -3145,7 +3145,7 @@ Output:
 Lambda
 ```
 
-### Controle Goto
+#### Controle Goto
 
 Goto:
 ```go
@@ -3192,7 +3192,7 @@ n 9 LOOP1 here...
 fim
 ```
 
-### Control if Else
+#### Control if Else
 
 2. An "if" statement in which:
       - the "else" branch is present, and
@@ -3222,7 +3222,7 @@ Output:
 else here.. n > 100
 ```
 
-### Control For Break Continue
+#### Control For Break Continue
 
 3. A "for" statement in which:
       - there are no "break" statements referring to the "for" statement, and
@@ -3303,7 +3303,7 @@ func main() {
 }
 ```
 
-### Control Switch Case Break
+#### Control Switch Case Break
 
 4. A "switch" statement in which:
       - there are no "break" statements referring to the "switch" statement,
@@ -3360,7 +3360,7 @@ i:  4
 goto fim
 ```
 
-### Etiqueta de Controle
+#### Etiqueta de Controle
 
 5. A labeled statement labeling a terminating statement.
 
@@ -3404,7 +3404,7 @@ A "for" statement with a "range" clause iterates through all entries of an array
 RangeClause = [ ExpressionList "=" | IdentifierList ":=" ] "range" Expression .
 ```
 
-### Faixa de Controle
+#### Faixa de Controle
 
 The expression on the right in the "range" clause is called the range expression, which may be an array, pointer to an array, slice, string, map, or channel permitting receive operations. As with an assignment, if present the operands on the left must be addressable or map index expressions; they denote the iteration variables. If the range expression is a channel, at most one iteration variable is permitted, otherwise there may be up to two. If the last iteration variable is the blank identifier, the range clause is equivalent to the same clause without that identifier. 
 
@@ -3529,7 +3529,7 @@ wed 2
 thu 3
 fri 4
 ```
-### Erros
+## Erros
 ---
  
  The predeclared type error is defined as 
@@ -3570,7 +3570,7 @@ Output:
 ```bash
 <nil>
 ```
-### Como funciona o controle de erros
+#### Como funciona o controle de erros
 
 Exemplo:
 ```go
@@ -3603,7 +3603,7 @@ Output:
 json: unsupported type: chan int
 ```
 
-### Novos Erros
+#### Novos Erros
 
 ```go
 package main
@@ -3645,7 +3645,7 @@ Math: negative number passed to Sqrt [-33.00]
 Sqrt(81) = [ 9 ]
 ```
 
-### Erros Personalizados
+#### Erros Personalizados
 
 ```go
 package main
@@ -3694,7 +3694,7 @@ MyFunc worked in line:  200
 MyFunc failed: 99 - can't work with it
 ```
 
-### fmt Errorf
+#### fmt Errorf
 
 ```go
 package main
@@ -3726,7 +3726,7 @@ Output:
 Area calculation failed, radius -80.00 is less than zero
 ```
 
-### Funções
+## Funções
 ---
 
 Declarando e Chamando Funções em Golang. 
@@ -3777,7 +3777,7 @@ Output:
 Hello, @go_br
 ```
 
-### Retornar vários valores
+#### Retornar vários valores
 
 Go tem suporte embutido para vários valores de retorno. Esse recurso é usado frequentemente no Go idiomático, por exemplo, para retornar valores de resultado e erro de uma função.
 
@@ -3818,7 +3818,7 @@ Output:
 <nil>
 ```
 
-### Funções Variadic
+#### Funções Variadic
 
 Funções Variadic podem ser chamadas com qualquer número de argumentos à direita. Por exemplo, fmt.Println é uma função variadic comum.
 Aqui está uma função que levará um número arbitrário de ints como argumentos.
@@ -3864,7 +3864,7 @@ The Len of 3 is: [ Clojure,Elixir,Scala ]
 The Len of 4 is: [ Algol,C,C++,Golang ]
 ```
 
-### Funções como um parâmetro
+#### Funções como um parâmetro
 
 Você pode passar a função como parâmetro para uma função Go. Aqui está um exemplo de função de passagem como parâmetro para outra função Go.
 
@@ -3932,7 +3932,7 @@ Output:
 [206116 207025 7396 976144]
 ```
 
-### Fechamentos
+#### Fechamentos
 
 Go supports anonymous functions, which can form closures. Anonymous functions are useful when you want to define a function inline without having to name it.
 This function intSeq returns another function, which we define anonymously in the body of intSeq. The returned function closes over the variable i to form a closure.
@@ -3970,7 +3970,7 @@ Output:
 6+10: 16
 ```
 
-### Recursão
+#### Recursão
 
 Go suporta funções recursivas. Aqui está um exemplo fatorial clássico.
 
@@ -4064,7 +4064,7 @@ Output:
 ...
 ```
 
-### Funções Asynchronous
+#### Funções Asynchronous
 
 In golang to perform asynchronous functions we use the keyword **"go"** it is responsible for putting the functions to be executed concurrently.
 A **"go"** statement starts the execution of a function call as an independent concurrent thread of control, or goroutine, within the same address space. 
@@ -4132,7 +4132,7 @@ ponger
 printer
 ```
 
-### Defer
+## Defer
 
 A "defer" statement invokes a function whose execution is deferred to the moment the surrounding function returns, either because the surrounding function executed a return statement, reached the end of its function body, or because the corresponding goroutine is panicking. 
 
@@ -4154,9 +4154,9 @@ defer db.Close()
 defer f.Close()
 defer res.Body.Close()
 ```
-### Exercício 01 
+## Exercício 01 
 
-#### MÓDULO 01
+### Módulo 01
 
 Utilizando Go e testes unitários você deverá determinar os dez maiores estados brasileiros em extensão territorial.
 
