@@ -1312,13 +1312,14 @@ Saída:
 ## Tipos
 ---
 
-A type determines a set of values together with operations and methods specific to those values. A type may be denoted by a type name, if it has one, or specified using a type literal, which composes a type from existing types. 
+Um tipo determina um conjunto de valores junto com operações e métodos específicos para esses valores. Um tipo pode ser denotado por um nome de tipo, se tiver um, ou especificado usando um literal de tipo, que compõe um tipo de tipos existentes. 
 
-The language predeclares certain type names. Others are introduced with type declarations. Composite types—array, struct, pointer, function, interface, slice, map, and channel types—may be constructed using type literals.
+A linguagem predeclara certos nomes de tipos. Outros são introduzidos com declarações de tipo. Tipos compostos -types—array, struct, pointer, function, interface, slice, map, e channel types—may- podem ser construídos usando literais de tipo.
 
-Each type T has an underlying type: If T is one of the predeclared boolean, numeric, or string types, or a type literal, the corresponding underlying type is T itself. Otherwise, T's underlying type is the underlying type of the type to which T refers in its type declaration. 
+Cada tipo T tem um tipo subjacente: Se T é um dos tipos boolean, numeric, ou string types, ou um type literal, o tipo subjacente correspondente é o próprio T. Caso contrário, o tipo subjacente de T é o tipo subjacente do tipo ao qual T se refere em sua declaração de tipo.
 
-Example:
+Exemplo:
+
 ```bash
 type (
     A1 = string
@@ -1333,12 +1334,12 @@ type (
 )
 ```
 
-The underlying type of string, A1, A2, B1, and B2 is string. The underlying type of []B1, B3, and B4 is []B1. 
+O tipo subjacente de string, A1, A2, B1 e B2 é string. O tipo subjacente de [] B1, B3 e B4 é [] B1. 
 
 
 ### Numeric Types
 
-A numeric type represents sets of integer or floating-point values. The predeclared architecture-independent numeric types are: 
+Um tipo numérico representa conjuntos de valores inteiros ou de ponto flutuante. Os tipos numéricos independentes da arquitetura pré-declarados são:
 
 ```bash
 uint8       the set of all unsigned  8-bit integers (0 to 255)
@@ -1360,9 +1361,9 @@ complex128  the set of all complex numbers with float64 real and imaginary parts
 byte        alias for uint8
 rune        alias for int32
 ```
-The value of an n-bit integer is n bits wide and represented using two's complement arithmetic.
+O valor de um inteiro de n bits é n bits de largura e representado usando aritmética de complemento de dois.
 
-There is also a set of predeclared numeric types with implementation-specific sizes:
+Há também um conjunto de tipos numéricos pré-declarados com tamanhos específicos de implementação:
 
 ```bash
 uint     either 32 or 64 bits
@@ -1370,7 +1371,7 @@ int      same size as uint
 uintptr  an unsigned integer large enough to store the uninterpreted bits of a pointer value
 ```
 
-To avoid portability issues all numeric types are defined types and thus distinct except byte, which is an alias for uint8, and rune, which is an alias for int32. Conversions are required when different numeric types are mixed in an expression or assignment. For instance, int32 and int are not the same type even though they may have the same size on a particular architecture. 
+Para evitar problemas de portabilidade, todos os tipos numéricos são definidos e, portanto, distintos, exceto byte, que é um alias para uint8, e rune, que é um alias para int32. Conversões são necessárias quando diferentes tipos numéricos são misturados em uma expressão ou atribuição. Por exemplo, int32 e int não são do mesmo tipo, embora possam ter o mesmo tamanho em uma arquitetura específica.
 
 ### String Types
 
