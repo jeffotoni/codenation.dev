@@ -1,14 +1,108 @@
 
 MODULO 2
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@888@@@@@@@@@@@@@@@@@@@@@@8@@@@@@@@@@
+@@@@@@@@@@@@@@@8CGCCGG8@@@@@@@@8888@@@8GGCCGG8@@@@@@@
+@@@@@@@@@@@@@@@@CGGG0GCGGGGGCCCCCCCCCCCGGGGGL0@@@@@@@
+@@@@@@@@8GLL0000CtfLfLftfffLLffffLLLLfLLLCLL8@@@@@@@@
+@@@@@@@@G:t1LCCLLCLft1tLCCL1iitfLLLLLft11i;;1C@@@@@@@
+@@@@@@@8fL088888@@@@@0CfLf;1CG0000GCG008880GfiG@@@@@@
+@@@@@@Gt088888@@8@@88@@0L;100GGGGLG8@@@@@@@@@@GC@@@@@
+@@@@@0188088@808@@8@@8888C1GGGGGL0@@@@@@@@GL8@@0L@@@@
+@@@@@fC@088800CG88@8888880tL0G0CG@@@@@@@CCt,1@@@L0@@@
+@@@@@tG@0888GGGG8888888@80ff0G0L0@@@@@@@G1itG@@@L0@@@
+@@@@@LL@08@8@88@888888@8G81C0GGCL@@@@@@@@@@@@@@GC@@@@
+@@@@@8tG@0088888888888008ft0GGG0LC@@@@@@@@@@@8Ct@@@@@
+@@@@@@8fC880088888880080ffGt;itCGCLG08@@@@80CCfL@@@@@
+@@@@@@@@CLCGG00088000GLfCGfCCCC1f0GCCCCCCCCCG0fG@@@@@
+@@@@@@@@@@0CtLLLLLLLfLC00GGLGCLCGGG00GGGGG00GGf8@@@@@
+@@@@@@@@@@@@fGGCCGGG000GGG0GGGG0GGGGGGGGGGGGGGf@@@@@@
+@@@@@@@@@@@@LC0000GGGGGGGGGGGGGGGGGGGGGGGGGGGGf@@@@@@
+@@@@@@@@@@@@LCGGGGGGGGGGGGGGGGGGGGGGGGGGGCGGG0f0@@@@@
+@@@@@@@@@@@@Cf0CGGGGGGGGGGGGGGGGGGGGGGGGCCCCG0fG@@@@@
+@@@@@@@@@@@@GfCCLGGGGGGGGGGGGGGGGGGGGGGGCCGGG0LC@@@@@
+@@@@@@@@@@@@8fGCGGGGGGGGGGGGGGGGGGGGGGGGGGGGG0fG@@@@@
+@@@@@@@@@@@@@LC0GGGGGGGGGGGGGGGGGGGGGGGGGGGG0Ct@@@@@@
+@@@@@@@@@@@@@8fC0GGGGGGGGGGGGGGGGGGGGGGGGG00Lf8@@@@@@
+@@@@@@@@@@@@@@8fLG00GGGGGGGGGGGGGGGGGG000GCfC@@@@@@@@
+@@@@@@@@@@@@@@@@GLLCGGG00000000000GGGGGCLLC8@@@@@@@@@
+@@@@@@@@@@@@@@@@@@80CLLLCCCCCCCCCCCCCCfLC@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@CLL88800000088@@@@0LL8@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@8G8@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+MODULO 2
 ------------------------------------------------
+
+25 Palavras-chaves 
+
+break     default      func    interface  select
+case      defer        go      map        struct
+chan      else         goto    package    switch
+const     fallthrough  if      range      type
+continue  for          import  return     var
+
+------------------------------------------------
+
+Eles podem ser categorizados em quatro grupos:
+
+1 - são usados para declarar todos os tipos de elementos de código em programas Go.
+	const
+	func 
+	import
+	package
+	type
+	var
+
+2 - são usados como partes em algumas denotações de tipo composto.
+	chan
+	interface
+	map 
+	struct 
+
+
+3 - são usados para controlar o fluxo de código.
+	break
+	case
+	continue
+	default
+	else
+	fallthrough (transfere o controle para o próximo case)
+		switch 2 {
+			case 1:
+			    fmt.Println("1")
+			    fallthrough
+			case 2:
+			    fmt.Println("2")
+			    fallthrough
+			case 3:
+			    fmt.Println("3")
+			}
+	for
+	goto
+	if
+	range
+	return
+	select
+	switch 
+
+4 - também controlam o fluxo de código, mas de outras maneiras específicas. Eles modificam as chamadas de função.
+	defer
+	go 
+------------------------------------------------
+
 Types
 	Struct Types
+	Struct Type Tags Json
 	String Types
 	Slice Types
-	Struct Type Tags Json
+	Pointer
 	Map Types
 	Map Literals Continued
 	Blank Identifier
+	Identifiers nil
+	Interface as type
 ------------------------------------------------
 Estrutura de Controle
 	for, break
@@ -43,19 +137,20 @@ Goroutine
 	Tickers
 	WaitGroup
 	Mutexes
- 
+------------------------------------------------ 
 Métodos
 	Quebrando paradigmas 
 	Introdução aos métodos
 	Método vs funções
 	Métodos e Interfaces
+------------------------------------------------
 Parse Json
 	Json Marshal Encode
 	Json MarshalIndent
 	Option Omitempty
 	Json NewEncoder
 	Json Unmarshal Decode
-
+------------------------------------------------
 Tests
 	Introdução aos tests
 	Exemplos de tests

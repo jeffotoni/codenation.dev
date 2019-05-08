@@ -1,0 +1,110 @@
+[
+	{
+		"nome": "Acre",
+		"extensao": 152.5
+	},
+	{
+		"nome": "Mato Grosso do Sul",
+		"extensao": 357.1
+	},
+	{
+		"nome": "Goiás",
+		"extensao": 340
+	},
+	{
+		"nome": "Roraima",
+		"extensao": 224.2
+	},
+	{
+		"nome": "Maranhão",
+		"extensao": 332
+	},
+	{
+		"nome": "Tocantins",
+		"extensao": 277.6
+	},
+	{
+		"nome": "Piauí",
+		"extensao": 251.5
+	},
+	{
+		"nome": "São Paulo",
+		"extensao": 248.2
+	},
+	{
+		"nome": "Ceará",
+		"extensao": 148.8
+	},
+	{
+		"nome": "Paraná",
+		"extensao": 199.3
+	},
+	{
+		"nome": "Rondônia",
+		"extensao": 237.5
+	},
+	{
+		"nome": "Amazonas",
+		"extensao": 1570.7
+	},
+	{
+		"nome": "Distrito Federal",
+		"extensao": 5.8
+	},
+	{
+		"nome": "Amapá",
+		"extensao": 142.8
+	},
+	{
+		"nome": "Rio Grande do Sul",
+		"extensao": 281.7
+	},
+	{
+		"nome": "Pernambuco",
+		"extensao": 98.3
+	},
+	{
+		"nome": "Santa Catarina",
+		"extensao": 95.3
+	},
+	{
+		"nome": "Paraíba",
+		"extensao": 56.4
+	},
+	{
+		"nome": "Rio Grande do Norte",
+		"extensao": 52.8
+	},
+	{
+		"nome": "Espírito Santo",
+		"extensao": 46
+	},
+	{
+		"nome": "Rio de Janeiro",
+		"extensao": 43.6
+	},
+	{
+		"nome": "Bahia",
+		"extensao": 564.6
+	},
+	{
+		"nome": "Minas Gerais",
+		"extensao": 587.5
+	},
+	{
+		"nome": "Pará",
+		"extensao": 1247.6
+	},
+	{
+		"nome": "Alagoas",
+		"extensao": 27.7
+	},
+	{
+		"nome": "Sergipe",
+		"extensao": 21.9
+	},
+	{
+		"nome": "Mato Grosso",
+		"extensao": 903.3
+	}
+]

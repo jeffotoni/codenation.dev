@@ -1,15 +1,11 @@
 // Go in action
 // @jeffotoni
-// 2019-01-29
+// 2019-05-06
+// different ways to inizialize a struct
 
 package main
 
 import "fmt"
-
-// Go in action
-// @jeffotoni
-// 2019-05-06
-// different ways to inizialize a struct
 
 type Before struct {
 	m map[string]string
