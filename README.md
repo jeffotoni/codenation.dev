@@ -180,7 +180,8 @@ Um simples programa C "hello, world" compilado e linkado estaticamente usando o 
 
 Um programa Go compilado com gc pode ser vinculado ao sinalizador -ldflags=-w para desabilitar a geração de DWARF, removendo as informações de depuração do binário, mas sem nenhuma outra perda de funcionalidade. Isso pode reduzir substancialmente o tamanho binário.
 
-Ex:
+Exemplo:
+
 ```bash
 $ go build -ldflags=-w -o helo hello.go
 ```
@@ -255,6 +256,7 @@ Em seguida, faça o diretório src/hello dentro de sua área de trabalho e, ness
 O espaço de trabalho é o nosso local de trabalho, onde organizaremos nossos diretórios com nossos projetos. Como mostrado acima, até **Go versão 1.12** fomos forçados a fazer tudo no espaço de trabalho. $GOPATH abaixo do Projeto.
 
 **Exemplo Hello**
+
 ```bash
 $ export GOPATH=$HOME/go
 $ mkdir $HOME/go
@@ -271,6 +273,7 @@ $GOPATH/
 ```
 
 **Example Project**
+
 ```bash
 $ export GOPATH=$HOME/go
 $ mkdir $HOME/go/src/project1
@@ -374,6 +377,7 @@ Para o cenário acima, teremos que usar **go mod** em nosso projeto para que tod
 Mais informações podem ser encontradas aqui: [Wiki Go Modules] (https://github.com/golang/go/wiki/Modules)
 
 Exemplo prático de como você irá proceder:
+
 ```go
 $ go mod init github.com/user/project1
 ```
@@ -382,6 +386,7 @@ $ go mod init github.com/user/project1
 Quando usarmos o go mod em $GOPATH, teremos que habilitar o uso de GO111MODULE=on, para que ele possa trabalhar dentro da estrutura $GOPATH.
 
 Então, nosso programa pode compilar com sucesso.
+
 ```go
 $ GO111MODULE=on go run cmd/main.go
 $ GO111MODULE=on go build -o project1 cmd/main.go
@@ -412,6 +417,7 @@ $HOME/
 Percebe-se que temos go.mod agora no raiz e em cada pkg que desejamos configurar para que possamos importa-los.
 
 O arquivo go.mod na raiz ficaria assim:
+
 ```go
 module project1
 
@@ -430,15 +436,18 @@ go 1.12
 
 Os arquivos que encontra-se dentro de cada pacote ficaria assim:
 pkg/math
+
 ```go
 module math
 ```
 
 pkg/util
+
 ```go
 module util
 ```
 Prontinho agora é testar
+
 ```go
 GO111MODULE=on go run main.go
 ```
@@ -466,11 +475,13 @@ $ docker pull golang
 ### Compile seu aplicativo dentro do contêiner Docker
 
 Pode haver ocasiões em que não é apropriado executar seu aplicativo em um contêiner. Para compilar, mas não executar seu aplicativo dentro da Instância do Docker, você pode escrever algo como:
+
 ```bash
 $ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.12.4 go build -v
 ```
 
 Isso adicionará seu diretório atual como um volume ao contêiner, configurará o diretório de trabalho para o volume e executará o comando go build, que informará para compilar o projeto no diretório de trabalho e exibir o executável em myapp. Como alternativa, se você tiver um Makefile, poderá executar o comando make dentro do contêiner.
+
 ```bash
 $ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.12.4 make
 ```
@@ -503,17 +514,20 @@ Agora vamos rodar um programa para ver se funciona corretamente
 $ docker run --rm -v "$PWD":/usr/src/main -w /usr/src/main golang:1.12.4 go run main.go
 ```
 
-Output:
+Saída:
+
 ```bash
 My first program being compiled by a docker container!
 ```
 
-Check a version:
+Confira uma versão:
+
 ```bash
 $ docker run --rm -v "$PWD":/usr/src/main -w /usr/src/main golang:1.12.4 go versio
 ```
 
-Output:
+Saída:
+
 ```bash
 go version go1.12.4 linux/amd64
 ```
@@ -574,7 +588,8 @@ print      prints all arguments; formatting of arguments is implementation-speci
 println    like print but prints spaces between arguments and a newline at the end
 ```
 
-using print:
+Usando Print:
+
 ```go
 // test print
 package main
@@ -584,12 +599,14 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 debugging my system with print
 ```
 
-using println:
+Usando println:
+
 ```go
 // test println
 package main
@@ -599,12 +616,14 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 debugging my system with println
 ```
 
-using fmt.Println:
+Usando fmt.Println:
+
 ```go
 package main
 
@@ -615,7 +634,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 debugging my system with fmt.Println
 ```
@@ -648,6 +668,7 @@ producer         buffer           destination (io.Writer)
 ```
 
 Confira o exemplo abaixo:
+
 ```go
 package main
 
@@ -678,7 +699,8 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 How many stars does Orion have?
 H
@@ -704,6 +726,7 @@ $ go build
 ```
 
 Ou podemos compilar assim:
+
 ```go
 $ cd $HOME/go/src/hello
 $ go build -o hello hello.go
@@ -725,9 +748,10 @@ hello, Gophers
 
 Se você ver o **"hello, Gophers"** mensagem, em seguida, sua instalação Go **is working**.
 
-You can run **go install** to install the binary into your workspace's **bin** directory or **go clean -i** to remove it.
+Você pode executar o **go install** para instalar o binário no diretório **bin** da sua área de trabalho ou **ir limpar -i** para removê-lo.
 
 Exemplo: go install
+
 ```go
 $ pwd
 $ $HOME/go/src/hello
@@ -778,6 +802,7 @@ Use "go help" para mais informações sobre um comando.
 ---
 
 Uso:
+
 ```bash
 go run [build flags] [-exec xprog] package [arguments...]
 ```
@@ -803,11 +828,13 @@ func main() {
 }
 ```
 Go run:
+
 ```bash
 go run println.go
 ```
 
-Output:
+Saída:
+
 ```bash
 Debugging my system with println
 ```
@@ -827,6 +854,7 @@ O -i flag instala os pacotes que são dependências do destino.
 $ go build [-o output] [-i] [build flags] [packages]
 ```
 Veja um exemplo:
+
 ```go
 package main
 
@@ -837,17 +865,20 @@ func main() {
 }
 ```
 
-Output:
+Saída:
+
 ```bash
 Workshop Golang 2019.
 ```
 
 Compilação normal
+
 ```go
 go build -o hello hello.go
 ```
 
-Output:
+Saída:
+
 ```bash
 $ ls -lh 
 -rwxrwxr-x 1 root root **1,9M** jan 18 12:42 hello
@@ -855,11 +886,13 @@ $ ls -lh
 ```
 
 Deixando o arquivo menor após a compilação
+
 ```go
 go build -ldflags="-s -w" hello.go
 ```
 
-Output:
+Saída:
+
 ```bash
 $ ls -lh 
 -rwxrwxr-x 1 root root **1,3M** jan 18 12:42 hello
@@ -872,6 +905,7 @@ $ ls -lh
 Instalar pacotes e dependências
 
 Uso:
+
 ```bash
 $ go install [-i] [build flags] [packages]
 ```
@@ -888,6 +922,7 @@ Para mais sobre o build flags, confira 'go help build'. Para mais informações 
 O **'go get'** comando muda o comportamento dependendo se o comando go está sendo executado no modo com reconhecimento de módulo ou no modo GOPATH herdado. Este texto de ajuda, acessível como 'go help module-get' mesmo em legado GOPATH mode, descreve 'go get' como opera em module-aware mode.
 
 Uso:
+
 ```bash
 $ go get [-d] [-m] [-u] [-v] [-insecure] [build flags] [packages]
 ```
@@ -913,6 +948,7 @@ The -v flag enables verbose progress and debug output.
 ```
 
 Exemplos:
+
 ```bash
 $ go get -v github.com/guptarohit/asciigraph
 $ go get -u github.com/mxk/go-sqlite
@@ -945,16 +981,15 @@ require (
   gopkg.in/yaml.v2 v2.1.0
 )
 ```
-The go.mod file can also specify replacements and excluded versions that only apply when building the module directly; they are ignored when the module is incorporated into a larger build. For more about the go.mod file, see 'go help go.mod'.
-
-To start a new module, simply create a go.mod file in the root of the module's directory tree, containing only a module statement. The 'go mod init' command can be used to do this: 
+O arquivo go.mod também pode especificar substituições e versões excluídas que só se aplicam ao construir o módulo diretamente; eles são ignorados quando o módulo é incorporado em uma construção maior. Para mais informações sobre o arquivo go.mod, consulte 'go help go.mod'.
+Para iniciar um novo módulo, basta criar um arquivo go.mod na raiz da árvore de diretórios do módulo, contendo apenas uma instrução do módulo. O comando 'go mod init' pode ser usado para fazer isso:
 
 ```bash
 $ go mod init github.com/user/gomyproject
 ```
-In a project already using an existing dependency management tool like **godep, glide, or dep, 'go mod init'** will also add require statements matching the existing configuration.
+Em um projeto que já utiliza uma ferramenta de gerenciamento de dependências existente como **godep, glide ou dep, 'go mod init'** também adicionará instruções requeridas que correspondam à configuração existente.
 
-Once the go.mod file exists, no additional steps are required: go commands like **'go build'**, **'go test'**, or even **'go list'** will automatically add new dependencies as needed to satisfy imports.
+Uma vez que o arquivo go.mod existe, nenhuma etapa adicional é necessária: vá com comandos como **'go build'**, **'go test' **, ou até mesmo **'go list'** adicionará automaticamente novas dependências conforme necessário para satisfazer as importações.
 
 Os comandos são: 
 
@@ -981,7 +1016,7 @@ Uso:
 $ go mod init [module]
 ```
 
-Init initializes and writes a new **go.mod** to the current directory, in effect creating a new module rooted at the current directory. The file go.mod must not already exist. If possible, init will guess the module path from import comments (see 'go help importpath') or from version control configuration. To override this guess, supply the module path as an argument. 
+Init inicializa e grava um novo **go.mod** no diretório atual, na verdade, criar um novo módulo com raiz no diretório atual. O arquivo go.mod não deve existir. Se possível, o init irá adivinhar o caminho do módulo a partir dos comentários de importação (consulte 'go help importpath') ou da configuração do controle de versão. Para substituir essa suposição, forneça o caminho do módulo como um argumento.
 
 
 ```bash
@@ -1001,12 +1036,14 @@ require (
 
 O comando go mod mod vendor baixará todas as dependências para o diretório "vendor".
 Ao usar o go mod mod, os pacotes não estão no seu diretório.
+
 ```bash
 $ cd gomyproject2
 $ go mod vendor
 ```
 
-Output:
+Saída:
+
 ```bash
 $ ls -lh vendor
 total 8,0K
@@ -1016,16 +1053,17 @@ drwxrwxr-x 3 root root 4,0K jan 27 01:47 github.com
 
 ### GO 1.11 Módulo
 
-Go 1.11 includes preliminary support for Go modules, including a new module-aware 'go get' command. We intend to keep revising this support, while preserving compatibility, until it can be declared official (no longer preliminary), and then at a later point we may remove support for work in GOPATH and the old 'go get' command.
+Go 1.11 inclui suporte preliminar para os módulos Go, incluindo um novo comando 'go get' que reconhece os módulos. Nós pretendemos continuar revisando este suporte, preservando a compatibilidade, até que ele possa ser declarado oficial (não mais preliminar), e então, em um ponto posterior, podemos remover o suporte para o trabalho no GOPATH e o antigo comando 'go get'.
 
-The quickest way to take advantage of the new Go 1.11 module support is to check out your repository into a directory outside GOPATH/src, create a go.mod file (described in the next section) there, and run go commands from within that file tree.
+A maneira mais rápida de aproveitar o novo suporte ao módulo Go 1.11 é verificar seu repositório em um diretório fora de GOPATH / src, criar um arquivo go.mod (descrito na próxima seção) e executar comandos go a partir desse arquivo árvore.
 
-For more fine-grained control, the module support in Go 1.11 respects a temporary environment variable, GO111MODULE, which can be set to one of three string values: off, on, or auto (the default). If GO111MODULE=off, then the go command never uses the new module support. Instead it looks in vendor directories and GOPATH to find dependencies; we now refer to this as "GOPATH mode." If GO111MODULE=on, then the go command requires the use of modules, never consulting GOPATH. We refer to this as the command being module-aware or running in "module-aware mode". If GO111MODULE=auto or is unset, then the go command enables or disables module support based on the current directory. Module support is enabled only when the current directory is outside GOPATH/src and itself contains a go.mod file or is below a directory containing a go.mod file.
+Para um controle mais refinado, o suporte a módulos no Go 1.11 respeita uma variável de ambiente temporária, GO111MODULE, que pode ser definida como um dos três valores de string: off, on ou auto (o padrão). Se GO111MODULE = off, então o comando go nunca usa o novo suporte ao módulo. Em vez disso, ele procura nos diretórios de fornecedores e no GOPATH para localizar dependências; agora nos referimos a isso como "modo GOPATH". Se GO111MODULE = on, então o comando go requer o uso de módulos, nunca consultando o GOPATH. Nós nos referimos a isso como o comando sendo ciente do módulo ou em execução no "modo de reconhecimento de módulo". Se GO111MODULE = auto ou não estiver definido, o comando go ativa ou desativa o suporte a módulos com base no diretório atual. O suporte a módulos é ativado somente quando o diretório atual está fora de GOPATH / src e ele contém um arquivo go.mod ou está abaixo de um diretório contendo um arquivo go.mod
 
-In module-aware mode, GOPATH no longer defines the meaning of imports during a build, but it still stores downloaded dependencies (in GOPATH/pkg/mod) and installed commands (in GOPATH/bin, unless GOBIN is set).
+No modo ciente de módulo, GOPATH não define mais o significado de importações durante uma compilação, mas ainda armazena dependências baixadas (em GOPATH / pkg / mod) e comandos instalados (em GOPATH / bin, a menos que GOBIN esteja definido).
 
 
 Confira abaixo como usamos o comando:
+
 ```bash
 $ GO111MODULE=on go run myprogram.go
 $ GO111MODULE=on go build myprogram.go
@@ -1053,14 +1091,15 @@ PASS
 ok    command-line-arguments  0.001s
 ```
 
-The test package runs side-by-side with the go test command. The package test should have the suffix "\_test.go".
-We can split the tests into several files following this convention. For example: "myprog1_test.go" and "myprog2_test.go".
+O pacote de teste é executado lado a lado com o comando go test. O teste de pacote deve ter o sufixo "\ _test.go".
+Podemos dividir os testes em vários arquivos seguindo esta convenção. Por exemplo: "myprog1_test.go" and "myprog2_test.go".
 
-We should put our test functions in these test files.
+Devemos colocar nossas funções de teste nesses arquivos de teste.
 
-Each test function is an exported public function whose name begins with **"Test"**, accepts a pointer to a **testing.T** object, and returns nothing. Like this:
+Cada função de teste é uma função pública exportada cujo nome começa com **"Test"**, aceita um ponteiro para um objeto **testing.T** e não retorna nada. Como isso:
 
-Example one / myprog1_test:
+Exemplo 1 / myprog1_test:
+
 ```go
 package main
 
@@ -1075,7 +1114,8 @@ func TestWhatever(t *testing.T) {
 $ go test -v
 ```
 
-Output:
+Saída:
+
 ```bash
 === RUN   TestWhatever
 --- PASS: TestWhatever (0.00s)
@@ -1083,9 +1123,10 @@ PASS
 ok    command-line-arguments  0.001s
 ```
 
-The T object provides several methods that we can use to indicate failures or log errors.
+O objeto T fornece vários métodos que podemos usar para indicar falhas ou erros de log.
 
-Example two / myprog2_test:
+Exexmplo 2 / myprog2_test:
+
 ```go
 package main
 
@@ -1103,7 +1144,8 @@ func TestSum(t *testing.T) {
 $ go test -v
 ```
 
-Output:
+Saída:
+
 ```bash
 === RUN   TestSum
 -- FAIL: TestSum (0.00s)
@@ -1112,11 +1154,12 @@ FAIL
 FAIL  command-line-arguments  0.001s
 ```
 
-In this example we will make an examination as it would be in our projects.
+Neste exemplo, faremos uma examinação de como seria em nossos projetos.
 
-In this program I will pass parameter at compile time or in our execution to facilitate and also serve as an example the use of **"ldflags"** that we can use in both **go run -ldflags ** and **go build -ldflags**
+Neste programa vou passar parâmetro em tempo de compilação ou em nossa execução para facilitar e também servir como exemplo o uso de **"ldflags"** que podemos usar em **go run -ldflags** e **go build -ldflags**
 
-From a check in our code below / main.go:
+De um check-in em nosso código abaixo / main.go:
+
 ```go
 import "strconv"
 
@@ -1139,7 +1182,7 @@ func main() {
 }
 ```
 
-Now we have a Sum function in a pkg that we create in **pkg/math/sum.go**
+Agora temos uma função Soma em um pacote que criamos em **pkg/math/sum.go**
 
 ```go
 package math
@@ -1149,7 +1192,7 @@ func Sum(x, y int) int {
 }
 ```
 
-We created our test file in **pkg/math/sum_test.go**
+Criamos nosso arquivo de teste em **pkg/math/sum_test.go**
 
 ```go
 package math
@@ -1188,7 +1231,8 @@ $ cd pkg/math/
 $ go test -v
 ```
 
-Output:
+Saída:
+
 ```bash
 === RUN   TestSum
 === RUN   TestSum/test_1:_
@@ -1208,25 +1252,27 @@ exit status 1
 FAIL  github.com/jeffotoni/goworkshopdevops/examples/tests/pkg/pkg/math  0.001s
 ```
 
-It converts to json the output of the tests
+Converte para json a saída dos testes
 
 ```bash
 $ go test -v -json
 ```
 
-check your output on your terminal screen to view json output.
+Verifique sua saída na tela do seu terminal para ver a saída do json.
 
 ---
 
-Now that we've saved our pkg / math / sum.go let's do a main.go by making the call in this packet.
-But first let's run go mod to manage our packages and versions correctly.
+Agora que salvamos nosso pkg / math / sum.go, vamos fazer um main.go fazendo a chamada neste pacote.
+Mas primeiro vamos executar o go mod para gerenciar nossos pacotes e versões corretamente.
 
-Check the command below:
+Verifique o comando abaixo:
+
 ```bash
 $ go mod init github.com/jeffotoni/goworkshopdevops/examples/tests/pkg
 ```
 
-Output:
+Saída:
+
 ```bash
 go: finding github.com/jeffotoni/goworkshopdevops/examples/tests/pkg/math latest
 go: finding github.com/jeffotoni/goworkshopdevops/examples/tests latest
@@ -1236,14 +1282,16 @@ go: downloading github.com/jeffotoni/goworkshopdevops v0.0.0-20190127023912-a2fa
 0
 ```
 
-Now we can do **build** or **run** in our **main.go**.
-Let's run go run using the **"-ldflags"** flag to pass parameter to our code at compile time.
+Agora podemos fazer **build** ou **run** em nosso **main.go**.
+
+Vamos rodar para rodar usando o flag **"- ldflags"** para passar parâmetros para o nosso código em tempo de compilação.
 
 ```bash
 $ go run -ldflags "-X main.x=2 -X main.y=3" main.go
 ```
 
-Output:
+Saída:
+
 ```bash
 5
 ```
@@ -1252,7 +1300,8 @@ Output:
 $ go run -ldflags "-X main.x=7 -X main.y=3" main.go
 ```
 
-Output:
+Saída:
+
 ```bash
 10
 ```
@@ -1263,13 +1312,14 @@ Output:
 ## Tipos
 ---
 
-A type determines a set of values together with operations and methods specific to those values. A type may be denoted by a type name, if it has one, or specified using a type literal, which composes a type from existing types. 
+Um tipo determina um conjunto de valores junto com operações e métodos específicos para esses valores. Um tipo pode ser denotado por um nome de tipo, se tiver um, ou especificado usando um literal de tipo, que compõe um tipo de tipos existentes. 
 
-The language predeclares certain type names. Others are introduced with type declarations. Composite types—array, struct, pointer, function, interface, slice, map, and channel types—may be constructed using type literals.
+A linguagem predeclara certos nomes de tipos. Outros são introduzidos com declarações de tipo. Tipos compostos -types—array, struct, pointer, function, interface, slice, map, e channel types—may- podem ser construídos usando literais de tipo.
 
-Each type T has an underlying type: If T is one of the predeclared boolean, numeric, or string types, or a type literal, the corresponding underlying type is T itself. Otherwise, T's underlying type is the underlying type of the type to which T refers in its type declaration. 
+Cada tipo T tem um tipo subjacente: Se T é um dos tipos boolean, numeric, ou string types, ou um type literal, o tipo subjacente correspondente é o próprio T. Caso contrário, o tipo subjacente de T é o tipo subjacente do tipo ao qual T se refere em sua declaração de tipo.
 
-Example:
+Exemplo:
+
 ```bash
 type (
     A1 = string
@@ -1284,12 +1334,12 @@ type (
 )
 ```
 
-The underlying type of string, A1, A2, B1, and B2 is string. The underlying type of []B1, B3, and B4 is []B1. 
+O tipo subjacente de string, A1, A2, B1 e B2 é string. O tipo subjacente de [] B1, B3 e B4 é [] B1. 
 
 
 ### Numeric Types
 
-A numeric type represents sets of integer or floating-point values. The predeclared architecture-independent numeric types are: 
+Um tipo numérico representa conjuntos de valores inteiros ou de ponto flutuante. Os tipos numéricos independentes da arquitetura pré-declarados são:
 
 ```bash
 uint8       the set of all unsigned  8-bit integers (0 to 255)
@@ -1311,9 +1361,9 @@ complex128  the set of all complex numbers with float64 real and imaginary parts
 byte        alias for uint8
 rune        alias for int32
 ```
-The value of an n-bit integer is n bits wide and represented using two's complement arithmetic.
+O valor de um inteiro de n bits é n bits de largura e representado usando aritmética de complemento de dois.
 
-There is also a set of predeclared numeric types with implementation-specific sizes:
+Há também um conjunto de tipos numéricos pré-declarados com tamanhos específicos de implementação:
 
 ```bash
 uint     either 32 or 64 bits
@@ -1321,7 +1371,7 @@ int      same size as uint
 uintptr  an unsigned integer large enough to store the uninterpreted bits of a pointer value
 ```
 
-To avoid portability issues all numeric types are defined types and thus distinct except byte, which is an alias for uint8, and rune, which is an alias for int32. Conversions are required when different numeric types are mixed in an expression or assignment. For instance, int32 and int are not the same type even though they may have the same size on a particular architecture. 
+Para evitar problemas de portabilidade, todos os tipos numéricos são definidos e, portanto, distintos, exceto byte, que é um alias para uint8, e rune, que é um alias para int32. Conversões são necessárias quando diferentes tipos numéricos são misturados em uma expressão ou atribuição. Por exemplo, int32 e int não são do mesmo tipo, embora possam ter o mesmo tamanho em uma arquitetura específica.
 
 ### String Types
 
