@@ -7,6 +7,13 @@ import (
 
 func main() {
 
+	var c chan int
+	var cc = make(chan int)
+	var ccc = make(chan int, 10)
+	fmt.Println(c)
+	fmt.Println(cc)
+	fmt.Println(ccc)
+
 	//
 	go func1()
 	go func2()
