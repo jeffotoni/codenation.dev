@@ -1,0 +1,68 @@
+{
+    "name": "Processe dados dos jogadores do FIFA© 2017 usando Go",
+    "description": "Utilizando Go, você deverá descobrir quais são os melhores jogadores, quais os mais valiosos e quais são suas nacionalidades.",
+    "slug": "go-2",
+    "test_cmd": [
+        "go get -u github.com/stretchr/testify/assert",
+        "go test"
+    ],
+    "test_results_files": ["output.xml"],
+    "submission_files":[
+        "main.go",
+        "main_test.go",
+        "submit_test.go",
+        "output.xml"
+    ],
+    "topic":[
+        "Go",
+        "Ler arquivos CSV",
+        "Processar grandes quantidades de dados",
+        "Channels",
+        "Goroutines"
+    ],
+    "private_files": [
+        "submit_test.go"
+    ],
+    "submission_cmd":[
+        "go get -u github.com/jstemmer/go-junit-report",
+        "go test -v main.go submit_test.go | go-junit-report > output.xml"
+    ],
+    "created_by": [
+        {
+            "name": "Elton Minetto",
+            "picture": "https://s3-us-west-1.amazonaws.com/codenation-user-avatar/5afad991822dfd4b52d23505/5afad991822dfd4b52d23505_160.gif",
+            "email": "elton.minetto@codenation.com.br",
+            "phone": "(47) 99189-6666",
+            "linkedin": "https://www.linkedin.com/in/eminetto/",
+            "github": "http://github.com/eminetto",
+            "site": "http://eltonminetto.net"
+        }
+    ],
+    "content": [
+        {
+            "name": "Go by Example: Writing Files",
+            "description": "Go by Example: Writing Files",
+            "url": "https://gobyexample.com/writing-files"
+        },
+        {
+            "name": "csv - The Go Programming Language",
+            "description": "csv - The Go Programming Language",
+            "url": "https://golang.org/pkg/encoding/csv/"
+        },
+        {
+            "name": "Go Concurrency Patterns: Timing out, moving on - The Go Blog",
+            "description": "Go Concurrency Patterns: Timing out, moving on - The Go Blog",
+            "url": "https://blog.golang.org/go-concurrency-patterns-timing-out-and"
+        },
+        {
+            "name": "Go by Example: Goroutines",
+            "description": "Go by Example: Goroutines",
+            "url": "https://gobyexample.com/goroutines"
+        },
+        {
+            "name": "Go by Example: Channels",
+            "description": "Go by Example: Channels",
+            "url": "https://gobyexample.com/channels"
+        }
+    ]
+}

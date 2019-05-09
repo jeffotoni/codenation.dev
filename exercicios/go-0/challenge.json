@@ -1,0 +1,74 @@
+{
+    "name": "Os 10 maiores estados brasileiros em extensão territorial",
+    "description": "Utilizando Go e testes unitários, você deverá determinar os dez maiores estados brasileiros em extensão territorial.",
+    "topic": [
+        "Go"
+    ],
+    "slug": "go-0",
+    "test_cmd": [
+        "go get -u github.com/stretchr/testify",
+        "go test"
+    ],
+    "test_results_files": ["output.xml"],
+    "submission_files":[
+        "main.go",
+        "main_test.go",
+        "submit_test.go",
+        "output.xml"
+    ],
+    "private_files": [
+        "submit_test.go"
+    ],
+    "submission_cmd":[
+        "go get -u github.com/jstemmer/go-junit-report",
+        "go test -v main.go submit_test.go | go-junit-report > output.xml"
+    ],
+    "created_by": [
+        {
+            "name": "Elton Minetto",
+            "picture": "https://s3-us-west-1.amazonaws.com/codenation-user-avatar/5afad991822dfd4b52d23505/5afad991822dfd4b52d23505_160.gif",
+            "email": "elton.minetto@codenation.com.br",
+            "phone": "(47) 99189-6666",
+            "linkedin": "https://www.linkedin.com/in/eminetto/",
+            "github": "http://github.com/eminetto",
+            "site": "http://eltonminetto.net"
+        }
+    ],
+    "content": [
+        {
+            "name": "The Go Programming Language",
+            "description": "Documentation - The Go Programming Language",
+            "url": "https://golang.org/doc/"
+        },
+        {
+            "name": "Curso Online Go: Iniciando com a linguagem do Google",
+            "description": "Conheça a simples e poderosa linguagem Go",
+            "url": "https://www.alura.com.br/curso-online-golang"
+        },
+        {
+            "name": "Curso: A Linguagem Go",
+            "description": "Aprenda a programar na linguagem mais quente da atualidade",
+            "url": "https://greatercommons.com/learn/golang-ptbr"
+        },
+        {
+            "name": "A Tour of Go",
+            "description": "A Tour of Go",
+            "url": "https://tour.golang.org/welcome/1"
+        },
+        {
+            "name": "Go by Example",
+            "description": "Go by Example is a hands-on introduction to Go using annotated example programs",
+            "url": "https://gobyexample.com/"
+        },
+        {
+            "name": "stretchr/testify",
+            "description": "A toolkit with common assertions and mocks that plays nicely with the standard library",
+            "url": "https://github.com/stretchr/testify"
+        },
+        {
+            "name": "A Linguagem de Programação Go - Novatec Editora",
+            "description": "Este livro é uma referência definitiva para programadores que queiram conhecer a linguagem Go",
+            "url": "https://novatec.com.br/livros/linguagem-de-programacao-go/"
+        }
+    ]
+}

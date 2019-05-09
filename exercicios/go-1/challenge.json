@@ -1,0 +1,84 @@
+{
+    "name": "Listagem de diretórios em formato JSON",
+    "description": "Gere um relatório em formato JSON com a lista de arquivos de um diretório, recursivamente.",
+    "slug": "go-1",
+    "test_cmd": [
+        "go get -u github.com/stretchr/testify/assert",
+        "go test"
+    ],
+    "test_results_files": ["output.xml"],
+    "submission_files":[
+        "main.go",
+        "main_test.go",
+        "submit_test.go",
+        "output.xml",
+        "files.json"
+    ],
+    "topic":[
+        "Go",
+        "Ler diretórios do sistema operacional",
+        "Ler parâmetros a partir da linha de comando",
+        "Gerar JSON",
+        "Escrever em arquivos"
+    ],
+    "private_files": [
+        "submit_test.go"
+    ],
+    "submission_cmd": [
+        "go get -u github.com/jstemmer/go-junit-report",
+        "go test -v main.go submit_test.go | go-junit-report > output.xml"
+    ],
+    "created_by": [
+        {
+            "name": "Elton Minetto",
+            "picture": "https://s3-us-west-1.amazonaws.com/codenation-user-avatar/5afad991822dfd4b52d23505/5afad991822dfd4b52d23505_160.gif",
+            "email": "elton.minetto@codenation.com.br",
+            "phone": "(47) 99189-6666",
+            "linkedin": "https://www.linkedin.com/in/eminetto/",
+            "github": "http://github.com/eminetto",
+            "site": "http://eltonminetto.net"
+        }
+    ],
+    "content": [
+        {
+            "name": "path - The Go Programming Language",
+            "description": "path - The Go Programming Language",
+            "url": "https://golang.org/pkg/path/"
+        },
+        {
+            "name": "ioutil - The Go Programming Language",
+            "description": "ioutil - The Go Programming Language",
+            "url": "https://golang.org/pkg/io/ioutil/"
+        },
+        {
+            "name": "Go by Example: Structs",
+            "description": "Go by Example: Structs",
+            "url": "https://gobyexample.com/structs"
+        },
+        {
+            "name": "Go by Example: Command-Line Arguments",
+            "description": "Go by Example: Command-Line Arguments",
+            "url": "https://gobyexample.com/command-line-arguments"
+        },
+        {
+            "name": "Go by Example: JSON",
+            "description": "Go by Example: JSON",
+            "url": "https://gobyexample.com/json"
+        },
+        {
+            "name": "Go by Example: Reading Files",
+            "description": "Go by Example: Reading Files",
+            "url": "https://gobyexample.com/reading-files"
+        },
+        {
+            "name": "json - The Go Programming Language",
+            "description": "json - The Go Programming Language",
+            "url": "https://golang.org/pkg/encoding/json/"
+        },
+        {
+            "name": "Go by Example: Writing Files",
+            "description": "Go by Example: Writing Files",
+            "url": "https://gobyexample.com/writing-files"
+        }
+    ]
+}

@@ -1,0 +1,81 @@
+{
+    "name": "Gerador de frases do Monty Python",
+    "description": "Crie uma API para gerar frases aleatórias coletadas da série Monty Python, de acordo com nosso ator favorito. Use Go e SQLite.",
+    "slug": "go-3",
+    "test_cmd": [
+        "go get -u github.com/stretchr/testify/assert",
+        "go get -u github.com/gorilla/mux",
+        "go get -u github.com/gorilla/context",
+        "go get -u github.com/mattn/go-sqlite3",
+        "go test"
+    ],
+    "test_results_files": ["output.xml"],
+    "submission_files":[
+        "main.go",
+        "main_test.go",
+        "submit_test.go",
+        "output.xml"
+    ],
+    "topic":[
+        "Go",
+        "Criar APIs",
+        "Testar APIs",
+        "Ler dados de um banco de dados SQLite"
+    ],
+    "private_files": [
+        "submit_test.go"
+    ],
+    "submission_cmd": [
+        "go get -u github.com/jstemmer/go-junit-report",
+        "go test -v main.go submit_test.go | go-junit-report > output.xml"
+    ],
+    "created_by": [
+        {
+            "name": "Elton Minetto",
+            "picture": "https://s3-us-west-1.amazonaws.com/codenation-user-avatar/5afad991822dfd4b52d23505/5afad991822dfd4b52d23505_160.gif",
+            "email": "elton.minetto@codenation.com.br",
+            "phone": "(47) 99189-6666",
+            "linkedin": "https://www.linkedin.com/in/eminetto/",
+            "github": "http://github.com/eminetto",
+            "site": "http://eltonminetto.net"
+        }
+    ],
+    "content": [
+        {
+            "name": "Learning Go’s Concurrency Through Illustrations – Trevor Forrey",
+            "description": "You’ve most likely heard of Go in one way or another. It’s been increasing in popularity, and for good reason. Go is fast, simple, and has…",
+            "url": "https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3"
+        },
+        {
+            "name": "Awesome Go",
+            "description": "A curated list of awesome #Golang frameworks, libraries and software",
+            "url": "https://awesome-go.com/"
+        },
+        {
+            "name": "http - The Go Programming Language",
+            "description": "http - The Go Programming Language",
+            "url": "https://golang.org/pkg/net/http/"
+        },
+        {
+            "name": "httptest - The Go Programming Language",
+            "description": "httptest - The Go Programming Language",
+            "url": "https://golang.org/pkg/net/http/httptest/"
+        },
+        {
+            "name": "sql - The Go Programming Language",
+            "description": "sql - The Go Programming Language",
+            "url": "https://golang.org/pkg/database/sql/"
+        },
+        {
+            "name": "gorilla/mux",
+            "description": "mux - A powerful URL router and dispatcher for golang.",
+            "url": "https://github.com/gorilla/mux"
+        },                
+        {
+            "name": "mattn/go-sqlite3",
+            "description": "go-sqlite3 - sqlite3 driver for go using database/sql",
+            "url": "https://github.com/mattn/go-sqlite3"
+        }
+        
+    ]
+}

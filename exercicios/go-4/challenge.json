@@ -1,0 +1,74 @@
+{
+    "name": "Superstars do Github",
+    "description": "Use APIs externas, testes, entre outros para descobrir quais são os projetos usando Go que possuem mais estrelas no Github.",
+    "slug": "go-4",
+    "test_cmd": [
+        "go get -u github.com/stretchr/testify/assert",
+        "go test"
+    ],
+    "submission_files":[
+        "main.go",
+        "main_test.go",
+        "submit_test.go",
+        "output.xml",
+        "stars.json"
+    ],
+    "test_results_files": ["output.xml"],
+    "topic":[
+        "Go",
+        "Acessar APIs externas",
+        "Testar APIs",
+        "Gerar JSON",
+        "Escrever em arquivos"
+    ],
+    "private_files": [
+        "submit_test.go"
+    ],
+    "submission_cmd": [
+        "go get -u github.com/jstemmer/go-junit-report",
+        "go test -v main.go submit_test.go | go-junit-report > output.xml"
+    ],
+    "created_by": [
+        {
+            "name": "Elton Minetto",
+            "picture": "https://s3-us-west-1.amazonaws.com/codenation-user-avatar/5afad991822dfd4b52d23505/5afad991822dfd4b52d23505_160.gif",
+            "email": "elton.minetto@codenation.com.br",
+            "phone": "(47) 99189-6666",
+            "linkedin": "https://www.linkedin.com/in/eminetto/",
+            "github": "http://github.com/eminetto",
+            "site": "http://eltonminetto.net"
+        }
+    ],
+    "content": [
+        {
+            "name": "Awesome Go",
+            "description": "A curated list of awesome #Golang frameworks, libraries and software",
+            "url": "https://awesome-go.com/"
+        },
+        {
+            "name": "GitHub API v3 Pagination | GitHub Developer Guide",
+            "description": "GitHub API v3 Pagination | GitHub Developer Guide",
+            "url": "https://developer.github.com/v3/?#pagination"
+        },
+        {
+            "name": "Search | GitHub Developer Guide",
+            "description": "Search | GitHub Developer Guide",
+            "url": "https://developer.github.com/v3/search/#search-repositories"
+        },
+        {
+            "name": "Go by Example: JSON",
+            "description": "Go by Example: JSON",
+            "url": "https://gobyexample.com/json"
+        },
+        {
+            "name": "json - The Go Programming Language",
+            "description": "json - The Go Programming Language",
+            "url": "https://golang.org/pkg/encoding/json/"
+        },
+        {
+            "name": "Go by Example: Writing Files",
+            "description": "Go by Example: Writing Files",
+            "url": "https://gobyexample.com/writing-files"
+        }
+    ]
+}
