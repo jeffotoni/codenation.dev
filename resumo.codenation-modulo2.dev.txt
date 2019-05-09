@@ -121,22 +121,7 @@ Funções
 	Closures
 	Funções Assíncronas
 	defer
-------------------------------------------------
-Goroutine
-	What are Threads?
-	Introdução a Goroutine
-	Goroutine != Thread
-	Implementando nossa primeira goroutine
-	Channels
-	Direção de Channels 
-	Timeouts
-	Buffered Channels
-	Range and Close 
-	Select and Default Selection
-	Timers
-	Tickers
-	WaitGroup
-	Mutexes
+
 ------------------------------------------------ 
 Métodos
 	Quebrando paradigmas 

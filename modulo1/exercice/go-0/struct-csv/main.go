@@ -41,6 +41,8 @@ func openCsv(src string) (e []Estados, err error) {
 			break
 		}
 		if err != nil {
+
+			fmt.Println(err)
 			continue
 			// handle the error...
 			// break? continue? neither?

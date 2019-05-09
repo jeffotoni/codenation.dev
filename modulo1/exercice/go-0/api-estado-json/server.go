@@ -63,6 +63,8 @@ func handlerEstado(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	fmt.Println("Run Server port:8080!")
+
 	http.HandleFunc("/api/estado/extensao", handlerEstado)
+
 	http.ListenAndServe(":8080", nil)
 }
