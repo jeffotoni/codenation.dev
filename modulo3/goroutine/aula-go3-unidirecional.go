@@ -15,8 +15,9 @@ func f2(c chan<- int) {
 	c <- 300
 }
 
-// ch <- v    // Send v to channel ch. /read
-// v := <-ch  // Receive from ch, and  /write
+// ch1 <- value    // Send value to channel ch1. // read
+// ch2 := <-ch1    // Receive from ch1, and  // write
+
 func main() {
 
 	// channel bidirecional
