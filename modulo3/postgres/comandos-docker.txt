@@ -1,0 +1,19 @@
+ 
+comandos docker postgres
+
+$ docker run --network s31 --name postgres -e POSTGRES_PASSWORD=12345 -v pgdata:/var/lib/postgresql/data -d postgres
+
+$ docker inspect postgres | grep IPAddress
+
+$ docker run -it --rm postgres psql -h $IPAddress -U postgres
+
+$ docker run -it -v /tmp:/tmp --rm postgres pg_dump -d aluno -s -t login -h 172.17.0.3 -U postgres -f /tmp/login.sql
+
+
+// client
+$ docker pull dpage/pgadmin4
+
+$  docker run -p 8080:80 \
+        -e "PGADMIN_DEFAULT_EMAIL=user@domain.com" \
+        -e "PGADMIN_DEFAULT_PASSWORD=123456" \
+        -d dpage/pgadmin4

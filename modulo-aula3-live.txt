@@ -1,0 +1,109 @@
+
+MODULO 3 -  Construindo APIS
+
+-------------------------------
+CURIOSIDADE
+-------------------------------
+
+-- Goroutine em C -------------
+Libmill is a library 
+that introduces Go-style 
+concurrency to C.
+
+http://libmill.org/index.html
+-------------------------------
+
+Goroutine
+-----------------------
+
+What are Threads?
+-----------------------
+
+Introdução a Goroutine
+-----------------------
+
+Goroutine != Thread
+-----------------------
+
+Implementando nossa primeira goroutine
+-----------------------
+
+Channels
+-----------------------
+
+Direção de Channels 
+
+Timeouts
+
+Buffered Channels
+
+Range and Close 
+
+Select and Default Selection
+
+Timers
+
+Tickers
+
+WaitGroup
+
+Mutexes
+
+Variáveis Ambiente
+
+Introdução a variáveis de ambiente
+
+os.Setenv
+
+os.Getenv
+
+flags Types
+
+flags.Parse
+
+Banco de Dados
+
+Introdução ao banco de dados com Go
+
+Falando um pouco de Bancos Relacionais
+**Postgres
+Mysql
+
+EMBUTIDO..
+Relacional: Falando um pouco do SqlLite3 	=> arqi.db
+Falando um pouco do BoltDB => FEITO GO 		=> arqi.db
+
+//
+Falando um pouco de InfluxDB
+
+///////////////////////
+Falando um pouco de Bancos NoSql
+Falando um pouco de Mongo
+
+// cache..
+Falando um pouco de Redis
+
+
+
+Instalação e configuração do Postgres
+Connect
+Select 
+Insert
+Update
+Delete
+
+Falando de Rotas
+
+Algunas libs como gorillamux, bellt etc.
+
+Introdução ao pkg Http
+
+Type Handler
+
+Type HandlerFunc
+
+Type ServerMux
+
+ListenAndServer
+
+Func Http.Error
