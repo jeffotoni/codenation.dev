@@ -1,43 +1,26 @@
 package main
 
 import "fmt"
-import "time"
 
-// Funcao que soma todos os valores de um slice e envia o resultado por um channel
-func soma(s []int, channel chan int) {
-
-	time.Sleep(time.Second * 1)
-	fmt.Println("entrei")
-
-	soma := 0
-
-	// Laco que soma todos os valores
-	for _, v := range s {
-		soma += v
+func sum(a []int, c chan int) {
+	sum := 0
+	for _, v := range a {
+		sum += v
 	}
-
-	// Envia o resultado da soma para o channel
-	channel <- soma
+	c <- sum // send sum to c
 }
 
 func main() {
-	// Cria um slice com alguns valores
-	slice := []int{7, 2, 8, 9, 4, 0}
 
-	// Cria o canal
-	channel := make(chan int)
+	// ch <- v    // Send v to channel ch.
+	// v := <-ch  // Receive from ch, and
 
-	// Cria duas goroutines com a funcao soma
+	a := []int{7, 2, 8, -9, 4, 0}
 
-	// Passa como parametro a primeira metade do slice e o channel
-	go soma(slice[:len(slice)/2], channel)
-	// Passa como parametro a segunda metado do slice e o channel
-	go soma(slice[len(slice)/2:], channel)
+	c := make(chan int)
+	go sum(a[:len(a)/2], c)
+	go sum(a[len(a)/2:], c)
+	x, y := <-c, <-c // receive from c
 
-	// Recebe os resultados dos channels
-	x, y := <-channel, <-channel
-
-	// Mostra os valores resultantes das duas goroutines e
-	// o resultado total que representa a soma de todo o slice
-	fmt.Println(x, "+", y, "=", x+y)
+	fmt.Println(x, y, x+y)
 }
