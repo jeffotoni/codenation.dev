@@ -1,0 +1,62 @@
+
+bloqueando goroutines
+https://pliutau.com/different-ways-to-block-go-runtime-forever/
+
+
+https://golang.org/pkg/net/http
+https://golang.org/pkg/net/http/httptest
+https://github.com/jeffotoni/goworkshopdevops#introduction-http
+https://medium.com/over-engineering/graceful-shutdown-with-go-http-servers-and-kubernetes-rolling-updates-6697e7db17cf
+https://cryptic.io/go-http/
+https://www.gorillatoolkit.org/pkg/mux
+https://github.com/GuilhermeCaruso/bellt
+https://github.com/gin-gonic/gin
+
+Type Handler
+Type HandlerFunc
+Func http Handlefunc
+Func http Handle
+Func http Error
+Constants Common HTTP Methods
+Type ServeMux
+Type NewServeMux
+Func ListenAndServe
+Func ListenAndServeTLS
+Http Shutdown Gracefully
+
+net/http Client
+Introdução
+http.Transport
+http.Client
+http.Get
+http,Post
+http.NewRequest
+Context.WithCancel
+
+
+net/http Server Pages
+Introduction
+http.FileServer
+http.NotFound
+Disable http.FileServer
+http.Dir
+http.StripPrefix
+
+
+Criando Middleware nativo
+Criando Middleware GorillaMux
+Create Endpoints Gorilla Mux
+Create Endpoints Gin
+Session Gorilla Mux
+Upload files Nativo
+Upload files Gin
+
+jwt
+
+https://gopher.pro.br/post/middleware-em-golang/
+middleware (alice, negroni)
+
+
+Rotas
+Middleware
+ioutil.ReadAll

@@ -18,8 +18,7 @@ func ping(pings chan<- string, msg string) {
 // send to receive-only type <-chan string   // write
 // receive from send-only type chan<- string // read
 func pong(pings <-chan string, pongs chan<- string) {
-	msg := <-pings
-	pongs <- msg
+	pongs <- <-pings
 }
 
 func main() {
@@ -27,7 +26,7 @@ func main() {
 	pings := make(chan string, 1) // channel bi-direcional
 	pongs := make(chan string, 1) // channel bi-direcional
 
-	ping(pings, "Enviando mensagem @jeffotoni..")
+	go ping(pings, "Enviando mensagem @jeffotoni..")
 	pong(pings, pongs)
 	println(<-pongs)
 }
