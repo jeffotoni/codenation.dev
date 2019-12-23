@@ -6,10 +6,12 @@ import "fmt"
 func main() {
 	var x int
 
-	go func() {
-		x++
-	}()
+	for i := 0; i < 10000; i++ {
+		go func() {
+			x++
+		}()
+	}
 
-	x++
+	//x++
 	fmt.Println(x)
 }

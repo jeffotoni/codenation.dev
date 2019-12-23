@@ -31,6 +31,7 @@ func Auth(w http.ResponseWriter, r *http.Request) {
 func main() {
 
 	mux := http.NewServeMux()
+
 	mux.HandleFunc("/login", LoginHtml)
 
 	mux.HandleFunc("/v1/api/auth", Auth)
